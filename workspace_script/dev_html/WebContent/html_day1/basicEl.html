@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- head영역에는 css소스를 추가하거나 Javascript소스를 추가할 수 있다. 
+head 영역에서는 title태그를 사용할 수 있다.
+브라우저 의 역할
+html 문서에 대한 인터프리터의 역할(통역)
+태그는 출력하지 않고 내용부분만 내보냄.
+
+특징
+컴파일을 하지 않아요, - 문법체크를 안해 - 오타나도 모름! 에러잡기 불편함
+런타임시에 모든 게 결정
+에러잡기 불편해
+java 언어보다는 완성도 떨어짐-->
+
+	<!-- 태그 열린태그와 닫힌 태그로 이루어짐
+		 태그는 중첩해서 사용할 수 있다!
+		 태그 안에 속성을 정의하고 속성에 대응하는 값을 줄 수 있다. -->
+	 
+	 <!-- 태그 사용 규칙
+	 -대소문자를 구분하지 않는다.
+	 -종료태그 사용시에는 반드시 </태그이름>
+	 -태그 안에서 띄어쓰기는 금함.
+	 -시작태그와 종료태그 사이에는 중첩하여 태그를 사용가능 
+	 -브라우저가 해석하지 못하는 태그는 무시되거나 에러발생
+	 --->
+	 
+<!-- 메타태그를 이용해서 검색엔진에 활용하는 검색어를 설정할 수 있음 -->
+<meta charset="UTF-8">
+<meta name = "author" content = "집사">
+<meta name = "title" content = "집사의 html 공부">
+<meta name = "date" content = "2019-06-04">
+<meta name = "keyword" content = "고양이,우주정복,귀여워">
+
+
+<title>집사의 HTML 공부</title>
+</head>
+
+<body>
+<!-- 화면처리 내용을 볼 수 있다. -->
+html <br>
+css 	<br>
+javascript 
+<h1>처음 보는 html</h1>
+문자&nbsp;열 <!-- 태그 이름은 없고 값이긴 하다. -->
+<li><font color ="orange">문  &nbsp;&nbsp;자 &nbsp;&nbsp;열</font>
+
+<H1><font color = "GREEN"> 내복이로 우주정복</font></H1>
+
+<!-- &lt; 꺽쇠열기 - &gt; 꺽쇠닫기 - &quot; 더블쿼테이션 &amp; 엔퍼센트 연산자 <li> 동그라미 -->
+&lt; &nbsp;&nbsp; &gt;  &nbsp;&nbsp; &quot; 더블쿼테이션 &nbsp;&nbsp; &amp; 엔퍼센트 연산자<br>
+
+<font color="ORANGE" size="47" face="궁서체">♥내복이♥</font><br>
+
+한글
+
+<h1><a href="https://instagram.com/ikobean">내복이 인스타</a></h1>
+<h1><a href="http://192.168.0.5:8000/html_day1/basicEl.html">고마라스크림 서버</a></h1>
+<h1><a href="http://192.168.0.235:8000/html_day1/basicEl.html">내사랑 경애쓰♡ 서버</a></h1>
+<h1><a href="http://192.168.0.211:8000/html_day1/basicEl.html">박쌍범 소악마 서버</a></h1>
+<a href="https://www.naver.com">네이버</a>
+<!-- 
+	url(Uniform Resource Locator) 경로
+	1)절대경로 - 프로토콜부터 도메인(ip주소) 그리고 폴더이름 페이지이름
+	   ((http)(https는 보안이 강화된 프로토콜)쓰지 말기. 퇴사각임)
+	2)상대경로 - 현재 내가 있는 곳을 기준으로 경로를 쓴다. 
+	. 이 나야!
+
+	-->
+		<A href = "../Index.html"> 상대경로 테스트</A>
+
+
+</body>
+</html>

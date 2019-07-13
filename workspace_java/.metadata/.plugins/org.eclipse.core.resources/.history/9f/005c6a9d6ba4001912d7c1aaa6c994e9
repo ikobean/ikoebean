@@ -1,0 +1,76 @@
+package UIswing;
+
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+public class SungjukApp extends JFrame implements ActionListener {
+	//선언부
+	//레이아웃 종류
+	//BorderLayout, FlowLayout, CardLayout, GridLayout, GridBagLayout, BoxLayout
+	//JPanel은 디폴트 레이아웃이 FlowLayout
+	JPanel 				jp_north	= new JPanel();
+	JLabel		 		jlb_inwon 	= new JLabel("인원수",JLabel.RIGHT);
+	JLabel 				jlb_num 	= new JLabel("명",JLabel.LEFT);
+	JTextField 			jtf_inwon 	= new JTextField(10);
+	JButton				jbtn_add 	= new JButton("추가");
+	Object 				data[][]	= new Object[0][7];
+	String 				cols[]		= {"이름","JAVA","Oracle","JSP","총점","평균","석차"};
+	JTable 				jtb_list 	= null;
+	JScrollPane 		jsp_list    = null;
+	DefaultTableModel   dtm_list 	= null;
+	Container			ct 			= this.getContentPane();
+	//생성자
+	/*
+	 * 문제 제기
+	 * 화면을 처리하는 메소드 호출을 생성자에서 할 수도 있고 메인 메소드에서 할 수도 있다.
+	 * 둘 의 차이점에 대해 생각해 보자.
+	 * 
+	 */
+	public SungjukApp() {
+		
+	}
+	//화면처리 구현
+	public void initDisplay() {
+		jp_north.add(jlb_inwon);
+		jp_north.add(jtf_inwon);
+		jp_north.add(jlb_num);
+		jp_north.add(jbtn_add);
+		ct.add("North",jp_north);
+		this.setResizable(false);
+		this.setTitle("성적어플");
+		this.setSize(300,250);
+		this.setVisible(true);
+		
+		jbtn_add.addActionListener(this);
+	}
+	//메인메소드
+	public static void main(String[] args) {
+		SungjukApp sja = new SungjukApp();
+		sja.initDisplay(); //이게 생성자에 있을 때랑 메인에서 있을 때랑 차이. 지연상황(스레드,소켓통신)
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		//여기서 테이블을 그려 넣어주면 돼
+		Object obj = e.getSource();
+		if(obj==jbtn_add) {
+			dtm_list = new DefaultTableModel(data,cols);
+			jtb_list = new JTable(dtm_list);
+			jsp_list = new JScrollPane();
+			//jsp_list.setViewportView(jtb_list); //디폴트가 불투명. 투명하게 해줘야 이미지가 보임.
+			ct.add("Center",jsp_list);
+			ct.validate();
+			this.pack();
+			
+		}
+	}
+}

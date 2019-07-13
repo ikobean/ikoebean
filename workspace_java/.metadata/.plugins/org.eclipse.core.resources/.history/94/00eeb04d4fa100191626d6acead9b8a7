@@ -1,0 +1,9 @@
+package com.ch15;
+
+public class FileCopy {
+
+	public static void main(String[] args) {
+		FileReader fr = new FileReader();
+	}
+
+}

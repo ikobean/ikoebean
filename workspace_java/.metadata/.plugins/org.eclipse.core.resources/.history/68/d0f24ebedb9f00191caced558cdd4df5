@@ -1,0 +1,81 @@
+package com.network1_alone;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+//클라이언트 측에서는 Runnable하지 않았다. - 단일스레드이다.
+//why? - 경합,선택에 따른 지속적인 서비스
+// main-> 생성자호출->  initDisplay() -> 서버접속 ->actionPerformed (말하기)
+import javax.swing.table.DefaultTableModel;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.StyleContext;
+
+import com.network1.Protocol_;
+import com.network2.MessageRoom;
+import com.network2.WaitRoom;
+
+public class TalkClient extends JFrame {
+	Login login=null;
+	String		nickName = null;
+	
+	JTabbedPane tp = new JTabbedPane();
+	Wait 	wr = new Wait(this); //여기서 oos,ois 생성할 것이므로 원본 주소번지 필요함~
+	Message mr = new Message(this);
+	
+	//소켓선언 - (서버 접속 시도 - 객체 손에 쥐면 oos와 ois생성 해줘야 해)
+	Socket mySocket = null;
+	String ip = "192.168.0.187";
+	int	   port = 5001;
+	
+	ObjectOutputStream oos = null;
+	ObjectInputStream  ois = null;
+	
+	
+	public TalkClient(Login login) {
+		this.login = login;
+		nickName=login.nickName;
+		initDisplay();
+		connect_process();
+	}
+
+
+	public void initDisplay() {
+		
+		//윈도우창 닫을 때 사용자원 반납.
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				try {
+					System.exit(0);
+				} catch (Exception e) {
+				}
+			}
+		});
+		
+		
+		
+	};
+	
+	
+
+
+}
+
+

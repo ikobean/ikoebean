@@ -1,0 +1,139 @@
+package com.test;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.geom.RoundRectangle2D;
+
+import javax.swing.ButtonGroup;
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
+import javax.swing.SwingConstants;
+
+public class Page_t1 extends JFrame{
+	MyPage_t1 jp_myPage = new MyPage_t1(this,"마이페이지");
+	MyPost_t1 jp_myPost = new MyPost_t1(this,"내 게시글");
+	MyPostSet_t1 jp_myPostSet = new MyPostSet_t1(this,"설정");
+	Chat_t1 jp_chat = new Chat_t1(this,"채팅");
+	Post_t1 jp_post = new Post_t1(this, "게시글");
+	Mentor_t1 jp_mentor = new Mentor_t1(this, "멘토");
+	Setting_t1 jp_setting = new Setting_t1(this, "설정");
+	JPanel jp_bubble = new JPanel();
+	JToggleButton jbtn_myPage  = new JToggleButton(new ImageIcon(".\\src\\images\\person01.png"));
+	JToggleButton jbtn_chat    = new JToggleButton(new ImageIcon(".\\src\\images\\chat02.png"));
+	JToggleButton jbtn_post    = new JToggleButton(new ImageIcon(".\\src\\images\\list02.png"));
+	JToggleButton jbtn_mentor  = new JToggleButton(new ImageIcon(".\\src\\images\\people01.png"));
+	JToggleButton jbtn_setting = new JToggleButton(new ImageIcon(".\\src\\images\\setting01.png"));
+	ButtonGroup bg = new ButtonGroup();
+	JPanel jp_south = new JPanel();
+	
+	public Page_t1() {
+		init();
+	}
+	
+	public void init() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+				super.windowClosing(e);
+			}
+		});
+		jp_bubble = jp_myPage.jp_bubble;
+		add(jp_bubble);
+		bg.add(jbtn_myPage);
+		bg.add(jbtn_chat);
+		bg.add(jbtn_post);
+		bg.add(jbtn_mentor);
+		bg.add(jbtn_setting);
+		jbtn_myPage.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				remove(jp_bubble);
+				jp_bubble = jp_myPage.jp_bubble;
+				add(jp_bubble);
+				revalidate();
+				repaint();
+			}
+		});
+		jbtn_chat.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				remove(jp_bubble);
+				jp_bubble = jp_chat;
+				add(jp_bubble);
+				revalidate();
+				repaint();
+			}
+		});
+		jbtn_post.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				remove(jp_bubble);
+				jp_bubble = jp_post.jp_bubble;
+				add(jp_bubble);
+				revalidate();
+				repaint();
+			}
+		});
+		jbtn_mentor.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				remove(jp_bubble);
+				jp_bubble = jp_mentor;
+				add(jp_bubble);
+				revalidate();
+				repaint();
+			}
+		});
+		jbtn_setting.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				remove(jp_bubble);
+				jp_bubble = jp_setting;
+				add(jp_bubble);
+				revalidate();
+				repaint();
+			}
+		});
+		jbtn_myPage.setBackground(new Color(189,117,58));
+		jbtn_chat.setBackground(new Color(189,117,58));
+		jbtn_post.setBackground(new Color(189,117,58));
+		jbtn_mentor.setBackground(new Color(189,117,58));
+		jbtn_setting.setBackground(new Color(189,117,58));
+		jbtn_myPage.setRolloverEnabled(false);
+		jbtn_chat.setRolloverEnabled(false);
+		jbtn_post.setRolloverEnabled(false);
+		jbtn_mentor.setRolloverEnabled(false);
+		jbtn_setting.setRolloverEnabled(false);
+		jbtn_myPage.setSelected(true);
+		jp_south.setLayout(new GridLayout(1,5));
+		jp_south.add(jbtn_myPage);
+		jp_south.add(jbtn_chat);
+		jp_south.add(jbtn_post);
+		jp_south.add(jbtn_mentor);
+		jp_south.add(jbtn_setting);
+		setBackground(new Color(255,202,158));
+		setSize(410,545);
+		setResizable(false);
+		add("South",jp_south);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		Page_t1 p1 = new Page_t1();
+	}
+}
+
+

@@ -1,0 +1,15 @@
+package com.design;
+
+import java.util.List;
+
+public class MemberApp {
+	public void methodA(List<String> nameList) {
+		
+	}
+	public void methodA(ArrayList<String> nameList) {
+		
+	}
+	public void methodA(Vector<String> nameList) {
+		
+	}
+}

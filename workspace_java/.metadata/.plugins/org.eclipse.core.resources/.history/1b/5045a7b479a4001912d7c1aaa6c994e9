@@ -1,0 +1,6 @@
+package SungjukApp;
+
+public class SJAppVO {
+	"이름","JAVA","Oracle","JSP","총점","평균","석차"
+	private String name = null;
+}

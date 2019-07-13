@@ -1,0 +1,17 @@
+package com.design;
+
+public class RubberDuck extends Duck {
+	
+	public RubberDuck() {
+		quackBehavior = new Squeak();
+		flybehavior = new FlyNoWay();
+	}
+	@Override
+	public void display() {
+			System.out.println("나는 고무오리");
+			
+			
+	}
+
+	
+}

@@ -1,0 +1,9 @@
+package com.network1_alone;
+
+public class Wait {
+
+	public Wait(TalkClient talkClient) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

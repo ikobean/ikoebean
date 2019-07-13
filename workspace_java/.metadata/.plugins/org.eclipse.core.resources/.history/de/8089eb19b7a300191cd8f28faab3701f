@@ -1,0 +1,36 @@
+package com.test;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.RoundRectangle2D;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Setting_t1 extends JPanel{
+	Page_t1 page = null;
+	JLabel jlb = new JLabel();
+	Font myfont = new Font("HY견고딕",Font.PLAIN,26);
+	Shape s;
+	public Setting_t1(Page_t1 page,String name) {
+		this.page = page;
+		setLayout(null);
+		s = new RoundRectangle2D.Float(10,10,380,60,20,20);
+		jlb.setBounds(30, 16, 150, 50);
+		jlb.setText(name);
+		jlb.setFont(myfont);
+		setBackground(new Color(255,224,200));
+		add(jlb);
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setColor(new Color(189,117,58));
+		g2.fill(s);
+		g2.setColor(Color.black);
+		g2.draw(s);
+	}
+}

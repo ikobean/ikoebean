@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../demo/demo.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<script> 
+	
+    $(document).ready(function(){
+        $("#cb_dname").combobox({
+        /*    data: [
+             {deptno:10, dname:'ACCOUNTING'}
+            ,{deptno:20, dname:'RESEARCH'}()
+            ,{deptno:30, dname:'SALES'}
+            ,{deptno:40, dname:'OPERATIONS'}
+             ]*/
+            url:'../easyUI_layout/jsonDept.json'
+           ,valueField:'deptno'
+           ,textField:'dname'
+        });
+    });
+</script>
+<form id="f_combo">
+    <input class="easyui-combobox" id="cb_dname" name="cb_dname">
+    <button onclick="send()">전송</button> <!-- 전송버튼 누르면 주소값에 valuefield가 넘어감 -->
+</form>
+
+    
+</body>
+</html>

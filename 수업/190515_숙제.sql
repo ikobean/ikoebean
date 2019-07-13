@@ -1,0 +1,57 @@
+SELECT SUM(SAL) CLERK
+FROM EMP
+WHERE JOB = 'CLERK'
+GROUP BY DEPTNO
+
+SELECT SUM(SAL) MANAGER
+FROM EMP
+WHERE JOB = 'MANAGER'
+GROUP BY DEPTNO
+
+SELECT SUM(SAL) ETC
+FROM EMP
+WHERE JOB != 'CLERK'
+    AND JOB != 'MANAGER'
+    GROUP BY DEPTNO
+    
+    
+SELECT SUM(SAL) DEPT_SAL
+FROM EMP
+GROUP BY DEPTNO
+    
+    
+SELECT DEPTNO
+      ,SUM(DECODE(JOB, 'CLERK', SAL)) CLERK
+      ,SUM(DECODE(JOB,'MANAGER',SAL)) MANAGER
+      ,SUM(DECODE(JOB, 'CLERK', NULL
+                      ,'MANAGER', NULL,SAL)) ETC
+      FROM emp
+      GROUP BY DEPTNO
+      
+      
+    
+SELECT DNAME
+      ,SUM(DECODE(JOB, 'CLERK', SAL)) CLERK
+      ,SUM(DECODE(JOB,'MANAGER',SAL)) MANAGER
+      ,SUM(DECODE(JOB, 'CLERK', NULL
+                      ,'MANAGER', NULL,SAL)) ETC
+      FROM EMP,(SELECT DNAME FROM DEPT)
+      GROUP BY DNAME
+      
+      
+      
+    
+SELECT DNAME
+      ,SUM(DECODE(JOB, 'CLERK', SAL)) CLERK
+      ,SUM(DECODE(JOB,'MANAGER',SAL)) MANAGER
+      ,SUM(DECODE(JOB, 'CLERK', NULL
+                      ,'MANAGER', NULL,SAL)) ETC
+      ,SUM(DECODE(DNAME, 'ACCOUNTING', SAL
+                       ,'OPERATIONS', SAL
+                       ,'RESEARCH', SAL
+                       ,'SALES', SAL))        
+      FROM EMP,(SELECT DNAME FROM DEPT),
+           (select
+      GROUP BY DNAME
+      
+      

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>보드 판매량 집계하기</title>
+<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../demo/demo.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+
+
+</head>
+<body>
+
+<table border='1' width='500px' height='600px'>
+	<tr>
+		<th colspan="2"  width="120px" align="center">보드판매량</th>
+		<!-- <td colspan="2" align="center">보드판매량
+		</td> -->
+	</tr>
+	<tr>
+		<td> 판매량</td>
+		<td><input class="easyui-numberbox"></td>
+	</tr>
+	<tr>
+		<td>구매가</td>
+		<td>700,000 </td>
+	</tr>
+	<tr>
+		<td>소비자가</td>
+		<td>850,000</td>
+	</tr>
+</table>
+	<div >마진금액
+	<!-- 마진금액 계산하는 함수? -->
+	<input class="easyui-numberbox">
+	</div>
+	<button onClick="magin()">마진</button>
+	<!-- <a href="#" class="easyui-linkbutton" iconCls="icon-ok" title="마진" plain="true"> 마진 </a> -->
+	
+</body>
+</html>

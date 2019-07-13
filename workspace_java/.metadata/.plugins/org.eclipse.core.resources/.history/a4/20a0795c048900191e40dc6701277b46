@@ -1,0 +1,49 @@
+package com.design;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+public class MemberApp {
+	//메소드의 파라미터로 어떤 타입을 선택하는 것이 유연한 것인지?
+	public void methodA(List<String> nameList) { //벡터, 어레이리스트 가능! 얘가 권장사항입니다~
+		System.out.println("나는 List");
+	}
+	public void methodA(ArrayList<String> nameList) {
+		System.out.println("나는 arraylist");
+	}
+	public void methodA(Vector<String> nameList) {
+		System.out.println("나는 vector~");
+	}
+	
+	
+	public void methodB(List<Integer> number) { //벡터, 어레이리스트 가능! 얘가 권장사항입니다~
+		System.out.println("나는 인티저List");
+	}
+	
+	public static void main(String[] args) {
+		MemberApp ma = new MemberApp();
+		
+		
+		
+		//리스트는 인터페이스. 어레이 리스트, 벡터는 구현체클래스
+		List<String> 		names  = 	new ArrayList<String>();
+		List<String> 		names2 = 	new Vector<String>(); //단톡방 닉네임 관리? 멀티스레드에서는 벡터가 안전함!
+
+		ArrayList<String>   names3 = 	new ArrayList<String>();
+		Vector<String>		names4 = 	new Vector<String>();
+		
+		List<Integer>		no = new List<Integer>();
+		
+		ma.methodA(names);
+		ma.methodA(names2);
+		ma.methodA(names3); //타입이 arraylist라서 arraylist만 받을 수 있음. 1번 메소드a는 못받음
+		ma.methodA(names4); //벡터인 것만 호출됨 리스트는 호출 안됨.
+		
+		
+		
+	}
+}
+
+//메소드 선언할 때 왜 인터페이스나 추상클래스로 하는 게 더 유리할까?
+

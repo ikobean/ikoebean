@@ -1,0 +1,143 @@
+package com.seontalk_alone;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.RoundRectangle2D;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+public class MyInfo  {
+	
+	Font font = new Font("HY중고딕", Font.BOLD,15);
+	
+	JFrame jfr = new JFrame();
+	
+	JPanel jp_north = new JPanel(); //내정보 
+	JPanel jp_center = new JPanel(); //프로필 사진
+	JPanel jp_south = new JPanel(); //상세정보
+	
+
+	
+	JLabel jlb_id = new JLabel("아이디");
+	JLabel jlb_user_id = new JLabel("ikobean");
+	//JTextField jtf_id = new JTextField("ikobean");
+	
+	JLabel jlb_name = new JLabel("이름");
+	JLabel jlb_user_name = new JLabel("내복이");
+	//JTextField jtf_name = new JTextField("내복이");
+	
+	JLabel jlb_sex = new JLabel("성별");
+	JLabel jlb_user_sex = new JLabel("남");
+	//JTextField jtf_sex = new JTextField("남");
+	
+	JLabel jlb_birth = new JLabel("생일");
+	JLabel jlb_user_birth = new JLabel("13.09.21");
+	//JTextField jtf_birth = new JTextField("13.09.21");
+
+	
+	/*
+	 * public MyInfo(){ initDisplay();
+	 * 
+	 * }
+	 */
+	class MyPanelzTop extends JPanel{
+		JLabel jlb_myinfo = new JLabel("내 정보");
+		Font myfont = new Font("HY견명조",Font.BOLD,20);
+		Shape s;
+		public MyPanelzTop() {
+			setLayout(null);
+			s = new RoundRectangle2D.Float(10,10,380,80,20,20);
+			jlb_myinfo.setBounds(0, 30, 410, 50);
+			jlb_myinfo.setFont(myfont);
+			setBackground(new Color(255,213,192));
+			jp_south.add(jlb_myinfo);
+		}
+		
+		
+	}
+	
+	
+	public void initDisplay() {
+		
+		//jfr.add("South",jp_south);
+		//jp_north.setLayout(null);
+		jp_south.setLayout(null);
+		
+		jlb_myinfo.setBounds;
+		jlb_myinfo.setBackground(new Color(255,213,192));
+		jlb_myinfo.setOpaque(true);
+		jlb_myinfo.setHorizontalAlignment(SwingConstants.CENTER);
+	
+		
+		
+		jlb_id.setBounds(25, 400, 80, 40);
+		jlb_user_id.setBounds(150,407,70,25);
+		jlb_id.setFont(font);
+		
+		jlb_name.setBounds(25, 420, 80, 40);
+		jlb_user_name.setBounds(150,427,70,25);
+		jlb_name.setFont(font);
+		
+		jlb_sex.setBounds(25, 440, 80, 40);
+		jlb_user_sex.setBounds(150,447,70,25);
+		jlb_sex.setFont(font);
+		
+		jlb_birth.setBounds(25, 460, 80, 40);
+		jlb_user_birth.setBounds(150,467,70,25);
+		jlb_birth.setFont(font);
+		
+		
+		jp_south.add(jlb_id);
+		jp_south.add(jlb_user_id);
+		//jp_south.add(jtf_id);
+		
+		
+		jp_south.add(jlb_name);
+		jp_south.add(jlb_user_name);
+		//jp_south.add(jtf_name);
+		
+		jp_south.add(jlb_sex);
+		jp_south.add(jlb_user_sex);
+		//jp_south.add(jtf_sex);
+		
+		jp_south.add(jlb_birth);
+		jp_south.add(jlb_user_birth);
+		//jp_south.add(jtf_birth);
+		
+		jp_south.add(jlb_myinfo);
+		
+		//jfr.setLayout(new BorderLayout());
+		//jfr.add("Center",jp_north);
+		jfr.add(jp_south);
+		
+		
+		jfr.setTitle("내 정보");
+		jfr.setSize(410, 600);
+		jfr.setVisible(true);
+		
+		
+		
+	}
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setColor(new Color(237,134,81));
+		g2.fill(s);
+		g2.setColor(Color.black);
+		g2.draw(s);
+
+	}
+	
+	public static void main(String[] args) {
+		MyInfo myinfo = new MyInfo();
+		myinfo.initDisplay();
+	}
+}
+

@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 지금:<%=new java.util.Date() %>  -->
+<!-- ==============html땅=================================== -->
+<%!
+/////////////////*자바땅*/////////////////////////////////////////
+ //디클러레이션 
+ //안에 선언하면 전변
+ String name = "바보";
+ int i;
+ public String methodA(int i){
+	 i = 100;
+	 return "hello";
+ }
+ %>
+
+<% //스크립틀릿
+//스크립틀릿 안에 선언하면 지변
+	String name;
+	name="이성계";
+	out.print(name); //이성계
+	out.print("<br>");
+	out.print(i);//0
+	out.print("<br>");
+	String insa = methodA(10);
+	out.print("insa :"+insa+"<hr>");
+%>
+<%= 
+	"문자열"
+%> 
+</body>
+</html>

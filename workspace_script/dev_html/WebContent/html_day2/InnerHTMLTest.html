@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML에 관해서</title>
+<!-- 
+    mime type
+    브라우저는 mime 타입으로 판정
+    image/png, image/gif, image/jpg
+    video/avi, video/mov, video/mp4
+    main type   text/javascript, text/plain, text/html
+    sub  type
+-->
+<style type="text/css">
+    div{            
+        display:block;
+        width: 500px;   /*div는 크기를 가지고 있어서 설정 가능*/
+        height: 300px;
+        background-color:lavender;
+      }
+    
+      span{
+          display : block;
+          width: 500px;   /*div는 크기를 가지고 있어서 설정 가능*/
+      	  height: 300px;
+          background-color:rgb(255, 162, 128);
+      } 
+      </style>
+
+<script type="text/javascript">
+    var msg="<table border='1' width='300px' height= '100px'>";
+        msg+= "<tr><td>  냥냥? </td></tr>"
+        msg+="</table>";
+        function test(){
+    	document.getElementById("d_msg").innerHTML =msg;
+        }
+</script>
+
+
+</head>
+<body>
+<!-- 인라인속성과 블럭속성-->
+aaa
+<div id="d_msg"><h1>내복아~  </h1></div> <!--블럭속성, 자체 크기를 가지고 있다.
+                                 div 자동완성 기능(?) id:변수이름같은거-->
+ <input type = "button" value="내복이를 불렀다" onclick="test()">
+bbb
+
+111
+<span>나는야 span 인라인 속성. 자체 크기가 없찌</span><!--인라인속성-->
+222
+
+</body>
+</html>

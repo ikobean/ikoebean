@@ -1,0 +1,5 @@
+package com.design;
+
+public abstract class WoodDuck extends Duck {
+
+}

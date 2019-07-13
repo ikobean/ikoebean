@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+    var days=["월요일","화요일","수요일","목요일","금요일","토요일","일요일"]
+    for (var i=0; i<days.length;i++){
+        document.write(days[i],"<br>");
+    }
+    var result =[
+    				["내복이","레오","러키"]
+    			   ,["터널","캣타워","오뎅꼬치"]
+    			   ,[80,90,70]
+    ]
+    for (var i=0; i<result.length;i++){
+    	for (var j=0; j<result[i].length;j++){
+    		document.write("result[",i,"][",j,"]",result[i][j],"<br>");
+    	}
+    }
+        //형전환 함수
+        var jumsu1= "90";
+    var name = new String("100");
+    document.write("<hr>");
+    document.write("<h2>형전환 함수</h2>");
+    document.write(parseInt(jumsu1)+50);
+    document.write("<br>");
+    document.write(name.toString());
+    var isView = new Boolean(false);
+    var bool = isView.valueOf();
+    if(!bool){
+        document.wrtie("참입니다.");
+    }
+</script>
+</body>
+</html>

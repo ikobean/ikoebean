@@ -1,0 +1,32 @@
+
+7월 11, 2019 11:37:24.76 NEW SESSION
+7월 11, 2019 11:37:24.76 [7240:13264:0711/113724.757:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 11, 2019 11:37:24.80 
+7월 11, 2019 11:37:24.80 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 12:17:25.56 [13228:5784:0711/121725.563:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 11, 2019 12:17:25.59 
+7월 11, 2019 12:17:25.59 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 12:20:59.28 [4156:2776:0711/122059.285:ERROR:browser_process_sub_thread.cc(221)] Waited 23 ms for network service
+7월 11, 2019 12:20:59.32 
+7월 11, 2019 12:20:59.32 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 12:42:23.62 [9968:12924:0711/124223.624:ERROR:browser_process_sub_thread.cc(221)] Waited 42 ms for network service
+7월 11, 2019 12:42:23.65 
+7월 11, 2019 12:42:23.65 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 15:48:13.29 [1924:1048:0711/154813.295:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 11, 2019 15:48:13.33 
+7월 11, 2019 15:48:13.33 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 15:49:41.43 [9696:3300:0711/154941.434:ERROR:browser_process_sub_thread.cc(221)] Waited 26 ms for network service
+7월 11, 2019 15:49:41.45 
+7월 11, 2019 15:49:41.46 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 16:19:51.27 [6320:1352:0711/161951.276:ERROR:browser_process_sub_thread.cc(221)] Waited 36 ms for network service
+7월 11, 2019 16:19:51.30 
+7월 11, 2019 16:19:51.30 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 16:20:59.20 [10884:3716:0711/162059.207:ERROR:browser_process_sub_thread.cc(221)] Waited 19 ms for network service
+7월 11, 2019 16:20:59.22 
+7월 11, 2019 16:20:59.23 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 16:34:23.99 [10400:11348:0711/163423.992:ERROR:browser_process_sub_thread.cc(221)] Waited 11 ms for network service
+7월 11, 2019 16:34:24.02 
+7월 11, 2019 16:34:24.03 KLIB_SelfTest return : KLR_OK
+7월 11, 2019 16:44:41.87 [2976:4888:0711/164441.873:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 11, 2019 16:44:41.89 
+7월 11, 2019 16:44:41.89 KLIB_SelfTest return : KLR_OK

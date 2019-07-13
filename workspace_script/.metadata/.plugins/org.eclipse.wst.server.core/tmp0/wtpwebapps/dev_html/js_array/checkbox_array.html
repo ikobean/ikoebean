@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+	html태그 경우 같은 이름이 두 개 이상이면 자동으로 배열전환 됨.
+	태그 이름이 한 개일 때는 배열이 아니다.
+	반드시 두 개 이상일 때만 배열로 접근 가능하다.
+ -->
+<head>
+<meta charset="UTF-8">
+<title>배열 활용 연습</title>
+	<script>
+		function clearAll(){
+		 		
+			for (var i=0;i<document.f_list.check.length;i++){
+ 				if(document.f_list.check[i].checked==1){
+ 					document.f_list.check[i].checked=0;
+ 					
+ 				}
+ 			}
+			
+		}
+			function checkBoxAll(){
+				//전체 체크박스를 선택했을 때
+				if(document.f_list.checkAll.checked==1){
+                    clearAll();
+                    for(var j=0;j<document.f_list.check.length;j++){
+                        document.f_list.check[j].checked =1;
+                    }
+             }
+				//전체 체크박스를 해제했을 때
+                else{
+
+                    for(var j=0;j<document.f_list.check.length;j++){
+                        document.f_list.check[j].checked =0;
+			}
+		}
+    }
+	</script>
+</head>
+<body>
+
+<table border="1" borderColor="green" width="400px">
+
+<form name="f_list">
+<tr >
+<td align="center"><input type="checkbox" id="checkAll" name="checkAll" onClick="checkBoxAll()"></td>
+<td>제목</td>
+<td>날짜</td>
+
+</tr>
+
+<tr>
+<td align="center"><input type="checkbox" id="check" name="check"></td>
+<td>내복이의 모험</td>
+<td>20190613</td>
+</tr>
+
+
+<tr>
+<td align="center"><input type="checkbox" id="check" name="check"></td>
+<td>레오의 참새 사냥</td>
+<td>20190621</td>
+</tr>
+
+<tr>
+<td align="center"><input type="checkbox" id="check" name="check"></td>
+<td>러키는 멍멍</td>
+<td>20190921</td>
+</tr>
+
+		</form>
+	</table>
+
+</body>
+</html>

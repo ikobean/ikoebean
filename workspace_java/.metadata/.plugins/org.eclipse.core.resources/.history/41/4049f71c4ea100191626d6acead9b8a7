@@ -1,0 +1,13 @@
+package com.ch15;
+
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class ScannerReadable {
+
+	public static void main(String[] args) {
+		Scanner scan = null;
+		FileReader fr = null;
+	}
+
+}

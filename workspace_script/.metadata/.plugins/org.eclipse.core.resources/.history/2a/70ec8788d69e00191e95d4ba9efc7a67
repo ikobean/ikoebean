@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="com.util.DBConnectionMgr"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.CallableStatement"%>
+
+<%
+//물리적으로 떨어져 있는 서버에 연결 통로 확보하기
+	String mem_id= request.getParameter("mem_id"); //사용자가 입력한 아이디
+	String mem_pw= request.getParameter("mem_pw"); //사용자가 입력한 비번
+	//proc_login 프로시저의 OUT속성에 결과를 담을 변수
+	String msg = null; 
+	Connection con = DBConnectionMgr.getConnection();
+//프로시저를 오라클 서버에 전달해줄 클래스 필요
+	CallableStatement cstmt = con.prepareCall("{call proc_login(?,?,?)}");
+	cstmt.setString(1,mem_id);
+	
+%>

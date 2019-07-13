@@ -1,0 +1,22 @@
+package com.design;
+
+public abstract class Duck {
+	int leg;
+	FlyBehavior flybehavior = null;
+		
+	public Duck() {
+		
+	}
+	public void prefly() {
+		flybehavior.fly();
+	}
+	
+	public abstract void display(); //추상메소드. 모든 오리의 생김이 달라달라달라
+	public void swimming() {
+		System.out.println("오리는 물에 둥둥");
+		
+		
+		
+	}
+}
+

@@ -1,0 +1,32 @@
+package com.design;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+public class MemberApp {
+	public void methodA(List<String> nameList) {
+		
+	}
+	public void methodA(ArrayList<String> nameList) {
+		
+	}
+	public void methodA(Vector<String> nameList) {
+		
+	}
+	
+	public static void main(String[] args) {
+		MemberApp ma = new MemberApp();
+		
+		//리스트는 인터페이스. 어레이 리스트, 벡터는 구현체클래스
+		List<String> 		names  = 	new ArrayList<String>();
+		List<String> 		names2 = 	new Vector<String>(); //단톡방 닉네임 관리? 멀티스레드에서는 벡터가 안전함!
+		ArrayList<String>   names3 = 	new ArrayList<String>();
+		Vector<String>		names4 = 	new Vector<String>();
+		
+		ma.methodA(names);
+		ma.methodA(names2);
+		ma.methodA(names3);
+		
+	}
+}

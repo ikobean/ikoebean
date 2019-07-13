@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+DOM을 지원하는 API 학습 
+DOM API를 활용하여 html 태그를 추가, 삭제, 변경 처리할 수 있다.-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM-textContent</title>
+</head>
+<body>
+	<style>
+<!--스타일 시트에서 선택자 쓰는 방법 기억하기.
+ id로 쓸 때는 div.#.d_menu-->
+ 
+ 	 div.c_menu{
+ 	 	border :1px solid red;
+ 	 }
+</style>
+<script type="text/javascript">
+/* onload는 그 documnet(dom_attr.html)가 DOM구성을 완료했을 때 실행 */
+	window.onload = function(){  //익명함수
+ 		var output='';
+		output += '<ul>';
+		output += '<li>메뉴1</li>';
+		output += '<li>메뉴2</li>';
+		output += '<li>메뉴3</li>';
+		output += '</ul>';
+		//document.body.textContent = output;
+		//document.body.textContent = "<h1>Document Object Model</h1>";
+		document.getElementById("d_menu").innerHTML=output;
+	}
+
+</script>
+<div id="d_menu" class="c_menu" > </div>
+
+
+</body>
+</html>

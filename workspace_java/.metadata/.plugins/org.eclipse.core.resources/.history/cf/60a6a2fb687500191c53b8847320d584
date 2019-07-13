@@ -1,0 +1,25 @@
+package alone;
+
+public class evenodd_alone {
+
+	public static void main(String[] args) {
+		//1부터 50까지 5배수의 합을 구하시오.
+		int i = 0;
+		int sum;
+		for(i = 0, sum = 0; i <=50; i = i+5) {
+							sum= sum+i;
+			}
+		if (i%3==0) {
+			System.out.println("거짓");
+		}
+		else {
+			System.out.println("참");
+		}
+			
+		}
+		
+
+	}
+
+
+

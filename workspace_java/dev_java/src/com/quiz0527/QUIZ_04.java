@@ -1,0 +1,81 @@
+package com.quiz0527;
+
+import javax.sound.midi.SysexMessage;
+
+public class QUIZ_04 {
+	
+
+	private Integer[] args;
+	public void testIfA() {
+		if(testIfB("True")) {
+			System.out.println("True");
+		} else {
+			System.out.println("Not true");
+		}
+		}
+		public Boolean testIfB(String str) {
+			return Boolean.valueOf(str);
+    
+		}
+		public static void main(String[] args) {
+			QUIZ_04 ABC = new QUIZ_04();
+			ABC.testIfA();
+			
+			
+			String str = "null";
+			if(str==null) {
+				System.out.println("null");
+			}
+			else if(str.length() == 0) {  //else if
+				System.out.println("zero");}
+			else {
+				System.out.println("some");}
+			
+		
+		int x=0;
+		int y=10;
+		do {
+		y--;
+		++x;
+		} while (x < 5);
+		System.out.println(x + "," + y);
+			
+		
+		
+		int x1= 12;
+		while (x1 < 10) {
+		x1--;
+		}
+		System.out.println("x1:"+x1);
+			
+		
+		int abc=10;
+		do { abc--;}
+		while (abc<10);
+		System.out.println("abc:"+abc);
+			
+		int i=0;
+		for (i=0;i<= 10;i++){
+		 if( i>6) break;
+			 }
+	     System.out.println(i);  //오류
+	     
+	     String bbb = "420";
+	     bbb +=42;
+			 System.out.println(bbb);}
+		
+		
+/*		String s = "Fred";
+		 s = s + “47”;  //s=”Fred47”
+		 s = s.substring(2, 5);  //s=”ed4”
+		 s = s.toUpperCase();  //s=”ED4”
+		 return s.toString();*/
+		 }
+		
+
+		
+			
+			
+	
+		
+

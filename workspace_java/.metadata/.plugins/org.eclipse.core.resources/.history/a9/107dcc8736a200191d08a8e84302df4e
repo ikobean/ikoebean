@@ -1,0 +1,28 @@
+package com.seontalk_alone;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+public class RoundRec extends JPanel {
+	public RoundRec()  {
+	    super(true);
+
+	    JLabel label = new JLabel("<html>Stack<br/>Overflow</html>");
+	    LineBorder line = new LineBorder(Color.blue, 1, true); // color, thickness, rounded
+	    label.setBorder(line);
+	    add(label, BorderLayout.CENTER);
+	  }
+
+	  public static void main(String s[]) {
+	    JFrame frame = new JFrame("Rounded Line Border");
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setSize(500, 200);
+	    frame.setContentPane(new RoundedLineBorder());
+	    frame.setVisible(true);
+	  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ 	<script>
+	   function send(){ 
+		days[0] = "월요일";
+        days[1] = "화요일";
+        days[2] = "수요일";
+        days[3] = "목요일";
+        days[4] = "금요일";
+        days[5] = "토요일";
+        days[6] = "일요일";
+        for(var i=0; i<days.length;i++){
+            document.write(days[i],"<br>");
+        }
+        document.write(days[1+2]);
+
+}
+
+
+</script>
+</head>
+<body>
+<!-- xxx.html문서는 서버에 요청을 하면 로컬 PC(사용자)에 다운로드 된다.
+브라우저가 해석-태그는 사라짐
+함수를 호출하면 그 안에 document 를 사용하면 dom트리를 다시 스캔 -->
+	여기
+    <script>
+   /*     var days = new Array(7);
+    
+        days[0] = "월요일";
+        days[1] = "화요일";
+        days[2] = "수요일";
+        days[3] = "목요일";
+        days[4] = "금요일";
+        days[5] = "토요일";
+        days[6] = "일요일";
+        for(var i=0; i<days.length;i++){
+            document.write(days[i],"<br>");
+        }
+        document.write(days[1+2]);*/
+    </script>
+    <button onClick="send()">전송</button>
+</body>
+</html>

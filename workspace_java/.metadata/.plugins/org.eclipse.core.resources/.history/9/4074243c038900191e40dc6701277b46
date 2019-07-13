@@ -1,0 +1,17 @@
+package com.design;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+public class MemberApp {
+	public void methodA(List<String> nameList) {
+		
+	}
+	public void methodA(ArrayList<String> nameList) {
+		
+	}
+	public void methodA(Vector<String> nameList) {
+		
+	}
+}

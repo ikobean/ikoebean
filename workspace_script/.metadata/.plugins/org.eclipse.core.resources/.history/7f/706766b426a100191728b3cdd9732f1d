@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구글맵 서비스 API 활용</title>
+</head>
+<body>
+	<div id="map" style="height:500px;"> </div>
+	<script type="text/javascript">
+		function initMap(){
+			alert("11");
+			var curLating={
+					lat:
+				   ,lng:
+			};
+			var map = new google.maps.Map(document.getElementById("map"),
+					center:curLating
+				   ,position:curLating
+				   ,map:map
+				   ,zoom: 15
+				   
+			)
+		}
+	
+	</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8D_PXczl75kkDhIK2y88HFwcR32QkRQY&callback=initMap"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+package SungjukApp;
+
+public class SJAppCtrl {
+	
+	private static final String _INS = "insert"; //입력
+	
+	public SJAppVO send(SJAppVO paVO) throws Exception {
+		SJAppVO raVO = null;
+		String command = paVO.getCommand();
+		if(_INS.equals(anObject))
+	}
+}

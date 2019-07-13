@@ -1,0 +1,5 @@
+[
+	 {"empno":7566, "ename":"내복이", "hiredate":"2020-10-24","deptno":10}
+	,{"empno":7596, "ename":"러키", "hiredate":"2018-03-29","deptno":20}
+	,{"empno":7536, "ename":"후쿠", "hiredate":"2010-07-30","deptno":30}
+]

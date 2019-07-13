@@ -1,0 +1,17 @@
+package com.ch15;
+
+import java.net.URL;
+import java.net.URLConnection;
+
+public class ViewURL {
+	ViewURL(String url){
+		URL myURL = null;
+		URLConnection myCons = null;
+		InStream is = null;
+	}
+
+	public static void main(String[] args) {
+		new ViewURL("http://localhost:8000/dev_html/google/multiMarkergoogleMap.html");
+	}
+
+}

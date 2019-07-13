@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax_수업</title>
+<!-- 
+CSS와 JS 를 외부에서 import하는 경우 수정했음에도 반영이 안되는 경우 발생함.
+이럴 땐 페이지 이름 뒤에 ? 붙이고 임의의 문자 추가해서 get방식의 헛점을 피해서 테스트함.
+같은 요청 건이면 브라우저가 인터셉트 함. -서버까지 전달이 안됨.
+버퍼캐시에 저장된 정보가 그대로 출력되는 거라서 수정된 내용이 반영이 안됨
+ -->
+    <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../demo/demo.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+   
+    <script type="text/javascript">
+
+	    function login(){
+	    	$.ajax({
+	    		method:"get"
+	    	   ,url:"LoginInfo.jsp"
+	    	   ,success:function(data){
+	    		   var u_id =$("#p_id").val();
+	    		   var u_pw =$("#p_pw").val();
+	    		   var jsonDoc=JSON.parse(data);
+	    		   var id="";
+	    		   var pw="";
+	    		   if(jsonDoc.length>0){
+	    			   for(var i=0; i<jsonDoc.length;i++){
+	    				   if(u_id==jsonDoc[i].p_id){
+	    					   if(u_pw==jsonDoc[i].p_pw){
+	    						   id=jsonDoc[i].p_id;
+								   pw=jsonDoc[i].p_pw
+	    					   }
+	    				   }
+	    			   }
+	    		   }
+	    		   $("#d_login").hide();
+	    	       $("#d_logout").show();
+	    	       $("#picture").show();
+	    	   }
+	    	})
+	    }
+/* 	    	var db_id="ikobean";
+	    	var db_pw="111";
+	    	var u_id=$("#p_id").val();
+	    	var u_pw=$("#p_pw").val();
+	    	if(db_id==u_id){
+	    		if(db_pw==u_pw){
+	    	    	$("#d_login").hide();
+	    	    	$("#d_logout").show();
+	    	    	$("#picture").show();
+	    		}
+	    	} */
+	    function logout(){
+	    	alert("안녕!");
+	    	$("#d_login").show();
+	    	$("#d_logout").hide();
+	    	$("#picture").hide();
+	    	
+	    	
+	    }
+	    	
+	    function picture(){
+	    	$.ajax({
+	    		method:"get"
+	 	    	   ,url:"../picture/pictureMain.html"
+	 	    	   ,success:function(result){
+	 	    		   $("#contents").html(result)
+	 	    	   }
+	    	})
+	    }
+    </script>
+    
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+     	$("#d_login").show();
+    	$("#d_logout").hide();
+    	$("#picture").hide();
+    });
+    </script>
+    
+<center>
+	<table width="900px" height="650px">
+<!-- top.html 시작 -->	
+		<tr>
+			<td width="900px" height="50px">
+			<table width="100%" height="100%" border="1" borderColor="orange">
+				<tr>
+					<td align="center">Ajax 수업</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+<!-- top.html 끝 -->	
+<!-- body.html 시작 -->			
+		<tr>
+			<td width="900px" height="570px">
+			<table>
+				<tr>
+<!-- menu.html 시작 -->				
+					<td width="250px" height="570px">
+					<table width="100%" height="100%" border="1" borderColor="red">
+						<tr>
+							<td align="left" valign="top">
+							<table border="1">
+								<tr>
+									<td height="20px">
+<!--===================== 로그인 화면 시작 ======================-->		
+									<div id="d_login">
+									<table>
+										<tr><td><input class="easyui-textbox" id="p_id" name="mem_id" data-options="iconCls:'icon-man', prompt:'아이디'" style="width:170px"></td></tr>
+										<tr><td><input class="easyui-textbox" id="p_pw" name="mem_pw"data-options="iconCls:'icon-lock', prompt:'비밀번호'" style="width:170px"></td></tr>
+										<tr><td><a id="btn" href="javascript:login()" class="easyui-linkbutton" data-options="width:170">로그인</a></td></tr>
+									</table>
+									</div>	
+<!--===================== 로그인 화면  끝   ======================-->									
+<!--===================== 로그아웃 화면 시작 ====================-->		
+							<div id="d_logout" >
+									<table>
+										<tr><td>우주짱짱귀요미 내복님 환영합니다.</td></tr>
+										<tr><td><a id="btn" href="javascript:logout()" class="easyui-linkbutton" data-options="width:170">로그아웃</a></td></tr>
+									</table>
+									</div>
+<!--===================== 로그아웃 화면  끝  ===================== -->
+<!-- ==================== 내복이 사진첩  시작======================== -->									
+									</td>
+								</tr>
+								<tr>
+									<td height="20px"><a id="picture" class="easyui-linkbutton" onclick="picture()">내복이 사진첩</a></td>
+								</tr>
+								<tr>	
+									<td height="20px">메뉴2</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+<!-- ==================== 내복이 사진첩 끝 ======================== -->	
+<!-- menu.html  끝  -->				
+					
+<!-- body.html 시작 -->
+						
+					<td width="650px" height="570px">
+					
+					<table id="contents" width="650px" height="570px" border="1" borderColor="green">
+					
+						<tr>
+							<td>콘텐츠</td>
+						</tr>
+							
+					</table>	
+									
+					</td>
+					
+				
+<!-- body.html  끝  -->				
+				</tr>
+			</table>
+			</td>
+		</tr>
+<!-- body.html 끝 -->			
+<!-- bottom.html 시작 -->			
+		<tr>
+			<td width="900px" height="30px">
+			<table width="100%" height="100%" border="1" borderColor="brown">
+				<tr>
+					<td align="center">한국 소프트인재 개발원</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+<!-- bottom.html 끝 -->					
+	</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package com.design;
+
+public abstract class RubberDuck extends Duck {
+
+	public RubberDuck() {
+		flybehavior = new FlyNoWay();
+	}
+	@Override
+	public void display() {
+			System.out.println("나는 고무오리");
+			
+	}
+
+	
+}

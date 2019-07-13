@@ -1,0 +1,19 @@
+package UIswing;
+
+import javax.swing.JLabel;
+
+public class SungjukApp {
+	//선언부
+	JLabel jlb_inwon = new JLabel("인원수",JLabel.RIGHT);
+	JTextFiled = jtf_ = new JTextFiled();
+	JPanel jp_ = new JPanel();
+	JButton jbtn = new JBtutton();
+	//생성자
+	
+	//화면처리 구현
+	
+	//메인메소드
+	public static void main(String[] args) {
+		
+	}
+}

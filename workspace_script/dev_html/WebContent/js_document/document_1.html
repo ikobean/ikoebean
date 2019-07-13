@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//html 태그를 자바스크립트 코드를 통해서 접근하고 제어할 수 있다.
+//자바 스크립트도 오픈 소스(자바스크립트 프레임워크 발전-node.js, anglur.js, react.js, vue.js)가 있다.
+//document는 모든 태그의 최상위 객체이다. - document_1.html
+	function send(){
+		var temp = document.getElementById("msg");
+		alert(temp);
+		temp.innerHTML ="<table border='1'><tr><td>귀이여어워어</td></tr></table>";
+		//화면에 대한 새로고침 처리 없이 새로운 정보를 보여줄 수 있음.
+	}
+</script>
+</head>
+<body>
+	<style>
+		#parent{
+			border:1px solid green;
+		}
+	</style>
+<script type="text/javascript"> 
+/* write 함수는 브라우저에 문자열을 출력해줌. */
+	document.write("<div id='parent'>");
+	document.write("document","<font color='green'>","html5","</font>","CSS");
+	document.write("</div>");
+	</script>
+<div id="msg"> <!-- 시각적 변화가 없는 태그. 공간분할 -->
+내복이는
+</div>
+<button onClick="send()"> 클릭 </button>
+</body>
+</html>

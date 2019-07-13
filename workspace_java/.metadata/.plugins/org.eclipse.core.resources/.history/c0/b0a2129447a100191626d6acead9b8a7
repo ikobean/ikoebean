@@ -1,0 +1,14 @@
+ package com.ch11;
+
+import com.ch2.Sonata_Variable;
+import com.ch9.Car;
+
+public class ClassTest {
+
+	public static void main(String[] args) {
+		Car myCar = new Sonata_Variable();
+		if(myCar instanceOf Sonata)
+		
+	}
+
+}

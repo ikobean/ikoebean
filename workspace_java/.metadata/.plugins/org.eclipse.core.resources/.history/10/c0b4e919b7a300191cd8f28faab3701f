@@ -1,0 +1,75 @@
+package com.test;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.RoundRectangle2D;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class MyPost_t1 extends JPanel {
+	Page_t1 page = null;
+	JLabel jlb = new JLabel();
+	Font myfont = new Font("HY견고딕",Font.PLAIN,26);
+	JButton jbtn_redo = new JButton(new ImageIcon(".\\src\\images\\preview01.png"));
+	JButton jbtn_set = new JButton(new ImageIcon(".\\src\\images\\setting01.png"));
+	Shape s;
+	public MyPost_t1(Page_t1 page,String name) {
+		this.page = page;
+		setLayout(null);
+		s = new RoundRectangle2D.Float(10,10,380,60,20,20);
+		jlb.setBounds(30, 16, 150, 50);
+		jlb.setText(name);
+		jlb.setFont(myfont);
+		initButton();
+		jbtn_redo.setBounds(280, 20, 50, 40);
+		jbtn_set.setBounds(330, 20, 50, 40);
+		jbtn_redo.setBackground(new Color(189,117,58));
+		jbtn_set.setBackground(new Color(189,117,58));
+		jbtn_redo.setRolloverEnabled(false);
+		jbtn_set.setRolloverEnabled(false);
+		jbtn_redo.setBorder(null);
+		jbtn_set.setBorder(null);
+		setBackground(new Color(255,224,200));
+		add(jlb);
+		add(jbtn_redo);
+		add(jbtn_set);
+	}
+	public void initButton() {
+		jbtn_redo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				page.remove(page.jp_bubble);
+				page.jp_bubble = page.jp_myPage.jp_bubble;
+				page.add(page.jp_bubble);
+				page.revalidate();
+				page.repaint();
+			}
+		});
+		jbtn_set.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				page.remove(page.jp_bubble);
+				page.jp_bubble = page.jp_myPostSet;
+				page.add(page.jp_bubble);
+				page.revalidate();
+				page.repaint();
+			}
+		});
+	}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setColor(new Color(189,117,58));
+		g2.fill(s);
+		g2.setColor(Color.black);
+		g2.draw(s);
+	}
+}
