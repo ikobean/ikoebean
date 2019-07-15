@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A.jsp</title>
+</head>
+<body>
+여기
+<%
+	String name ="john";
+	//요청 객체에 담기
+	request.setAttribute("name", name);
+	
+	//doGet(HttpServeletRequest res)
+	RequestDispatcher view = request.getRequestDispatcher("./B.jsp");//객체주입 받는 코드
+	view.forward(request,response);
+	//response.sendRedirect("B.jsp");
+	//주소가 변경됨 - 기존에 요청이 끊어지고 새로운 요청이 다시 
+%>
+
+</body>
+</html>

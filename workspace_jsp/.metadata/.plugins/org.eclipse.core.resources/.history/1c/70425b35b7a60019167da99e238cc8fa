@@ -1,0 +1,18 @@
+package com.ch3;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class viewParameter {
+	
+	public viewParameter(HttpServletRequest req) {
+		//??
+		this.req = req;
+	}
+	HttpServletRequest req = null;
+	public void bind(Map<String,Obget> target) {
+		target.clear();
+		
+	}
+}

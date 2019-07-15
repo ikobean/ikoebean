@@ -1,0 +1,7 @@
+package com.util;
+
+public class HangulConversion {
+	//화면에서 전송한 값을 euc-kr 인코딩 된 걸 컨버전 할 때 
+	//화면에서 전송한 값을 utf-8 인코딩 된 걸 컨버전 할 때 
+	
+}

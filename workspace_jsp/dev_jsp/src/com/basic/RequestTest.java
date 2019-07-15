@@ -47,6 +47,7 @@ public class RequestTest extends HttpServlet {
 		res.setContentType("text/html;charset=utf-8");
 		PrintWriter out = res.getWriter();
 		
+		
 		/*
 		 * 상대경로 현재 내가 있는 곳 ->어디를 보면 알 수 있지? web.xml
 		 * 절대경로 http://192.168.0.187:8000/basic/XXX.jsp

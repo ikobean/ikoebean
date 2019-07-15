@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A1.jsp</title>
+</head>
+<body>
+여기
+<%
+	String name ="john";
+	session.setAttribute("name", name);
+	response.sendRedirect("B.jsp");
+	RequestDispatcher view = request.getRequestDispatcher("./B.jsp");//객체주입 받는 코드
+	
+	
+%>
+
+</body>
+</html>

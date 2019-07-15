@@ -1,0 +1,27 @@
+package com.ch3;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class PetServlet extends HttpServlet {
+		Logger logger = Logeer.getLogger(PetServlet.class)
+
+	public void service(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			String uri = req.getRequestURI();
+			String context = req.getContextPath();
+		}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			service(req,res);
+		}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			service(req,res);
+		}
+	}
+

@@ -1,0 +1,44 @@
+package com.ch3;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.util.HashMapBinder;
+
+public class PetServlet extends HttpServlet {
+		Logger logger = Logger.getLogger(PetServlet.class);
+
+	public void service(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			String uri = req.getRequestURI();
+			String context = req.getContextPath();
+			StringBuffer url = req.getRequestURL();
+			logger.info("uri:"+uri);
+			logger.info("context:"+context);
+			logger.info("url:"+url);
+			//선호하는 반려동물 선택하는 페이지 처리
+			if("ch3/pet.do".equals(uri)) {
+				Map<String,Object> target = new HashMap<>();
+				HashMapBinder hmb = new HashMapBinder(req);
+				hmb.bind(target);
+			}
+	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			service(req,res);
+		}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			service(req,res);
+		}
+	}
+

@@ -1,0 +1,9 @@
+package com.ch3;
+
+public class viewParameter {
+	HttpServletRequest req = null;
+	public void bind(Map<String,Obget> target) {
+		target.clear();
+		
+	}
+}
