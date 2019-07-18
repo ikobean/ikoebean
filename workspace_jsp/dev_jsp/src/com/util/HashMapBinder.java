@@ -23,11 +23,11 @@ public class HashMapBinder {
 		//p77의 11-15행 대신 쓰려는 것
 		//파라미터로 넘어온 target 안에 다른 정보가 담겨있다면 제거
 		target.clear();
-		Enumeration er = req.getParameterNames();
+		Enumeration er = req.getParameterNames(); //name,address,pet
 		while(er.hasMoreElements()) {
 			String name = (String)er.nextElement(); //name,address,pet
 			if("pet".equals(name)) {
-				String values[] = req.getParameterValues(name);
+				String values[] = req.getParameterValues(name); //선택한 dog/cat/pig
 				String myPet="";
 				if(values!=null) {
 					for(int i=0;i<values.length;i++) {
@@ -39,7 +39,7 @@ public class HashMapBinder {
 			//key에는  name,address,pet이 와야 함
 			//value에는 각 key가 가리키는 값이 오면 됨.
 			else {
-				target.put(name,HangulConversion.toUTF(req.getParameter(name)));
+				target.put(name,req.getParameter(name)); //address,주소 . name,이름이 들어감
 			}
 			//HangulConversion.toUTF(req.getParameter(name)) post 방식에만 가능함. 
 			//get일때는 req.getParameter(name)

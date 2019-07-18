@@ -5,3 +5,21 @@
 1563171004417	Rename resource 'ch02'
 1563173991288	Move file
 1563174003182	Move 'jsonDeptList.jsp' to 'ch3'
+1563241551075	Rename package 'com.ch3'
+1563241560369	Rename resource 'ch3'
+1563241567576	Rename resource 'ch2'
+1563241635677	Delete element
+1563242410360	Rename resource 'memberMgr.jsp'
+1563258875030	Rename resource 'jsonMemberList.jsp'
+1563258885056	Rename resource 'jsonUIMemberList.jsp'
+1563258906018	Rename resource 'memberList2.jsp'
+1563332593617	Copy package
+1563332598065	Delete element
+1563414232269	Rename resource 'mapper.xml'
+1563417261379	Delete element
+1563421627203	Rename package 'mapper'
+1563422382758	Move file
+1563428959433	Delete element
+1563429377036	Delete element
+1563429580800	Delete element
+1563435587007	Rename resource 'mvc1'

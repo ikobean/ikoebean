@@ -1,0 +1,13 @@
+package com.mybatis;
+
+import org.apache.log4j.Logger;
+
+public class MemberLogic {
+	Logger logger = Logger.getLogger(MemberLogic.class);
+	MemberDao mDao = new MemberDao();
+	public int memberInsert() {
+		
+		return 0;
+	}
+
+}

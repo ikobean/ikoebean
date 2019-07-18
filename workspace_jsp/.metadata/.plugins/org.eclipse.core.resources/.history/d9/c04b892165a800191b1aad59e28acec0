@@ -1,0 +1,32 @@
+package com.mvc1;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.ch03.PetServlet;
+
+public class FrontController extends HttpServlet {
+	Logger logger = Logger.getLogger(FrontController.class);
+	MemberController memCtrl = new MemberController();
+	GoodsController memCtrl = new GoodsController();
+	OrderController memCtrl = new OrderController();
+
+	public void doService(HttpServletRequest req, HttpServletResponse res) 
+		throws ServletException{
+			logger.info("doService 호출 성공");
+	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException{
+				doService(req,res);
+			}
+		
+		public void doPost(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException{
+				doService(req,res);
+			}
+}

@@ -1,0 +1,42 @@
+package com.ch05;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+public class MemberServlet extends HttpServlet {
+	Logger logger = Logger.getLogger(MemberServlet.class);
+	public void service(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException{
+		//DAO객체를 주입하시오==인스턴스화 하시오
+		MemberDao mDao = new MemberDao();
+		List<Map<String,Object>> memList = mDao.memberList();
+				
+		req.setAttribute("memList", memList);
+		//이동할 페이지 이름을 작성하시오
+		RequestDispatcher view = req.getRequestDispatcher("./ch05/memberMgr.jsp");
+		view.forward(req, res);
+	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+	
+	
+	
+			throws ServletException,IOException{
+		
+	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException,IOException{
+				System.out.println("doPost");
+			}
+}

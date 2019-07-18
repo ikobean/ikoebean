@@ -1,0 +1,16 @@
+package com.util;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class MyBatisCommonFactory {
+	private static SqlSessionFactory sqlSessionFactory = null;
+	
+	public static SqlSessionFactory getSqlSessionFactory() {
+		return sqlSessionFactory;
+	}
+	String resource = "org/mybatis/example/Configuration.xml"; 
+	Reader reader = Resources.getResourceAsReader(resource);
+}

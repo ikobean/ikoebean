@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -39,9 +40,24 @@ public class HelloServlet extends HttpServlet {
 	 * 질문2:파라미터 객체는 누가제공하나요?
 	****************************************************************/
 	Logger logger = Logger.getLogger(HelloServlet.class);
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
 	
 	throws ServletException,IOException{
+		/*
+		 * JSP 에서는 내장 객체로 지원되지만 서블릿ㅅ에서는 내장객체 지원 없으므로 다음과 같이
+		 * 생성한 후 사용함
+		 */
+		
+		HttpSession session = req.getSession();
+		//세션에 값을 담기
+		session.setAttribute("name", "내복이");
+		//세션에 있는 값 꺼내기
+		//getAttribute 메소드는 세션객체가 지원하는 메소드로 
+		//리턴타입은 Object
+		//따라서 List 같은 자료구조도 담을 수 있음.
+		//그러나 cache 메모리 공간에 한계로 조회 결과를 담는데 사용하지 않음.
+		//일반적으로 이런 경우는 request를 사용함.
+		String s_name = (String)session.getAttribute("name");
 		//System.out.println("doGet호출");
 		//logger.info("doGet");
 		res.setContentType("text/html;charset=utf-8");

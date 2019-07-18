@@ -1,0 +1,13 @@
+package com.mybatis;
+
+import org.apache.log4j.Logger;
+
+public class MemberDao {
+	Logger logger = Logeer.getlogger(MemberDao.class);
+	SqlSessionFactory
+	
+	public MemberDao() {
+		
+	}
+
+}

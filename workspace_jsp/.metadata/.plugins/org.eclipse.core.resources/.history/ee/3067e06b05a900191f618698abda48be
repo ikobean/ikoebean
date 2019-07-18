@@ -1,0 +1,17 @@
+package com.mybatis;
+
+import org.apache.log4j.Logger;
+
+public class MemberDao {
+	Logger logger = Logger.getLogger(MemberDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+	
+	public MemberDao() {
+		
+	}
+	public String currentTime() {
+		String time = sqlSession.selectOne("currentTime");
+				return time;
+	}
+}

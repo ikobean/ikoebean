@@ -1,0 +1,36 @@
+package com.util;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+/*
+ * Dao 에서 오라클 서버와 연계시 MyBatis를 사용할 것임.
+ * MyBatis에서 제공하는 mybatis.jar를 배포한 후
+ * SqlSessionFactory 와 SqlSession 두 개의 클래스 객체 주입이 필요함.
+ * 업무별로
+ */
+public class MyBatisCommonFactory {
+	private static SqlSessionFactory sqlSessionFactory = null;
+	public static void init() {
+		try {
+			String resource = "com/mybatis/MapperConfig.xml"; 
+			Reader reader = Resources.getResourceAsReader(resource);
+			if(sqlSessionFactory!=null) {
+				sqlSessionFactory = 
+						new SqlSessionFactoryBuilder().build(reader);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	public static SqlSessionFactory getSqlSessionFactory() {
+		//SqlSessionFactory 객체를 생성해야 SqlSession 객체를 생성할 수 있음.
+		//SqlSessionFactory 객체를 생성하기 위해서는 DB커넥션 정보를 읽어야 함.
+		//따라서 초기화에 필요한 메소드를 추가할 것.
+		init();
+		return sqlSessionFactory;
+	}
+	
+}

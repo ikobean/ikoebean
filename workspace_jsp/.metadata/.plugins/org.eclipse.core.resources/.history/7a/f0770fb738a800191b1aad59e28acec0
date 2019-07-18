@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>내가짱이다 캬캬캬캬캬캬</h1>
+<table width="100%" height="100%">
+	<tr>
+		<td>
+	메인 페이지 - 화면 템플릿
+		</td>
+	</tr>
+</table>
+</body>
+</html>

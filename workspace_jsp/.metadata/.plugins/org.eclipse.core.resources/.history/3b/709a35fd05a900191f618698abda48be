@@ -1,0 +1,26 @@
+package com.mybatis;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+public class MemberDao {
+	Logger logger = Logger.getLogger(MemberDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+	
+	public MemberDao() {
+		
+	}
+	public String currentTime() {
+		/*
+		 * DML 호출 뿐 아니라 커밋과 롤백도 처리할 수 있음.
+		 * 
+		 * select할 때
+		 * sqlSession.selectList()
+		 */
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String time = sqlSession.selectOne("currentTime");
+		
+		return time;
+	}
+}

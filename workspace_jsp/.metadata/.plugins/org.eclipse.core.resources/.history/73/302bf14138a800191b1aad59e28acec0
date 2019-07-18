@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>로그인</h1>
+
+<li>아이디</li>
+<input type="text">
+<li>비밀번호</li>
+<input type="text">
+<input type='button' value="로그인" onclick=alert("아직 아무것도 없지롱")>
+</body>
+</html>

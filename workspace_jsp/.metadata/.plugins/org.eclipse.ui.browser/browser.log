@@ -61,3 +61,198 @@
 7월 15, 2019 18:29:31.46 [4516:13416:0715/182931.465:ERROR:browser_process_sub_thread.cc(221)] Waited 23 ms for network service
 7월 15, 2019 18:29:31.49 
 7월 15, 2019 18:29:31.49 KLIB_SelfTest return : KLR_OK
+7월 15, 2019 19:22:43.36 [15872:2544:0715/192243.362:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
+7월 15, 2019 19:26:09.01 [15872:788:0715/192609.014:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 15, 2019 19:26:09.04 
+7월 15, 2019 19:26:09.04 KLIB_SelfTest return : KLR_OK
+7월 15, 2019 19:40:30.25 [9880:10372:0715/194030.256:ERROR:browser_process_sub_thread.cc(221)] Waited 17 ms for network service
+7월 15, 2019 19:40:30.28 
+7월 15, 2019 19:40:30.28 KLIB_SelfTest return : KLR_OK
+
+7월 16, 2019 11:18:37.68 NEW SESSION
+7월 16, 2019 11:18:37.68 [5596:5100:0716/111837.684:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 16, 2019 11:18:37.72 
+7월 16, 2019 11:18:37.72 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 12:00:19.51 [8696:12532:0716/120019.510:ERROR:browser_process_sub_thread.cc(221)] Waited 17 ms for network service
+7월 16, 2019 12:00:19.54 
+7월 16, 2019 12:00:19.54 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 12:03:15.10 [12844:9904:0716/120315.105:ERROR:browser_process_sub_thread.cc(221)] Waited 17 ms for network service
+7월 16, 2019 12:03:15.12 
+7월 16, 2019 12:03:15.13 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 12:58:51.53 [4136:5420:0716/125851.531:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+7월 16, 2019 12:58:51.57 
+7월 16, 2019 12:58:51.57 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 14:53:07.54 [17212:16404:0716/145307.541:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 16, 2019 14:53:07.57 
+7월 16, 2019 14:53:07.57 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 15:05:36.31 [7084:17200:0716/150536.316:ERROR:browser_process_sub_thread.cc(221)] Waited 6 ms for network service
+7월 16, 2019 15:05:36.34 
+7월 16, 2019 15:05:36.35 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 15:18:16.80 [10844:848:0716/151816.802:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 16, 2019 15:18:16.82 
+7월 16, 2019 15:18:16.82 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 15:44:20.95 [16020:2960:0716/154420.955:ERROR:browser_process_sub_thread.cc(221)] Waited 9 ms for network service
+7월 16, 2019 15:44:20.97 
+7월 16, 2019 15:44:20.98 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 15:53:17.36 [17068:10116:0716/155317.365:ERROR:textfield.cc(1758)] NOT IMPLEMENTED
+7월 16, 2019 15:58:08.43 [17068:7740:0716/155808.431:ERROR:browser_process_sub_thread.cc(221)] Waited 10 ms for network service
+7월 16, 2019 15:58:08.47 
+7월 16, 2019 15:58:08.48 KLIB_SelfTest return : KLR_OK
+7월 16, 2019 17:15:43.50 [11972:14468:0716/171543.508:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 16, 2019 17:15:43.54 
+7월 16, 2019 17:15:43.54 KLIB_SelfTest return : KLR_OK
+
+7월 17, 2019 09:48:13.13 NEW SESSION
+7월 17, 2019 09:48:13.13 [2316:1272:0717/094813.128:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 17, 2019 09:48:13.15 
+7월 17, 2019 09:48:13.15 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 09:49:06.18 [18492:10604:0717/094906.187:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 17, 2019 09:49:06.20 
+7월 17, 2019 09:49:06.21 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 09:57:29.15 [11828:3824:0717/095729.159:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 17, 2019 09:57:29.18 
+7월 17, 2019 09:57:29.18 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 09:58:02.92 [6104:10000:0717/095802.927:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 17, 2019 09:58:02.95 
+7월 17, 2019 09:58:02.95 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 09:59:27.95 [15072:18712:0717/095927.957:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+7월 17, 2019 09:59:27.98 
+7월 17, 2019 09:59:27.99 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 09:59:53.08 [10912:15344:0717/095953.086:ERROR:browser_process_sub_thread.cc(221)] Waited 19 ms for network service
+7월 17, 2019 09:59:53.10 
+7월 17, 2019 09:59:53.11 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:00:52.26 [12444:9148:0717/100052.268:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 17, 2019 10:04:08.69 [17976:7336:0717/100408.691:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 17, 2019 10:04:08.71 
+7월 17, 2019 10:04:08.72 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:04:50.39 [17236:14144:0717/100450.395:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 17, 2019 10:04:50.42 
+7월 17, 2019 10:04:50.42 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:06:46.40 [7492:15024:0717/100646.405:ERROR:browser_process_sub_thread.cc(221)] Waited 15 ms for network service
+7월 17, 2019 10:06:46.42 
+7월 17, 2019 10:06:46.43 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:07:11.01 [14588:14720:0717/100711.014:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 17, 2019 10:07:11.03 
+7월 17, 2019 10:07:11.04 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:07:24.33 [15904:5260:0717/100724.336:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 17, 2019 10:07:24.37 
+7월 17, 2019 10:07:24.37 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:40:42.11 [4660:2900:0717/104042.115:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+7월 17, 2019 10:40:42.14 
+7월 17, 2019 10:40:42.15 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:45:40.49 [18392:9156:0717/104540.493:ERROR:browser_process_sub_thread.cc(221)] Waited 19 ms for network service
+7월 17, 2019 10:45:40.56 
+7월 17, 2019 10:45:40.57 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 10:59:59.50 [12928:18092:0717/105959.506:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 17, 2019 10:59:59.53 
+7월 17, 2019 10:59:59.53 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 11:11:36.31 [12324:8836:0717/111136.318:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+7월 17, 2019 11:11:36.34 
+7월 17, 2019 11:11:36.35 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 11:11:45.91 [16824:6808:0717/111145.910:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 17, 2019 11:11:45.93 
+7월 17, 2019 11:11:45.94 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 11:19:10.66 [12888:13364:0717/111910.663:ERROR:browser_process_sub_thread.cc(221)] Waited 11 ms for network service
+7월 17, 2019 11:19:10.68 
+7월 17, 2019 11:19:10.69 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 11:19:20.16 [18480:5352:0717/111920.160:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 17, 2019 11:19:20.18 
+7월 17, 2019 11:19:20.19 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 11:41:36.92 [11032:10684:0717/114136.920:ERROR:browser_process_sub_thread.cc(221)] Waited 8 ms for network service
+7월 17, 2019 11:41:36.94 
+7월 17, 2019 11:41:36.95 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 12:37:53.37 [7280:13980:0717/123753.372:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 17, 2019 12:37:53.39 
+7월 17, 2019 12:37:53.40 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 12:41:03.42 [11224:15532:0717/124103.427:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+7월 17, 2019 12:41:03.45 
+7월 17, 2019 12:41:03.45 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 12:41:34.77 [14840:1540:0717/124134.773:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 17, 2019 12:41:34.79 
+7월 17, 2019 12:41:34.80 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 12:42:17.70 [14488:8768:0717/124217.702:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+7월 17, 2019 12:42:17.72 
+7월 17, 2019 12:42:17.73 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 12:42:22.41 [8556:9796:0717/124222.416:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 17, 2019 16:07:36.92 [9596:4696:0717/160736.920:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service
+7월 17, 2019 16:07:36.95 
+7월 17, 2019 16:07:36.96 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 16:53:08.13 [8828:1868:0717/165308.131:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 17, 2019 16:53:08.15 
+7월 17, 2019 16:53:08.15 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 16:53:17.48 [19336:8832:0717/165317.486:ERROR:browser_process_sub_thread.cc(221)] Waited 32 ms for network service
+7월 17, 2019 16:53:17.50 
+7월 17, 2019 16:53:17.51 KLIB_SelfTest return : KLR_OK
+7월 17, 2019 16:55:50.38 [7976:7836:0717/165550.385:ERROR:browser_process_sub_thread.cc(221)] Waited 25 ms for network service
+7월 17, 2019 16:55:50.40 
+7월 17, 2019 16:55:50.40 KLIB_SelfTest return : KLR_OK
+
+7월 18, 2019 11:46:59.15 NEW SESSION
+7월 18, 2019 11:46:59.15 [17724:4684:0718/114659.155:ERROR:browser_process_sub_thread.cc(221)] Waited 19 ms for network service
+7월 18, 2019 11:46:59.19 
+7월 18, 2019 11:46:59.20 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 12:07:01.23 [13820:1548:0718/120701.235:ERROR:browser_process_sub_thread.cc(221)] Waited 13 ms for network service
+7월 18, 2019 12:07:01.25 
+7월 18, 2019 12:07:01.26 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:36:08.36 [4700:6084:0718/153608.363:ERROR:browser_process_sub_thread.cc(221)] Waited 18 ms for network service
+7월 18, 2019 15:36:08.39 
+7월 18, 2019 15:36:08.39 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:48:12.03 [11364:12072:0718/154812.030:ERROR:browser_process_sub_thread.cc(221)] Waited 8 ms for network service
+7월 18, 2019 15:48:12.05 
+7월 18, 2019 15:48:12.05 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:49:18.74 [11792:14720:0718/154918.747:ERROR:browser_process_sub_thread.cc(221)] Waited 15 ms for network service
+7월 18, 2019 15:49:18.76 
+7월 18, 2019 15:49:18.77 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:50:26.48 [3336:18412:0718/155026.484:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+7월 18, 2019 15:50:26.50 
+7월 18, 2019 15:50:26.51 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:53:19.92 [15196:1164:0718/155319.923:ERROR:browser_process_sub_thread.cc(221)] Waited 17 ms for network service
+7월 18, 2019 15:53:19.96 
+7월 18, 2019 15:53:19.96 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 15:59:11.96 [15152:12796:0718/155911.967:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+7월 18, 2019 15:59:11.99 
+7월 18, 2019 15:59:11.99 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:00:13.28 [792:3132:0718/160013.281:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 18, 2019 16:00:13.30 
+7월 18, 2019 16:00:13.30 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:01:23.31 [10396:2104:0718/160123.314:ERROR:browser_process_sub_thread.cc(221)] Waited 24 ms for network service
+7월 18, 2019 16:01:23.33 
+7월 18, 2019 16:01:23.34 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:03:21.34 [15996:16560:0718/160321.346:ERROR:browser_process_sub_thread.cc(221)] Waited 16 ms for network service
+7월 18, 2019 16:03:21.36 
+7월 18, 2019 16:03:21.37 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:04:49.54 [1352:2268:0718/160449.548:ERROR:browser_process_sub_thread.cc(221)] Waited 26 ms for network service
+7월 18, 2019 16:04:49.57 
+7월 18, 2019 16:04:49.57 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:05:02.57 [4104:18928:0718/160502.575:ERROR:browser_process_sub_thread.cc(221)] Waited 20 ms for network service
+7월 18, 2019 16:05:02.59 
+7월 18, 2019 16:05:02.60 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:05:25.48 [10996:8520:0718/160525.487:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 18, 2019 16:05:25.50 
+7월 18, 2019 16:05:25.51 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:07:31.31 [15668:18328:0718/160731.319:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 18, 2019 16:07:31.34 
+7월 18, 2019 16:07:31.34 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:08:22.25 [13756:13224:0718/160822.255:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 18, 2019 16:08:22.28 
+7월 18, 2019 16:08:22.28 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:11:41.26 [6556:13108:0718/161141.262:ERROR:browser_process_sub_thread.cc(221)] Waited 22 ms for network service
+7월 18, 2019 16:11:41.28 
+7월 18, 2019 16:11:41.28 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:12:04.84 [10164:9240:0718/161204.841:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 18, 2019 16:12:04.86 
+7월 18, 2019 16:12:04.87 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:12:31.26 [1880:13144:0718/161231.268:ERROR:browser_process_sub_thread.cc(221)] Waited 21 ms for network service
+7월 18, 2019 16:12:31.28 
+7월 18, 2019 16:12:31.29 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 16:19:37.18 [8912:5048:0718/161937.180:ERROR:browser_process_sub_thread.cc(221)] Waited 27 ms for network service
+7월 18, 2019 16:19:37.20 
+7월 18, 2019 16:19:37.21 KLIB_SelfTest return : KLR_OK
+7월 18, 2019 18:08:05.43 [1376:18944:0718/180805.431:ERROR:service_manager_context.cc(242)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\75.0.3770.142\content_browser.service.exe
+7월 18, 2019 18:08:05.43 [1376:18944:0718/180805.432:ERROR:service_manager_context.cc(242)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\75.0.3770.142\content_browser.service.exe
+7월 18, 2019 18:08:05.44 [1376:18944:0718/180805.432:ERROR:service_manager_context.cc(242)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\75.0.3770.142\content_browser.service.exe
+7월 18, 2019 18:08:05.44 [1376:18944:0718/180805.432:ERROR:service_manager_context.cc(242)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\75.0.3770.142\content_browser.service.exe
+7월 18, 2019 18:08:05.45 [1376:18944:0718/180805.434:ERROR:service_manager_context.cc(242)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\75.0.3770.142\content_browser.service.exe
+7월 18, 2019 18:08:05.46 [1376:18944:0718/180805.445:ERROR:browser_process_sub_thread.cc(221)] Waited 7 ms for network service
+7월 18, 2019 18:08:05.47 
+7월 18, 2019 18:08:05.48 KLIB_SelfTest return : KLR_OK

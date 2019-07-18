@@ -1,0 +1,15 @@
+package com.ch05;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class MemberDao {
+	public List<Map<String,Object>> memberList()
+	{
+		List<Map<String,Object>> nameList = new ArrayList<>();
+		Map<String,Object> rMap = new HashMap<>();
+		return memList;
+	}
+}

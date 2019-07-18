@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td align="left" valign="top">
+		<table>
+			<tr><td height="20px">로그인</td></tr>
+			<tr><td height="20px">온라인 시험</td></tr>
+			<tr><td height="20px">게시판</td></tr>
+			<tr><td height="340px">&nbsp;</td></tr>
+		
+		</table>
+			
+
+</table>
+</body>
+</html>

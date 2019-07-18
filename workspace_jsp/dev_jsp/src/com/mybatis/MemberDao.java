@@ -1,0 +1,76 @@
+package com.mybatis;
+
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.util.MyBatisCommonFactory;
+
+public class MemberDao {
+	Logger logger = Logger.getLogger(MemberDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+	public MemberDao() {
+		//객체주입
+		sqlSessionFactory= 
+		MyBatisCommonFactory.getSqlSessionFactory(); //공통코드 static이라서 인스턴스화 없이 메소드 호출 가능.
+	}
+	public String currentTime() {
+		/*
+		 * DML 호출 뿐 아니라 커밋과 롤백도 처리할 수 있음.
+		 * 
+		 * select할 때
+		 * sqlSession.selectList()==>List로 반환
+		 * sqlSession.selectOne() ==>여기서 One은 Object임
+		 * sqlSession.selectMap() ==>Map으로 반환
+		 * 
+		 * insert할 때 -> 리턴 타입은 Object임.
+		 * sqlSession.insert("아이디",파라미터);
+		 * 
+		 * update할 때 -> 리턴 타입은 int임.
+		 * sqlSession.update("아이디",파라미터);
+		 * 
+		 * delete할 때 -> 리턴 타입은 int임.
+		 * sqlSession.delete("아이디", 파라미터);
+		 * 
+		 * 과제
+		 * MemberDao를 단위 테스트 할 수 있는 클래스를 선언하고
+		 * currentTime 메소드를 호출하여 현재 시간 정보 (오라클 서버가 제공)를
+		 * 출력하는 문장을 작성해 보시오.
+		 * 
+		 */
+		String time = null;
+		try {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			time = sqlSession.selectOne("currentTime");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return time;	
+		
+	}
+	/*
+	 * 입력 수정 삭제 시 주의사항
+	 * 자바에서 jdbc api를 활용할 때는 con.setAutocommit(true)가 디폴트임 
+	 * 따라서 별도로 끄지 않으면 커밋이 되었으나
+	 * mybatis에서는 false가 디폴트 이므로 반드시 커밋 처리 할 것
+	 * 관찰하기
+	 * 요청 파라미터의 이름과 메소드 이름 그리고 myBatis 의 아이디는 무조건 통일하여 사용할 것
+	 */
+	public int memberInsert(Map<String, Object> pMap) {
+		int result = 0;
+		logger.info("DAO memberInsert 호출 성공");
+		try {
+			SqlSession sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.update("memberInsert",pMap);
+			sqlSession.commit();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;		
+	}
+}

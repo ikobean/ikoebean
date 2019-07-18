@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Include 액션태그</title>
+</head>
+<body>
+1. 첫번째 코드 <br><!-- 실행순서1 -->
+가
+2. 두번째 코드 <br><!-- 실행순서2 -->
+나
+<jsp:include page="B.jsp" flush="false"/>
+3. 세번째 코드 <br><!-- 실행순서6-->
+바
+4. 네번째 코드 <br><!-- 실행순서7-->
+사
+</body>
+</html>
