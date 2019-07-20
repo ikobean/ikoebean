@@ -28,9 +28,8 @@ public class FrontController extends HttpServlet {
 			 String command = uri.substring(context.length()+1);
 			 //command ==> member/memberInsert.kos
 			 int end =command.lastIndexOf('.'); //19
-			 logger.info(command+" , "+end);
+			 logger.info(command+" , "+end);//command = member/memberInsert		
 			 command = command.substring(0,end);	
-			 logger.info(command); //command = member/memberInsert							//★여기까지
 			 
 			 /* 요청하는 이름.kos 로 되게 해라~
 			 * 테스트 할 때 어떤 이름이든 상관없이 ?work=member를 넘겨주면 됨
@@ -41,15 +40,16 @@ public class FrontController extends HttpServlet {
 //			StringBuffer url = req.getRequestURL();
 //			String url2 = url.toString();
 //			if(url2.contains("shdrn")) {
-//				
 //			}
 //			else if(url2.contains("qoemalsxjs")) {
 //				
 //			}
-			String work = req.getParameter("work");
+			String work = req.getParameter("work"); //work에 member담김-회원관리 //mgr클래스에  name work 변수의 값을  내놔라!
 			ActionForward forward = null;
-			if("member".equals(work)) {
-				req.setAttribute("crud", command);//crud속성에 select를 담아라
+			if("member".equals(work)) { //work에 member 들어있음
+				//work정보 쿼리스트링으로 처리하고
+				//상세업무 정보는 request 객체 담기
+				req.setAttribute("crud", command);//crud속성에 select를 담아라 //member/memberInsert
 				//req.setAttribute("command", command);
 				forward = memCtrl.execute(req, res);//보냈어 
 				//req.setAttribute("crud", "insert");
@@ -64,7 +64,7 @@ public class FrontController extends HttpServlet {
 			}
 			
 			if(forward!=null) {
-				if(forward.isRedirect()) {
+				if(forward.isRedirect()) {//새창열기 이전의 리퀘스트가 없어짐.
 					res.sendRedirect(forward.getviewName());
 				}else {
 					RequestDispatcher view = req.getRequestDispatcher(forward.getviewName());

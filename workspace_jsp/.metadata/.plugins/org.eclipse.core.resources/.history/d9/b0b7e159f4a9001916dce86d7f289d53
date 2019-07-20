@@ -1,0 +1,34 @@
+package com.mybatis;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.util.MyBatisCommonFactory;
+
+public class ZipCodeDao {
+	Logger logger = Logger.getLogger(ZipCodeDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+	public ZipCodeDao() {
+		sqlSessionFactory= 
+				MyBatisCommonFactory.getSqlSessionFactory(); 
+	}
+	
+	public  List<ZipCodeVO> zipcodeList() {
+		List<Map<String,Object>> zipList = new ArrayList<>();
+		try {
+			SqlSession sqlSession
+				= sqlSessionFactory.openSession();
+			zipList = sqlSession.selectList("zipList");
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return zipList;
+	}
+}

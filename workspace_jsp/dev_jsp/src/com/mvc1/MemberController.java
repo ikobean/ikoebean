@@ -2,6 +2,7 @@ package com.mvc1;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 import com.mybatis.MemberLogic;
+import com.mybatis.ZipCodeDao;
 import com.util.HashMapBinder;
+import com.vo.ZipCodeVO;
 
 public class MemberController extends HttpServlet implements Action {
 	Logger logger = Logger.getLogger(MemberController.class);
@@ -24,10 +27,27 @@ public class MemberController extends HttpServlet implements Action {
 		boolean isRedirect = false;
 		String crud =(String) req.getAttribute("crud");
 		System.out.println(crud); //select
-	
-		if("select".equals(crud)) {
+		
+		if("member/zipcodeList".equals(crud)) {
+			logger.info("우편번호 조회 호출 성공");
+			List<ZipCodeVO> zipList = null;
+			ZipCodeDao zDao = new ZipCodeDao();
+			ZipCodeVO zVO = new ZipCodeVO();
+			zVO.setDong(req.getParameter("dong"));
+			zipList = memLogic.zipcodeList(zVO);
+			req.setAttribute("zipList", zipList);
+			viewName = "jsonZipcodeList.jsp";
+			isRedirect = false;
+			forward.setRedirect(isRedirect);
+			forward.setviewName(viewName);
+			
+		}
+		else if("member/memberList".equals(crud)) {
 			logger.info("회원 목록 조회 호출 성공");
-			viewName = "memberList.jsp";
+			List<Map<String,Object>> memList = null;
+			memList = memLogic.memberList();
+			req.setAttribute("memList", memList);
+			viewName = "jsonMemberList.jsp";
 			isRedirect = false;
 			forward.setRedirect(isRedirect);
 			forward.setviewName(viewName);
@@ -40,7 +60,7 @@ public class MemberController extends HttpServlet implements Action {
 			HashMapBinder hmb = new HashMapBinder(req);
 			hmb.bind(pMap);
 			result = memLogic.memberInsert(pMap);
-			viewName = "memberList.jsp";
+			viewName = "memberMgr.jsp";
 			isRedirect = true;
 			forward.setRedirect(isRedirect);
 			forward.setviewName(viewName);
@@ -49,8 +69,18 @@ public class MemberController extends HttpServlet implements Action {
 		else if("update".equals(crud)) {
 			
 		}
-		else if("delete".equals(crud)) {
-			
+		else if("member/memberDelete".equals(crud)) {
+			logger.info("회원 삭제 호출 성공");
+			int result=0;
+			Map<String,Object> pMap = new HashMap<>();
+			//req.getpParameter 대신 해주는 클래스
+			HashMapBinder hmb = new HashMapBinder(req);
+			hmb.bind(pMap);
+			result = memLogic.memberDelete(pMap);
+			viewName = "memberMgr.jsp";
+			isRedirect = true;
+			forward.setRedirect(isRedirect);
+			forward.setviewName(viewName);
 		}
 		
 		return forward;

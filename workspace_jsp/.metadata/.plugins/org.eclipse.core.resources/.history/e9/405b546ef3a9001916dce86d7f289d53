@@ -1,0 +1,10 @@
+package com.mybatis;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+public class ZipcodeDao {
+	Logger logger = Logger.getLogger(ZipcodeDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+}

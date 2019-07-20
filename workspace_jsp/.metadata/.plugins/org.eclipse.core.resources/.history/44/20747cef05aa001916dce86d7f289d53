@@ -1,0 +1,211 @@
+<%@page import="com.vo.ZipCodeVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List, com.vo.ZipCodeVO" %>
+<%
+	List<ZipCodeVO> zipList = 
+		(List<ZipCodeVO>)request.getAttribute("zipList");
+	int size=0;	
+	if(zipList!=null && zipList.size()>0){
+		size = zipList.size();	
+	}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<%@ include file="../common/JEasyUICommon.jsp"%>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#dg_member').datagrid({
+				url:"memberList.kos?work=member",
+				title : "회원관리 ver1.0",
+				toolbar : '#td_member',
+				columns : [ [ {
+					field : 'MEM_ID',
+					title : '아이디',
+					width : 100
+				}, {
+					field : 'MEM_NAME',
+					title : '이름',
+					width : 100
+				}, {
+					field : 'MEM_ADDR',
+					title : '주소',
+					width : 100,
+					align : 'left'
+				} ] ]
+			});////////////end of datagrid
+			
+			$('#dlg_ins').dialog({
+				title : "회원가입",
+				width : 400,
+				height : 500,
+				footer : "#tb_ins",
+				closed : true
+			});
+			
+			$('#dlg_zip').dialog({
+				title : "우편번호 검색기",
+				width : 400,
+				height : 500,
+				closed : true
+			});
+			
+			
+			$('#btn_ins').linkbutton({
+				onClick : function() {
+					$('#dlg_ins').dialog('open');
+				}
+			})
+			$('#btn_close').linkbutton({
+				onClick : function() {
+					$('#dlg_ins').dialog('close');
+				}
+			})
+			
+			$('#btn_save').linkbutton({
+				onClick : function() {
+					$('#dlg_ins').dialog('close');
+					$('#f_ins').attr('method','GET');
+					$('#f_ins').attr('action','./memberInsert.kos');
+					$('#f_ins').submit();
+				}
+			})
+			$('#btn_search').linkbutton({
+				onClick : function() {
+					$('#dlg_zip').dialog('open');
+				}
+			})
+			$('#btn_zip').linkbutton({
+				onClick : function() {
+					$('#dlg_zip').dialog('open');
+				}
+			})
+			
+			$('#btn_del').linkbutton({
+				onClick : function() {
+					$('#f_del').attr('method','GET');
+					$('#f_del').attr('action','./memberDelete.kos');
+					$('#f_del').submit();
+				
+				}
+			})
+		});
+	</script>
+
+
+	<table id="dg_member"></table>
+	<div id="td_member" style="padding: 5px;">
+		<a id="btn_ins" href="#" class="easyui-linkbutton"
+			data-options="iconCls:'icon-add',plain:true">가입 </a>
+			
+			<a id="btn_del" href="#" class="easyui-linkbutton"
+			data-options="iconCls:'icon-cancel',plain:true">삭제 </a>
+	</div>
+	<!-- **위에 더 써야함
+	사용자가 화면에 입력한 값을 서버측에 전달할 때는 name 속성이 반드시 필요하다.
+	입력받는 컴포넌트에 값이 담기기 때문에 반드시 form 전송으로 처리한다.
+	form태그는 여러개를 사용할 수 있고 아이디로 구분하여 서로 다른 서버 계층으로 전송이 가능하다.
+	화면에는 존재하지 않지만 개발자가 업무 처리를 위한 목적으로 따로 전달하고 싶은 정보가 있을 때도 form 태그 사용
+	이 때 사용하는 컴포넌트는 hidden 속성으로 처리한다.
+	hidden 속성은 input type text 속성과 동일하게 사용하면 된다.
+	아이디와 이름 속성을 반드시 부여하여 서버에 전송할 때와 ajax 처리 할 때를 준비해 둔다.
+	아이디는 절대로 중복되면 안된다.
+	실제 서버로 전송할 때는 form 태그에 메소드 방식과 목적지를 기술하지 말고
+	jquery api를 사용하여 필수 처리 한다.
+	화면에 담겨있는 정보들은 가독성이 떨어지고 화면 내용이 많아지게 되면 찾기가 불편함.
+	
+	
+	 -->
+	 <!-- =========================우편번호 검색기 ========================-->
+	 	<div id="dlg_zip" style="padding: 30px 60px;">
+	 		<input class="easyui-textbox" id="dong" name="dong" data-options="prompt:'Enter a Dong" labelPosition="top"	style="width: 70%;">
+			<a id="btn_search" href="#" class="easyui-linkbutton"	data-options="iconCls:'icon-search',plain:true">검색 </a> 
+			
+	 		<table border="1" id="dg_zipcode">
+	 			<thead>
+	 				<th>우편번호</th>
+	 				<th>주소</th>
+	 			</thead>
+	 			<tbody>
+	 			<!-- 실제 조회한 데이터가 들어올 곳. -->
+<%
+//데이터가 없을 때 
+%>
+			<tr>
+				<td colspan="2"></td>
+			</tr>
+<%
+//데이터가 있을 때
+	if(size>0){
+		for(int i=0; i<size; i++){
+			ZipCodeVO zVO = zipList.get(i);
+%>
+			<tr>
+				<td><%= zVO.getZipcode() %> </td>
+				<td><%= zVO.getAddress() %> </td>
+			</tr>
+<%
+		}///////end of for
+	}/////end of if
+
+%>
+
+	 			</tbody>
+	 		</table>
+	 	</div>
+	 <!-- =========================우편번호 검색기 ========================-->
+	 <!-- ========== 회원삭제 =============== -->
+	 <form id="f_del">
+			<input type="hidden" id="work" name="work" value="member"/> <!-- id 브라우저(화면) name 서버 value =값 -->
+			
+		</form>
+	 <!-- ========== 회원삭제 =============== -->
+	<!--=================회원가입====================-->
+
+	<div id="dlg_ins" style="padding: 30px 60px;">
+		<form id="f_ins">
+			<input type="hidden" id="work" name="work" value="member"/> <!-- id 브라우저(화면) name 서버 value =값 -->
+			<div style="margin-bottom: 10px">
+				<input class="easyui-textbox" name="mem_id" label="ID" labelPosition="top"
+					style="width: 70%;">
+			</div>
+			<div style="margin-bottom: 10px">
+				<input class="easyui-textbox" name="mem_name" label="Name" labelPosition="top"
+					style="width: 70%;">
+			</div>
+			<div style="margin-bottom: 10px">
+				<input class="easyui-textbox" name="mem_addr" label="Address" labelPosition="top"
+					style="width: 70%;">
+			</div>
+			<div style="margin-bottom: 10px">
+				<input class="easyui-textbox" name="mem_zipcode" label="Zipcode" labelPosition="top"
+					style="width: 70%;">
+					<a id="btn_zip" href="#" class="easyui-linkbutton"
+					data-options=plain:true">우편번호 </a>
+			</div>
+			<div style="margin-bottom: 10px">
+				<input class="easyui-passwordbox" name="mem_pw" label="Password"
+					labelPosition="top" style="width: 70%;">
+			</div>
+		</form>
+		</table>
+	</div>
+	<!-- 회원가입 텍스트박스 -->
+
+
+	<div id="tb_ins" style="padding: 5px;">
+		<a id="btn_save" href="#" class="easyui-linkbutton"
+			data-options="iconCls:'icon-save',plain:true">저장 </a> <a
+			id="btn_close" href="#" class="easyui-linkbutton"
+			data-options="iconCls:'icon-cancel',plain:true">닫기</a>
+	</div>
+
+	<!--=================회원가입====================-->
+
+</body>
+</html>

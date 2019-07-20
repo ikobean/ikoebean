@@ -1,0 +1,14 @@
+package com.vo;
+
+public class ZipcodeVO {
+	 private int 	uid_no    =0;
+	 private int 	zipcode   =0;
+	 private String zdo       ="";
+	 private String dong      ="";
+	 private String ri        ="";
+	 private String bungi     ="";
+	 private String aptname   ="";
+	 private String upd_date  ="";
+	 private String address   ="";
+	 private String sigu      ="";
+}

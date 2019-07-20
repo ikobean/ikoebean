@@ -23,3 +23,7 @@
 1563429377036	Delete element
 1563429580800	Delete element
 1563435587007	Rename resource 'mvc1'
+1563503765202	Rename resource 'memberList.jsp'
+1563515547306	Delete element
+1563518981790	Rename type 'ZipcodeVO'
+1563520147319	Rename type 'ZipcodeDao'
