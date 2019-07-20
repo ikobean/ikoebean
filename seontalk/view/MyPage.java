@@ -139,7 +139,11 @@ public class MyPage extends JPanel {	//우선 자기자신도 panel(상단 제�
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(e.getX()>=20&&e.getX()<=180&&e.getY()>=20&&e.getY()<=180) {
-					
+					page.remove(page.jp_page);
+					page.jp_page = page.jp_myBest;
+					page.add(page.jp_page);
+					page.revalidate();
+					page.repaint();
 				}
 				super.mouseClicked(e);
 			}

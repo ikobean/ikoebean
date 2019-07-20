@@ -28,8 +28,13 @@ public class MainPage extends JFrame{
 	MyPage 		jp_myPage 		= null;
 	MyPost 		jp_myPost 		= null;
 	MyPostSet 	jp_myPostSet 	= null;
+	MyBest		jp_myBest		= null;
 	Chat 		jp_chat 		= null;
 	Post 		jp_post 		= null;
+	//////////////마이페이지 세부화면
+	/////////////////현영
+	MyPost2			jp_mypost2			= null;
+	
 	/////////////////////////멘토페이지 세부화면/////////////////////////////
 	//세부페이지는 멘토 내부 이벤트로 화면전환이 일어남(jp_page를 교체하는 형식이 아님.)
 	MentorRank		jp_rank			= null;
@@ -66,7 +71,9 @@ public class MainPage extends JFrame{
 	public void init() {	//화면 초기화 메소드
 		jp_myPage 		= new MyPage(this,"마이페이지");
 		jp_myPost 		= new MyPost(this,"내 게시글");
+		jp_mypost2		= new MyPost2(this,"두번째 게시판");
 		jp_myPostSet 	= new MyPostSet(this,"게시글 설정");
+		jp_myBest		= new MyBest(this,"내 추천글");
 		jp_chat 		= new Chat(this,"채팅");
 		jp_post 		= new Post(this, "게시글");
 		jp_rank			= new MentorRank(this);
@@ -103,7 +110,7 @@ public class MainPage extends JFrame{
 		add("South",jp_south);
 		//전체화면 설정
 		setSize(410,545);
-		setResizable(false);
+		setResizable(true);
 		setVisible(true);
 	}
 	public void initButton() {	//버튼초기화 메소드

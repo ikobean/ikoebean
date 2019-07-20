@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MyPost extends JPanel {
+public class MyPost2 extends JPanel {
 	MainPage 		page 			= null;	//전체화면 객체주입되는 변수
 	JLabel 			jlb 			= new JLabel(); //상단 제목 라벨
 	JButton 		jbtn_set 		= new JButton();
@@ -27,17 +27,15 @@ public class MyPost extends JPanel {
 	JPanel			jp_bubble 		= new JPanel();
 	JPanel			jp_list			= new JPanel();
 	JPanel			jp_cols			= new JPanel();
-	JButton			jbtn_next		= new JButton("다음페이지");
 	
-
 	
 	/////////////게시판 컬럼명
-	JLabel jlb_post_num = new JLabel("번호", JLabel.CENTER);	//게시글번호
-	JLabel jlb_post_category = new JLabel("카테고리", JLabel.CENTER); //카테고리
-	JLabel jlb_post_title = new JLabel("글제목", JLabel.CENTER);	//글제목
-	JLabel jlb_post_date = new JLabel("작성날짜", JLabel.CENTER);		//작성날짜
-	JLabel jlb_post_views = new JLabel("조회수", JLabel.CENTER);	//조회수
-
+	JLabel jlb_post_num = new JLabel("번호2", JLabel.CENTER);	//게시글번호
+	JLabel jlb_post_category = new JLabel("카테고리2", JLabel.CENTER); //카테고리
+	JLabel jlb_post_title = new JLabel("글제목2", JLabel.CENTER);	//글제목
+	JLabel jlb_post_date = new JLabel("작성날짜2", JLabel.CENTER);		//작성날짜
+	JLabel jlb_post_views = new JLabel("조회수2", JLabel.CENTER);	//조회수
+	
 	///////////글
 	//플로우레이아웃 ->패널에 붙인 다음에 addcomponent
 	JLabel jlb_post_mynum = null;		//게시글번호
@@ -48,7 +46,7 @@ public class MyPost extends JPanel {
 	
 	JPanel jp_blank = new JPanel();
 	
-	public MyPost(MainPage page,String name) {
+	public MyPost2(MainPage page,String name) {
 		this.page = page;
 		setLayout(null);
 		jp_cols.setLayout(null);
@@ -86,6 +84,7 @@ public class MyPost extends JPanel {
 		
 		
 		
+		//////라벨 배경색 설정
 			
 		jlb_post_num.setBackground(theme.setBackgroundColor(page.memVO.getTheme()));
 		jlb_post_category.setBackground(theme.setBackgroundColor(page.memVO.getTheme()));
@@ -93,6 +92,7 @@ public class MyPost extends JPanel {
 		jlb_post_date.setBackground(theme.setBackgroundColor(page.memVO.getTheme()));
 		jlb_post_views.setBackground(theme.setBackgroundColor(page.memVO.getTheme()));
 				
+		
 		////컬럼 
 		jp_cols.add(jlb_post_num);
 		jp_cols.add(jlb_post_category);
@@ -100,21 +100,18 @@ public class MyPost extends JPanel {
 		jp_cols.add(jlb_post_date);
 		jp_cols.add(jlb_post_views);
 		
-		
-		jp_list.add(jp_grid);
-		jp_cols.setBounds(15,85,380,20);
-		jp_list.setBounds(15, 111, 380,300);
-		jbtn_next.setBounds(170, 430, 100, 20);
-		
 		add(jlb);
 		add(jbtn_set);
 		add(jp_cols);
+		
+		jp_cols.setBounds(15,85,380,20);
+		jp_list.setBounds(15, 111, 380,300);
+		jp_list.add(jp_grid);
 		add(jp_list);
-		add(jbtn_next);
 		initGroup();
 	
 	}
-	public MyPost(int i,MainPage page) {
+	public MyPost2(int i,MainPage page) {
 		
 		
 
@@ -166,10 +163,15 @@ public class MyPost extends JPanel {
 
 	}
 	public void initGroup() {
-		List<MyPost> myPostList = new ArrayList<>();
-		MyPost myPost = null;
+		
+		
+		
+		
+		
+		List<MyPost2> myPostList = new ArrayList<>();
+		MyPost2 myPost = null;
 		for(int i=0;i<15;i++) {
-			myPost = new MyPost(i,page);
+			myPost = new MyPost2(i,page);
 			myPostList.add(myPost);
 		}
 		
@@ -221,18 +223,6 @@ public class MyPost extends JPanel {
 				page.repaint();
 			}
 		});
-		jbtn_next.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				page.remove(page.jp_page);
-				page.jp_page = page.jp_mypost2;
-				page.add(page.jp_page);
-				page.revalidate();
-				page.repaint();
-			}
-		});
-		
-		
 	}
 
 	

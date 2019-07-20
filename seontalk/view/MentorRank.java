@@ -169,7 +169,7 @@ class MentorRank2_t1 extends JPanel{
 					.addComponent(jlb_nick,160,160,160)
 					.addComponent(jlb_interest,160,160,160)
 				)
-				.addComponent(jp_blank)
+				//.addComponent(jp_blank)
 			);
 			layout.setVerticalGroup(layout.createSequentialGroup()
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -179,7 +179,7 @@ class MentorRank2_t1 extends JPanel{
 						.addComponent(jlb_nick,40,40,40)
 						.addComponent(jlb_interest,20,20,20)
 					)
-					.addComponent(jp_blank)
+					//.addComponent(jp_blank)
 				)
 			);
 		}
