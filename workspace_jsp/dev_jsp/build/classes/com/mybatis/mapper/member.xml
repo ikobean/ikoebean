@@ -13,8 +13,19 @@
 		INSERT INTO MEMBER (MEM_ID, MEM_NAME, MEM_ADDR,MEM_PW,MEM_ZIPCODE)
 		VALUES(#{mem_id},#{mem_name},#{mem_addr},#{mem_pw},#{mem_zipcode})
 	</insert>
-	<delete id="memberDelete" parameterType="map">
-		DELETE FROM MEMBER WHERE mem_id='DD'
-	</delete>
+	<insert id="memberDelete" parameterType="map">
+		DELETE FROM MEMBER WHERE MEM_ID=#{mem_id}
+	</insert>
+	<select id="isId" parameterType="com.vo.MemberVO" resultType="java.lang.String">
+	select nvl((select '아이디가 존재합니다.' from member
+            		   where mem_id=#{mem_id}),'아이디가 존재하지 않습니다.') status
+                FROM dual
+	</select>
+	<select id="login" parameterType="com.vo.MemberVO" resultType="java.lang.String">
+	select nvl((select mem_name|| '님 환영합니다.' from member
+            where mem_id=#{mem_id} 
+              AND mem_pw=#{mem_pw}),'비밀번호가 틀립니다.') 
+            FROM dual
+	</select>
 </mapper> 
  

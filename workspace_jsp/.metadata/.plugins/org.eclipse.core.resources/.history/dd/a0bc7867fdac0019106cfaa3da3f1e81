@@ -1,0 +1,64 @@
+package onlineTest;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.mvc1.Action;
+import com.mvc1.ActionForward;
+import com.mybatis.ZipCodeDao;
+import com.vo.ZipCodeVO;
+
+public class TestController extends HttpServlet implements Action {
+
+		Logger logger = Logger.getLogger(TestController.class);
+		TestLogic testlogic = new TestLogic();
+		
+		
+		@Override
+		public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+			
+			ActionForward forward = new ActionForward();
+			
+			String viewName		  = null;
+			boolean isRedirect    = false;
+			//command="/onlineTest/subjectList.kos?work=onlineTest
+			//command.substring(0,end)
+			String crud = (String) req.getAttribute("crud");
+			//==>/onlineTest/subjectList.kos?work=onlineTest
+			
+			
+			List<ZipCodeVO> zipList = null;
+			ZipCodeDao zDao = new ZipCodeDao();
+			ZipCodeVO zVO = new ZipCodeVO();
+			zVO.setDong(req.getParameter("dong"));
+			zipList = testlogic.zipcodeList(zVO);
+			req.setAttribute("zipList", zipList);
+			viewName = "jsonZipcodeList.jsp";
+			isRedirect = false;
+			forward.setRedirect(isRedirect);
+			forward.setviewName(viewName);
+			
+			
+			return null;
+		}
+		@Override
+		public List<Map<String, Object>> test(HttpServletRequest req, HttpServletResponse res)
+				throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public ActionForward execute(HttpServletRequest req, HttpServletResponse res, String crud)
+				throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+}

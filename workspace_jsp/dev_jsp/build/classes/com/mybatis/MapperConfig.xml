@@ -16,5 +16,6 @@
 	<mappers>
 		<mapper resource="com/mybatis/mapper/member.xml" />
 		<mapper resource="com/mybatis/mapper/zipcode.xml" />
+		<mapper resource="com/mybatis/mapper/onlineTest.xml" />
 	</mappers>
 </configuration>

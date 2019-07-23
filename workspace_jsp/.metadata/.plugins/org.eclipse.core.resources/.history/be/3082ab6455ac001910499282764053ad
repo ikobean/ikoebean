@@ -1,0 +1,160 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+    function loginModal(){
+      $("#myModal").modal();
+    }
+    function loginAction(){
+
+    }   
+    function logoutAction(){
+
+    }   
+  </script>
+</head>
+<body>
+    <style>
+        .jumbotron {
+            background-image: url('../../images/code6.jpeg');
+            background-size: cover;
+            text-shadow: black 0.2em 0.2em 0.2em;
+            color: white;
+        }
+    </style>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">�ڹ�52��</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">�Ұ�</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Front-End��Ʈ<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">HTML5</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Back-End��Ʈ<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Java</a></li>
+          <li><a href="#">����</a></li>
+          <li><a href="#">JSP</a></li>
+          <li><a href="#">Spring</a></li>
+          <li><a href="#">�ȵ���̵�</a></li>
+        </ul>
+      </li>
+     </ul>
+     <div id="loginForm" class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-right" action="/action_page.php">
+          <div class="form-group">
+            <input type="text" class="form-control" id="usrname" size="10" placeholder="���̵�">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="psw" size="10" placeholder="��й�ȣ">
+          </div>
+          <button type="button" class="btn btn-dark" onclick="loginAction()">Login</button>
+        </form>
+      </div>
+  </div>
+</nav>
+  
+<div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">�ڹ� 52��</h1>
+      <p class="text-center">�ڹ� 52�� ������Ʈ �Դϴ�.
+      <p class="text-center"><a class="btn-primary btn-lg" href="lecture.html" role="button">���� ��� ����?</a></p>
+    </div>
+      <!-- =========================== ���� �̹��� ���� ����Ʈ �Ұ�=====================-->
+      <div class="row">
+          <div class="col-sm-4">
+              <h4>�ڵ������� Ư¡</h4>
+              <p>�ڵ����̴� ���α׷��� �� ����Ͽ� �ڽ��� ����ϴ� �͵��� ����Ʈ����� ����� ���� ���̵�� �����Ǿ����ϴ�.</p>
+              <p><a class="btn btn-default" data-target="#modal" data-toggle="modal">�ڼ��� �˾ƺ���</a></p>
+          </div>
+           <div class="col-sm-4">
+              <h4>�ڵ������� Ư¡</h4>
+              <p>�ڵ����̴� ���α׷��� �� ����Ͽ� �ڽ��� ����ϴ� �͵��� ����Ʈ����� ����� ���� ���̵�� �����Ǿ����ϴ�.</p>
+              <p><a class="btn btn-default" href="instructor.html">�ڼ��� �˾ƺ���</a></p>
+          </div>
+          <div class="col-sm-4">
+              <h4>�ڵ������� Ư¡</h4>
+              <p>�ڵ����̴� ���α׷��� �� ����Ͽ� �ڽ��� ����ϴ� �͵��� ����Ʈ����� ����� ���� ���̵�� �����Ǿ����ϴ�.</p>
+              <p><a class="btn btn-default" href="lecture.html">�ڼ��� �˾ƺ���</a></p>
+          </div>                       
+      </div>
+      <hr>
+      <!-- =========================== ���� �̹��� ���� ����Ʈ �Ұ�=====================-->
+      <div class="pannel pannel-primary">
+          <div class="pannel-heading">
+              <h3 class="pannel-title"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;�ֽ� ���� ���</h3>
+          </div>
+          <div class="pannel-body">
+              <div class="col-sm-4">
+                  <div class="media-left">
+                      <a href="lecture.html?lectureName=C"><img src="../../images/c.jpeg" width="50px" height="50px" alt="c���"></a>
+                  </div>
+                  <div class="media-body">
+                      <h4 class="media-heading"><a href="lecture.html?lectureName=C">C��� ����</a>&nbsp;<span class="badge">New</span></h4>
+                          C��� ���α׷��� ����
+                  </div>
+              </div>
+               <div class="col-sm-4">
+                  <div class="media-left">
+                      <a href="lecture.html?lectureName=java"><img src="../../images/java.png" width="50px" height="50px" alt="c���"></a>
+                  </div>
+                  <div class="media-body">
+                      <h4 class="media-heading"><a href="lecture.html?lectureName=C">JAVA ����</a>&nbsp;<span class="badge">New</span></h4>
+                          JAVA ���α׷��� ����
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="media-left">
+                      <a href="lecture.html?lectureName=oracle"><img src="../../images/oracle.png" width="50px" height="50px" alt="c���"></a>
+                  </div>
+                  <div class="media-body">
+                      <h4 class="media-heading"><a href="lecture.html?lectureName=oracle">Oracle ����</a>&nbsp;<span class="badge">New</span></h4>
+                          Oracle �����ͺ��̽� ����
+                  </div>
+              </div>      
+              <br><br><hr>     
+          </div>
+      </div>
+  </div>
+  <footer style="background-color: #000000; color: #ffffff;">
+      <div class="container">
+          <br>
+          <div class="row">
+          <!-- 12�� �������� ���߾� �ش�. -->
+              <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2019</h5><h5>������</h5></div>
+              <div class="col-sm-4"><h4>��ǥ�� �Ұ�</h4><p>�ѱ�����Ʈ���簳�߿����� �ڹٰ����� ����ϰ� �ֽ��ϴ�.</p></div>
+              <div class="col-sm-2"><h4 style="text-align: center;">������̼�</h4>
+                <div class="list-group">
+                   <a href="#" class="list-group-item">�Ұ�</a>   
+                   <a href="#" class="list-group-item">������</a>
+                   <a href="#" class="list-group-item">����</a>
+                  </div>
+              </div>
+              <div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+                  <div class="list-group">
+                   <a href="#" class="list-group-item">���̽���</a>   
+                   <a href="#" class="list-group-item">��Ʃ��</a>
+                   <a href="#" class="list-group-item">���̹� TV</a>
+                  </div>
+               </div>
+                <div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok" ></span>by &nbsp;������</h4></div>
+          </div>
+      </div>
+  </footer>
+  </div>  
+</body>
+</html>

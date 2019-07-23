@@ -1,0 +1,21 @@
+package com.mybatis;
+
+import java.util.List;
+import java.util.Map;
+
+public class TestDao {
+	
+	/*
+	 * Dao에서 MyBatis를 활용하여 오라클 서버에 접속(MyBatis에서 대신 해줌)하고 
+	 * 
+	 */
+	public TestDao() {
+		
+	}
+
+	public List<Map<String, Object>> subjectList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

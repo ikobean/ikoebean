@@ -10,11 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import onlineTest.TestController;
+
 public class FrontController extends HttpServlet {
 	Logger logger = Logger.getLogger(FrontController.class);
-	MemberController memCtrl = new MemberController();
-	GoodsController goodCtrl = new GoodsController();
-	OrderController orderCtrl = new OrderController();
+	MemberController memCtrl 	= new MemberController();
+	GoodsController	 goodCtrl	= new GoodsController();
+	OrderController  orderCtrl	= new OrderController();
+	TestController 	 testCtrl  	= new TestController();
+	
 
 	public void doService(HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException,IOException{
@@ -29,7 +33,7 @@ public class FrontController extends HttpServlet {
 			 //command ==> member/memberInsert.kos
 			 int end =command.lastIndexOf('.'); //19
 			 logger.info(command+" , "+end);//command = member/memberInsert		
-			 command = command.substring(0,end);	
+			 command = command.substring(0,end); //command  onlineTest/subjectLIst	
 			 
 			 /* 요청하는 이름.kos 로 되게 해라~
 			 * 테스트 할 때 어떤 이름이든 상관없이 ?work=member를 넘겨주면 됨
@@ -61,8 +65,8 @@ public class FrontController extends HttpServlet {
 			}
 			else if("order".equals(work)) {
 				forward = orderCtrl.execute(req, res);
+				
 			}
-			
 			if(forward!=null) {
 				if(forward.isRedirect()) {//새창열기 이전의 리퀘스트가 없어짐.
 					res.sendRedirect(forward.getviewName());

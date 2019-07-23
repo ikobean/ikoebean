@@ -9,12 +9,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
 import com.mybatis.MemberLogic;
 import com.mybatis.ZipCodeDao;
 import com.util.HashMapBinder;
+import com.vo.MemberVO;
 import com.vo.ZipCodeVO;
 
 public class MemberController extends HttpServlet implements Action {
@@ -81,9 +83,40 @@ public class MemberController extends HttpServlet implements Action {
 			isRedirect = true;
 			forward.setRedirect(isRedirect);
 			forward.setviewName(viewName);
+			
+		}else if("member/login".equals(crud)) {
+			logger.info("mem_name");
+			String mem_name= null;
+			MemberVO pmVO = new MemberVO();
+			//사용자가 입력한 아이디 받기
+			pmVO.setMem_id(req.getParameter("mem_id"));
+			//사용자가 입력한 비번 받기
+			pmVO.setMem_pw(req.getParameter("mem_pw"));
+			//req.getpParameter 대신 해주는 클래스
+			mem_name = memLogic.login(pmVO);
+			//사용자 정보 세션에 담기
+			HttpSession session = req.getSession();
+			session.setAttribute("mem_name", mem_name);
+			//로그인 성공시 보여줄 화면 선언
+			viewName = "/onlineTest/loginAccount.jsp";
+			isRedirect = true;
+			forward.setRedirect(isRedirect);
+			forward.setviewName(viewName);
 		}
 		
 		return forward;
+	}
+	@Override
+	public List<Map<String, Object>> test(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse res, String crud)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

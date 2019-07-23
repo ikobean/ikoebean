@@ -1,0 +1,10 @@
+package onlineTest;
+
+import org.apache.log4j.Logger;
+
+import com.mvc1.MemberController;
+
+public class TestLogic {
+	Logger logger = Logger.getLogger(TestLogic.class);
+	
+}

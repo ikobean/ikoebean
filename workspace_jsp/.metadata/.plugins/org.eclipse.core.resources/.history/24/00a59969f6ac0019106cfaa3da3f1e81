@@ -1,0 +1,9 @@
+package onlineTest;
+
+import org.apache.log4j.Logger;
+
+public class TestController {
+
+		Logger logger = Logger.getLogger(TestController.class);
+		TestLogic testlogic = new TestLogic();
+}

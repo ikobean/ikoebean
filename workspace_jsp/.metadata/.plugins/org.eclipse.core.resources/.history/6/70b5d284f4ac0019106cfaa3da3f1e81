@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시험 응시</title>
+<%@ include file="../common/JEasyUICommon.jsp" %>
+</head>
+<body>
+      <script> 
+      	//DOM구성이 완료되었을 때 콤보박스를 초기화 할 것.
+      	//이 문서 전체를 가리키는 내장객체.
+      	$(document).ready(function (){
+      		
+      		//콤보 초기화
+      		$('#m_takeatest')({
+      			onClick:function(){
+      				$('#dlg_takeatest').dialog('open');
+      			}
+      		})
+      		$('#pl_takeatest').dialog({
+      		title:"test take"
+      	   ,width:400
+      	   ,height:500
+      	   ,closed:true
+      		});
+      	});
+      </script>
+ <!-- 
+ ===========================================================================================
+ 					test take 창 만들기 시작
+ ===========================================================================================
+  -->
+
+ <div class="easyui-panel" title="Take a Test" style="width:70%;padding;30px 30px" id="pl_takeatest">
+	<div style="margin-bottom:20px">
+		<select class="easyui-combobox" id="cb_subject" name="cb_subject" label="수험과복" labelPosition="top" style="width:70%;"></select>
+	</div>
+	<div style="margin-bottom:20px">
+		<input class="easyui-textbox" id="tb_examno" name="tb_examno" label="수험번호" labelPosition="top" style="width:70%;">
+	</div>
+	<div>
+		<a id="btn_start" href="#" class="easyui-linkbutton">시험 시작 </a>
+	</div>
+</div>
+
+   <!-- 
+ ===========================================================================================
+ 					test take 창 만들기 끝
+ ===========================================================================================
+  -->
+</div>
+</body>
+</html>

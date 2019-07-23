@@ -1,0 +1,24 @@
+package onlineTest;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.mvc1.Action;
+import com.mvc1.ActionForward;
+
+public class TestController extends HttpServlet implements Action {
+
+		Logger logger = Logger.getLogger(TestController.class);
+		TestLogic testlogic = new TestLogic();
+		
+		public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+			
+			
+		}
+}

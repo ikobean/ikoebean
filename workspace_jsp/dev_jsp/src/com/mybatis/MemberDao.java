@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 
 import com.util.MyBatisCommonFactory;
+import com.vo.MemberVO;
 
 public class MemberDao {
 	Logger logger = Logger.getLogger(MemberDao.class);
@@ -64,11 +65,13 @@ public class MemberDao {
 	public int memberInsert(Map<String, Object> pMap) {
 
 		logger.info("DAO memberInsert 호출 성공");
-		logger.info("pMap.get(mem_id)"+pMap.get("mem_id"));
-		logger.info("pMap.get(mem_name)"+pMap.get("mem_name"));
-		logger.info("pMap.get(mem_addr)"+pMap.get("mem_addr"));
-		logger.info("pMap.get(mem_zipcode)"+pMap.get("mem_zipcode"));
-		logger.info("pMap.get(mem_pw)"+pMap.get("mem_pw"));
+		/*
+		 * logger.info("pMap.get(mem_id)"+pMap.get("mem_id"));
+		 * logger.info("pMap.get(mem_name)"+pMap.get("mem_name"));
+		 * logger.info("pMap.get(mem_addr)"+pMap.get("mem_addr"));
+		 * logger.info("pMap.get(mem_zipcode)"+pMap.get("mem_zipcode"));
+		 * logger.info("pMap.get(mem_pw)"+pMap.get("mem_pw"));
+		 */
 		int result = 0;
 		try {
 			SqlSession sqlSession 
@@ -113,6 +116,32 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 		return memList;		
+	}
+	public String isId(MemberVO pmVO) {
+		String mem_name = null;
+		try {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			mem_name = sqlSession.selectOne("isId",pmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mem_name;
+	}
+
+	public String login(MemberVO pmVO){
+		String mem_name = null;
+		logger.info(pmVO.getMem_id());
+		logger.info(pmVO.getMem_pw());
+		
+		try {
+		
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			mem_name = sqlSession.selectOne("login",pmVO);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mem_name;		
 	}
 
 }

@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="dlg_zip"/>
+		<item key="selection" value="Value"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="dlg_zip"/>
+			<item value="value"/>
+			<item value="myModal"/>
+			<item value="onlintest"/>
+			<item value="online"/>
+			<item value="dlg_"/>
+			<item value="dg_"/>
 			<item value="dg_member"/>
-			<item value="memberlist"/>
-			<item value="encoding"/>
-			<item value="uriencoding"/>
-			<item value="&lt;div id=&quot;dlg_ins&quot; style=&quot;padding:30px 60px;&quot; &gt;"/>
-			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt; &lt;!DOCTYPE configuration     PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;     &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;  &lt;configuration&gt;   &lt;environments default=&quot;development&quot;&gt;       &lt;environment id=&quot;development&quot;&gt;       &lt;transactionManager type=&quot;JDBC&quot;/&gt;       &lt;dataSource type=&quot;POOLED&quot;&gt;         &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;         &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;         &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;         &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;       &lt;/dataSource&gt;     &lt;/environment&gt;   &lt;/environments&gt;   &lt;mappers&gt;     &lt;mapper resource=&quot;org/mybatis/example/BlogMapper.xml&quot;/&gt;   &lt;/mappers&gt; &lt;/configuration&gt; "/>
-			<item value="mybatis"/>
-			<item value="path"/>
-			<item value="viewName"/>
-			<item value="setAttribute"/>
-			<item value="connector"/>
-			<item value="context"/>
+			<item value="enter a dong"/>
+			<item value="btn_search"/>
+			<item value="f_del"/>
+			<item value="   ,singleSelcet:true"/>
+			<item value="$(&apos;#mem_zipcode&apos;).textbox(&apos;setValue&apos;,value);"/>
+			<item value="dg_zipcode"/>
+			<item value="selected"/>
+			<item value="btn_seartch"/>
 		</list>
 		<list key="replacehistory">
 			<item value="viewName"/>
@@ -28,8 +30,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="611"/>
-		<item key="DIALOG_Y_ORIGIN" value="354"/>
+		<item key="DIALOG_X_ORIGIN" value="1509"/>
+		<item key="DIALOG_Y_ORIGIN" value="249"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

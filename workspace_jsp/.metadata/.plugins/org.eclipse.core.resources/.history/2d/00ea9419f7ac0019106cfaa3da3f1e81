@@ -1,0 +1,13 @@
+package com.mybatis;
+
+import java.util.List;
+import java.util.Map;
+
+public class TestDao {
+
+	public List<Map<String, Object>> subjectList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

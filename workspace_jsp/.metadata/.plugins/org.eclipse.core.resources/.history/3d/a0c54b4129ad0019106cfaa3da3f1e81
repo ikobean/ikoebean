@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+//MemberController에서 세션에 담아놓은 값 읽어오기
+//세션값은 서버의 cache 메모리에 기억되어 있어서 
+//페이지 이동과 상관없이 그 시간 동안은 무조건 유지된다.
+	String mem_name=(String)session.getAttribute("mem_name");
+%>
+
+<script type="text/javascript">
+	function wrong(){
+		if("비밀번호가 틀립니다.".equals(<%=mem_name %>)){
+			$("#btn_logout").hide();
+			alert("비밀번호가 틀렸어");
+		};
+		wrong();
+</script>
+     <div id="loginForm" class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-right">
+         	<label for="msg">
+         		<font color="white"> <%=mem_name %></font>
+         	</label>
+          <button type="button" id="btn_logout" class="btn btn-dark" onclick="logoutAction()">LogOut</button>
+        </form>
+      </div>
