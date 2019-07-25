@@ -38,6 +38,12 @@ public class MemberLogic {
 		zipList = zDao.zipcodeList(zVO);
 		return zipList;
 	}
+	public MemberVO proc_login(MemberVO pmVO) {
+		logger.info("proc_login 로그인 호출");
+		//프로시저는 파라미터를 리턴타입으로 받음.
+		mDao.proc_login(pmVO);
+		return pmVO;
+	}
 	public String login(MemberVO pmVO) {
 		logger.info("logic 로그인 호출");
 		//화면에 전달될 메시지 값
@@ -55,5 +61,6 @@ public class MemberLogic {
 		}
 		return mem_name;
 	}
+
 
 }

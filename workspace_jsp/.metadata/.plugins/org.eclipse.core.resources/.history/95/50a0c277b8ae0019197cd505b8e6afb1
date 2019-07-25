@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.onlineTestMapper">
+	<select id="subjectList" parameterType="map" resultType="map">
+		SELECT SUB_CD, SUB_NAME
+		FROM online_subject
+	</select>
+		<select id="getExamNo" parameterType="int" resultType="java.lang.String">
+		SELECT TO_CHAR(sysdate,'YY'||'MM'||'DD')
+			||LPAD(seq_exam_no.nextval,4,0) exam_no
+			FROM dual
+	</select>
+	<insert id="examReceipt" parameterType="map">
+		Insert INTO take_examination(EXAM_NO, MEM_ID, SUB_CD, EXAM_DATE, GET_POINT
+									,IS_PASS, S_TIME, E_TIME, FEE_DATE,  IS_PAYMENT
+									,EXAM_CHASI, REG_DATE)
+			values({#EXAM_NO},{#MEM_ID},{#SUB_CD},{#EXAM_DATE},0
+					,0, '00:00:00', '00:00:00','9999-99-99',0
+					1,to_char(sysdate,'YYYY-MM-DD'))
+	</insert>
+</mapper>
+
+
+   
+ 

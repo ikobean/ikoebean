@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function autoReload(){
+	$.ajax({
+		method:"get"
+	   ,url:"index.jsp"
+	   ,success:function(result){ //result는 응답페이지의 출력 문자열 담김.
+		   $("#d_news").html(result);
+	   }
+	   ,fail:function(xhrObject,textStatus){
+		   alert("Request failed: " + textStatus);
+		   alert(xhrObject.responseText);
+	   }
+	});
+}
+
+
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -8,11 +8,17 @@ public class MemberVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 4137373418319886949L;
-	String  mem_id      ="" ;
-	String  mem_pw      ="" ;
-	String  mem_name    ="" ;
-	String  mem_addr    ="" ;
-	String  mem_zipcode ="" ;
+	public String  mem_id      ="" ;
+	public String  mem_pw      ="" ;
+	public String  mem_name    ="" ;
+	public String  mem_addr    ="" ;
+	public String  mem_zipcode ="" ;
+	/*
+	 * VO는 보통 테이블 컬럼을 담는 것이 일반적이지나 개발자가 필요한 정보도 추가로 담을 수 있다.
+	 * r_status 는 proc_login 프로시저에서 사용되는 out 속성으로
+	 * -1 / 아이디 를 담는 변수로 활용됨.
+	 */
+	public String r_status		="" ;
 	
 	
 	public String getMem_id() {
@@ -44,6 +50,12 @@ public class MemberVO implements Serializable {
 	}
 	public void setMem_zipcode(String mem_zipcode) {
 		this.mem_zipcode = mem_zipcode;
+	}
+	public String getR_status() {
+		return r_status;
+	}
+	public void setR_status(String r_status) {
+		this.r_status = r_status;
 	}
 
 }

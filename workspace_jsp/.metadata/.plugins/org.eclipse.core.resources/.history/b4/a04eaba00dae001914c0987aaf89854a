@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String dap2 = request.getParameter("dap2");
+	Cookie cookie = new Cookie("dap2",dap2);
+	cookie.setMaxAge(60*30);
+	cookie.setPath("/");
+	response.addCookie(cookie);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<%@ include file="../common/JEasyUICommon.jsp" %>
+<script>
+	function answer(p_dap){
+		for(var i=0;i<document.getElementById("f_test2").cb.length;i++){
+			if(p_dap==i){
+				document.getElementById("f_test2").cb[i].checked=1;
+			}else{
+				document.getElementById("f_test2").cb[i].checked=0;
+			}
+		}
+	}
+	function prev(){
+		location.href="test2_hy.jsp?dap1=<%=dap1%>";
+	}
+	function next(){
+		var temp=1;
+		for(var i=0; i<document.getElementById("f_test2").cb.length;i++){
+			if(document.getElementById("f_test2").cb[i].checked==1){
+				document.getElementById("f_test2").dap2.value=temp;//폼태그의 values를 temp값으로 설정한다.
+			}else{
+				temp = temp+1;
+			}
+		}
+			document.getElementById("f_test2").submit();
+	}
+</script>
+</head>
+<body>
+	<div class="easyui-panel" style="width:600px;height:500px;padding:20px"
+		title="문제1" data-options="footer:'#footer'">
+		<form id="f_test3" method="get" action="result_hy.jsp">
+		<input type="hidden" id="dap3" name="dap3"/>
+		다음 중 내복이가 먹지 않는 간식은?
+		<div style="margin-bottom=20px"></div>
+		<br>
+		<input  type="checkbox" name="cb" value="1" onChange="answer(0)">
+		1.츄르
+		<div style="margin-bottom=20px"></div>
+		<br>
+		<input  type="checkbox" name="cb" value="2" onChange="answer(1)">
+		2.그리니즈
+		<div style="margin-bottom=20px"></div>
+		<br>
+	    <input type="checkbox" name="cb" value="3" onChange="answer(2)">
+	    3.마따따비
+	    <div style="margin-bottom=20px"></div>
+	    <br>
+		<input type="checkbox" name="cb" value="4" onChange="answer(3)">
+		4.캣닢
+		<div style="margin-bottom=20px" ></div>
+		</form>
+		<br>
+		<div id="footer" style="padding:5px;">
+       		<span style="float:right">
+	        	<a href="javascript:next()" class="easyui-linkbutton" data-options="iconCls:'icon-next',iconAlign:'right'">다음</a>
+        	</span>
+        </div>
+	</div>
+</body>
+</html>

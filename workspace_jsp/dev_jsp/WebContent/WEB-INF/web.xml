@@ -32,6 +32,14 @@
   </servlet-mapping>
   
   <servlet>
+  		<servlet-name>CookieLogin</servlet-name>
+  		<servlet-class>com.ch09.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CookieLogin</servlet-name>
+  	<url-pattern>/ch09/login.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
   		<servlet-name>Ch5member</servlet-name>
   		<servlet-class>com.ch05.MemberServlet</servlet-class>
   </servlet>

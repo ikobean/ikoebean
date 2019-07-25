@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.onlineTestMapper">
+	<select id="subjectList" parameterType="map" resultType="map">
+		SELECT SUB_CD, SUB_NAME
+		FROM online_subject
+	</select>
+	<insert id="examReceipt" parameterType="map">
+		Insert INTO take_examination(EXAM_NO,MEM_ID,SUB_CD,EXAM_DATE,GET_POINT
+									,IS_PASS,S_TIME,E_TIME,FEE_DATE,IS_PAYMENT
+									,EXAM_CHASI,REG_DATE)
+	
+	</insert>
+</mapper>
+
+
+   
+ 

@@ -14,7 +14,10 @@
       $("#myModal").modal();
     }
     function loginAction(){
-
+	
+			
+		})
+		
     }   
     function logoutAction(){
 

@@ -126,14 +126,13 @@
 			}); 
 			 $('#btn_del').linkbutton({
 				onClick : function() {
-						$('#f_del').attr('method','GET');
-						$('#f_del').attr('action','./memberDelete.kos');
-						$('#f_del').submit();
-			
-				
+					$('#f_del').attr('method','GET');
+					$('#f_del').attr('action','./memberDelete.kos');
+					$('#f_del').submit();
 				}
-			});
-		}); 
+			 });
+		});
+			 
 	</script>
 	</head>
 <body>

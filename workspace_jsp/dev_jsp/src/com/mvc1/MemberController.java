@@ -84,7 +84,8 @@ public class MemberController extends HttpServlet implements Action {
 			forward.setRedirect(isRedirect);
 			forward.setviewName(viewName);
 			
-		}else if("member/login".equals(crud)) {
+		}
+		else if("member/login".equals(crud)) {
 			logger.info("mem_name");
 			String mem_name= null;
 			MemberVO pmVO = new MemberVO();
@@ -93,10 +94,18 @@ public class MemberController extends HttpServlet implements Action {
 			//사용자가 입력한 비번 받기
 			pmVO.setMem_pw(req.getParameter("mem_pw"));
 			//req.getpParameter 대신 해주는 클래스
-			mem_name = memLogic.login(pmVO);
+			//프로시저 사용 안할 때
+			//mem_name = memLogic.login(pmVO);
+			
+			//프로시저 사용할 때
+			MemberVO rmVO = null;
+			rmVO = memLogic.proc_login(pmVO);
 			//사용자 정보 세션에 담기
 			HttpSession session = req.getSession();
-			session.setAttribute("mem_name", mem_name);
+			//프로시저 사용 안 할 떄
+			//session.setAttribute("mem_name", mem_name);
+			//프로시저 사용시 리턴 타입을 vo로 함.
+			session.setAttribute("rmVO", rmVO);
 			//로그인 성공시 보여줄 화면 선언
 			viewName = "/onlineTest/loginAccount.jsp";
 			isRedirect = true;

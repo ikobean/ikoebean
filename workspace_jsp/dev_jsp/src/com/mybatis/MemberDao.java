@@ -132,9 +132,7 @@ public class MemberDao {
 		String mem_name = null;
 		logger.info(pmVO.getMem_id());
 		logger.info(pmVO.getMem_pw());
-		
 		try {
-		
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			mem_name = sqlSession.selectOne("login",pmVO);
 		
@@ -142,6 +140,20 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 		return mem_name;		
+	}
+	
+	public MemberVO proc_login(MemberVO pmVO) {
+		/*
+		 * 저장 프로시저의 특이사항은 파라미터로 넘긴 주소번지의 OUT 속성의 값이 담긴다는 사실이다.
+		 */
+		try {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			sqlSession.selectOne("proc_login",pmVO);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pmVO;			
 	}
 
 }

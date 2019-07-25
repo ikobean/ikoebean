@@ -9,14 +9,12 @@
 <fullyQualifiedTypeName name="com.mvc1.MemberDaoSimulation"/>
 <fullyQualifiedTypeName name="com.mvc1.MemberController"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="com.util.HashMapBinder"/>
 <fullyQualifiedTypeName name="com.mybatis.MemberDao"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 <fullyQualifiedTypeName name="com.vo.ZipCodeVO"/>
 <fullyQualifiedTypeName name="com.mybatis.ZipCodeDao"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="onlineTest.TestLogic"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="com.mvc1.Action"/>
 <fullyQualifiedTypeName name="com.mvc1.ActionForward"/>
 <fullyQualifiedTypeName name="com.mybatis.TestDao"/>
@@ -28,4 +26,8 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.vo.MemberVO"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+<fullyQualifiedTypeName name="com.util.HashMapBinder"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException"/>
 </qualifiedTypeNameHistroy>

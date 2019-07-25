@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -11,20 +9,40 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script>
   
+  function autoReload(){
+		$.ajax({
+			method:"get"
+		   ,url:"logoutAccount.jsp"
+		   ,success:function(data){ //result는 응답페이지의 출력 문자열 담김.
+			   $("#loginForm").html(data);
+		   }
+		   ,fail:function(xhrObject,textStatus){
+			   alert(e.responseText);
+		   }
+		});
+	};
+  function start(){
+		var watch;
+			//첫번째 파라미터는 메소드 호출하기
+			//두번째 파라미터는 지연시간 주기
+			//아래의 경우 3초마다 한번씩 갱신
+			watch = setTimeout(autoReload, 3000);
+		};
   function wrong(mem_name){
 		if("비밀번호가 틀립니다."==(mem_name)){
 			$("#btn_logout").hide();
+			start();
+			
 		}else if("아이디가 존재하지 않습니다."==(mem_name)){
 			$("#btn_logout").hide();
+			start();
 		}
 	};
-	
     function loginModal(){
       $("#myModal").modal();
     }
     //ajax
     function loginAction(){
-    	
     	//사용자가 입력한 아이디와 비번 가져오기
 		var mem_id=$("#mem_id").val();
 		var mem_pw=$("#mem_pw").val();
@@ -32,8 +50,7 @@
 			method:'get'
 		   ,url:'/member/login.kos?work=member&mem_id='+mem_id+'&mem_pw='+mem_pw
 		   ,success:function(data){
-				$("#loginForm").html(data);	
-				
+				$("#loginForm").html(data);
 		  }
 		,error:function(e){
 			alert(e.responseText);
@@ -41,7 +58,6 @@
 		});
     }   
     function logoutAction(){
-    	
     	$.ajax({
 			method:'get'
 		   ,url:'logoutAccount.jsp'
@@ -54,7 +70,6 @@
 		});
     }   
   </script>
-  
 </head>
 <body>
 <%@ include file="./top.jsp" %>
@@ -66,8 +81,6 @@
             color: white;
         }
     </style>
-
-  
 <div class="container">
     <div class="jumbotron">
       <h1 class="text-center">자바 52기</h1>

@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제3</title>
+<%@ include file="../common/JEasyUICommon.jsp" %>
+<script>
+	function answerSend(){
+		alert("자신있나?");
+		location.href="result.jsp"
+	}
+</script>
+</head>
+<body>
+	<div class="easyui-panel" style="width:600px;height:500px;padding:20px"
+		title="문제3" data-options="footer:'#footer'">
+		<form id="test3">
+		<input type="hidden" id="dap3" name="dap3"/>
+		다음 설명 중에 틀린 것을 고르시오.
+		<div style="margin-bottom=20px"></div>
+		<br>
+		<input class="easyui-checkbox" name="fruit" value="black">
+		1.JEasyUI는 자바 스크립트 기반의 UI 솔루션이다.
+		<div style="margin-bottom=20px"></div>
+		<br>
+		<input class="easyui-checkbox" name="fruit" value="Orange">
+		2.JEasyUI는 jqeury 기반의 솔루션이다.
+		<div style="margin-bottom=20px"></div>
+		<br>
+	    <input class="easyui-checkbox" name="fruit" value="Orange">
+	    3.JEasyUI는 자바코드와 직접적으로 연동이 가능하다.
+	    <div style="margin-bottom=20px"></div>
+	    <br>
+		<input class="easyui-checkbox" name="fruit" value="Orange">
+		4.JEasyUI는 html5보다 훨씬 더 많은 컴퍼넌트를 제공한다.
+		<div style="margin-bottom=20px" ></div>
+		<br>
+		<div id="footer" style="padding:5px;">
+			<span>
+       			<a href="javascript:location.href='test2jsp'" class="easyui-linkbutton" data-options="iconCls:'icon-before',iconAlign:'left'" >이전</a>
+       		</span>
+       		<span style="float:right">
+	        	<a href="javascript:answerSend()" class="easyui-linkbutton" data-options="iconCls:'icon-ok',iconAlign:'right'">제출</a>
+        	</span>
+        </div>
+	</div>
+</body>
+</html>

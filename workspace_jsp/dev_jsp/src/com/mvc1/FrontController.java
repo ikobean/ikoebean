@@ -66,7 +66,21 @@ public class FrontController extends HttpServlet {
 			else if("order".equals(work)) {
 				forward = orderCtrl.execute(req, res);
 				
-			}
+			}else if("onlineTest".equals(work))
+			{
+				/*
+				 * FrontController가 실제 업무를 처리하는 클래스가 아니다.
+				 * 요청건에 따라 해당 업무를 처리하는 클래스(MemberController,TestController)를 배정
+				 * 이 때 필요한 정보가 work에 담겨 있는 정보 임.
+				 * TestController의 execute 메소드가 호출되야함.
+				 * TestController의 메소드는 하나뿐임.
+				 * 처리해야 하는 업무는 4가지이다.
+				 * 분기를 해야함.
+				 * 기준되는 값이 crud의 담긴 값			
+				 */		
+							req.setAttribute("crud", command);//==> member/memberInsert
+							forward = testCtrl.execute(req, res);
+						}
 			if(forward!=null) {
 				if(forward.isRedirect()) {//새창열기 이전의 리퀘스트가 없어짐.
 					res.sendRedirect(forward.getviewName());
