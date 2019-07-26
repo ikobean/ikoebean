@@ -2,8 +2,6 @@ package com.mvc1;
 
 import java.util.List;
 
-import com.mybatis.MemberDao;
-import com.mybatis.ZipCodeDao;
 import com.vo.ZipCodeVO;
 
 public class MemberDaoSimulation {

@@ -15,7 +15,6 @@ import org.apache.log4j.Logger;
 
 public class MemberServlet extends HttpServlet {
 	Logger logger = Logger.getLogger(MemberServlet.class);
-	
 	/*
 	 * 지금은 get/post 뭐 쓸지 모르니깐~~~~~
 	 * service 파일은 무조건 생긴다.
@@ -25,7 +24,7 @@ public class MemberServlet extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException{
 		//DAO객체를 주입하시오==인스턴스화 하시오
-		MemberDao memDao = new MemberDao();
+		MemberDao2 memDao = new MemberDao2();
 		List<Map<String,Object>> memList = memDao.memberList();
 		//request는 저장소이기도 하다.
 		//request 저장소에 담을땐 setAttribute 호출함.

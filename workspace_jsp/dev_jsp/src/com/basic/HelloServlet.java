@@ -44,10 +44,9 @@ public class HelloServlet extends HttpServlet {
 	
 	throws ServletException,IOException{
 		/*
-		 * JSP 에서는 내장 객체로 지원되지만 서블릿ㅅ에서는 내장객체 지원 없으므로 다음과 같이
+		 * JSP 에서는 내장 객체로 지원되지만 서블릿에서는 내장객체 지원 없으므로 다음과 같이
 		 * 생성한 후 사용함
 		 */
-		
 		HttpSession session = req.getSession();
 		//세션에 값을 담기
 		session.setAttribute("name", "내복이");

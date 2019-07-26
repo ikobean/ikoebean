@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import com.mybatis.MemberLogic;
-import com.mybatis.ZipCodeDao;
 import com.util.HashMapBinder;
 import com.vo.MemberVO;
 import com.vo.ZipCodeVO;
@@ -22,6 +20,7 @@ import com.vo.ZipCodeVO;
 public class MemberController extends HttpServlet implements Action {
 	Logger logger = Logger.getLogger(MemberController.class);
 	MemberLogic memLogic = new MemberLogic();
+	
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		ActionForward forward = new ActionForward();

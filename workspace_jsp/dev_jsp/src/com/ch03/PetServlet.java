@@ -14,7 +14,6 @@ import com.util.HashMapBinder;
 
 public class PetServlet extends HttpServlet {
 		Logger logger = Logger.getLogger(PetServlet.class);
-
 	public void service(HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException{
 			String uri = req.getRequestURI();

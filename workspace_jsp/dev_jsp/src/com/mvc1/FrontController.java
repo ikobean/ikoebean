@@ -2,6 +2,7 @@ package com.mvc1;
 
 import java.io.IOException;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,6 @@ public class FrontController extends HttpServlet {
 	GoodsController	 goodCtrl	= new GoodsController();
 	OrderController  orderCtrl	= new OrderController();
 	TestController 	 testCtrl  	= new TestController();
-	
 
 	public void doService(HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException,IOException{
@@ -27,9 +27,11 @@ public class FrontController extends HttpServlet {
 			 * 요청하는 이름에 따라 구체적인 업무를 구분하고 싶다면 호출하는 이름을 별도로 처리해야 한다.
 			 * 어떡하면 될까?
 			 */ 
+	
 			 String uri = req.getRequestURI(); //   	/member/memberList.kos ★중요 코드
 			 String context = req.getContextPath();//   /
 			 String command = uri.substring(context.length()+1);
+			 logger.info(uri); //uri=>/member/login.kos
 			 //command ==> member/memberInsert.kos
 			 int end =command.lastIndexOf('.'); //19
 			 logger.info(command+" , "+end);//command = member/memberInsert		

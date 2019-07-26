@@ -18,16 +18,21 @@
 <fullyQualifiedTypeName name="com.mvc1.Action"/>
 <fullyQualifiedTypeName name="com.mvc1.ActionForward"/>
 <fullyQualifiedTypeName name="com.mybatis.TestDao"/>
-<fullyQualifiedTypeName name="com.util.MyBatisCommonFactory"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="onlineTest_HY.TestController"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.vo.MemberVO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="com.util.HashMapBinder"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException"/>
+<fullyQualifiedTypeName name="com.util.MyBatisCommonFactory"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.mvc1.MyProcSimulation"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.vo.DeptVO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
 </qualifiedTypeNameHistroy>

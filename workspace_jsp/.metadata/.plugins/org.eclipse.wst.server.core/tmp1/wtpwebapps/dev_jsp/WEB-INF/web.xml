@@ -83,8 +83,16 @@
   	<servlet-name>Servletlogin</servlet-name>
   	<url-pattern>/login.nhn</url-pattern>
   </servlet-mapping>
+  <!-- 이 프로젝트에서 세션 타임을 디폴트로 정할 수 있다. 분단위 작성함 -->
   <session-config>
   	<session-timeout>30</session-timeout>
   </session-config>
+  <!-- 커넥션 풀 이름 등록하기 -->
+  <resource-ref>
+  	<description>Connection</description>
+  	<res-ref-name>jdbc/dbPool</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
 
 </web-app>

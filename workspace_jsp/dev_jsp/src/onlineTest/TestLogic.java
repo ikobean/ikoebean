@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.mybatis.TestDao;
+import com.mvc1.TestDao;
 
 public class TestLogic {
 	Logger logger = Logger.getLogger(TestLogic.class);

@@ -7,7 +7,6 @@ class Param {
 }
 
 
-
 public class ParameterTest {
 	/*
 	 * 리턴타입이 void 이다. 내가 설계한 메소드가 아닐 때

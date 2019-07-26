@@ -1,6 +1,7 @@
 package com.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class MemberVO implements Serializable {
 	
@@ -13,6 +14,7 @@ public class MemberVO implements Serializable {
 	public String  mem_name    ="" ;
 	public String  mem_addr    ="" ;
 	public String  mem_zipcode ="" ;
+	public ArrayList<TakeExaminationVO> key = null;
 	/*
 	 * VO는 보통 테이블 컬럼을 담는 것이 일반적이지나 개발자가 필요한 정보도 추가로 담을 수 있다.
 	 * r_status 는 proc_login 프로시저에서 사용되는 out 속성으로
@@ -56,6 +58,12 @@ public class MemberVO implements Serializable {
 	}
 	public void setR_status(String r_status) {
 		this.r_status = r_status;
+	}
+	public ArrayList<TakeExaminationVO> getKey() {
+		return key;
+	}
+	public void setKey(ArrayList<TakeExaminationVO> key) {
+		this.key = key;
 	}
 
 }
