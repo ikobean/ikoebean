@@ -68,7 +68,7 @@
 	}////////////////////end of makeInfo
 	function result_process(){
 		//pictureInfo.jsp 에서 출력된 결과를 담기
-		var temp = xhrObject.responseText;
+		var temp = xhrObject.responseText; //응답받아오기
 		var picHTML=makeInfo(temp);
 		//화면 처리 전에 스타일 적용하기
 		document.getElementById("popupContent").style.border="1px dotted #b0c0e6";

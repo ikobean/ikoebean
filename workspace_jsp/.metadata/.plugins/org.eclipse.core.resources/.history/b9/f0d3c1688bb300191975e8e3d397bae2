@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<%@ include file="../common/JEasyUICommon.jsp" %>
+<title>자바 스크립트 노트 페이지</title>
+
+</head>
+<body>
+
+1.<body class="easyui-layout">
+2.    <div data-options="region:'north'" style="height:100px"></div>
+3.    <div data-options="region:'center'">
+4.        <div class="easyui-layout" data-options="fit:true">
+5.            <div data-options="region:'west',collapsed:true" style="width:180px"></div>
+6.            <div data-options="region:'center'"></div>
+7.        </div>
+8.    </div>
+9.</body>
+
+
+</body>
+</html>

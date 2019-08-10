@@ -7,7 +7,7 @@ import com.vo.ZipCodeVO;
 public class MemberDaoSimulation {
 
 	public static void main(String[] args) {
-		MemberDao mDao = new MemberDao();
+		MemberDaoo mDao = new MemberDaoo();
 		String time = mDao.currentTime();
 		//System.out.println(time);
 		ZipCodeDao zDao = new ZipCodeDao();

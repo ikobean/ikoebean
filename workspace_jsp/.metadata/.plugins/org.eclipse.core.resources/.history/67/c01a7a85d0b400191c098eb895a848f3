@@ -1,0 +1,8 @@
+package com.chain;
+
+public class Block {
+	public String hash = null;
+	public String previousHash = null;
+	private String data = null;
+	private long timeStamp = 0;
+}

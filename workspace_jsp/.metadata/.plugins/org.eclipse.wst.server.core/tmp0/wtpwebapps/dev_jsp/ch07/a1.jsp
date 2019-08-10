@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>a1.jsp</title>
+<title>A1 Include 다이렉티브</title>
 </head>
 <body>
-1.첫번째 코드<br><!-- 실행순서 1 -->
-2.두번째 코드<br><!-- 실행순서 2 -->
-<%@ include file="b1.jsp" %>
-3.세번째 코드<br><!-- 실행순서 6 -->
-4.네번째 코드<br><!-- 실행순서 7 -->
+<% int i=10; %>
+1. 첫번째 코드 <br><!-- 실행순서1 -->
+2. 두번째 코드 <br><!-- 실행순서2 -->
+<%@ include file="B1.jsp" %>
+3. 세번째 코드 <br><!-- 실행순서6-->
+4. 네번째 코드 <br><!-- 실행순서7-->
 </body>
 </html>

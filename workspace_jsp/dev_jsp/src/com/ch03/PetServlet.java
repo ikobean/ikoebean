@@ -35,6 +35,7 @@ public class PetServlet extends HttpServlet {
 				logger.info(target.get("name"));
 				logger.info(target.get("address"));
 				logger.info(target.get("pet"));
+				logger.info("sss");
 			}
 	}
 	

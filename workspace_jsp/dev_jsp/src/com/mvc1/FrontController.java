@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import onlineTest.TestController;
 
 public class FrontController extends HttpServlet {
 	Logger logger = Logger.getLogger(FrontController.class);
@@ -68,8 +67,7 @@ public class FrontController extends HttpServlet {
 			else if("order".equals(work)) {
 				forward = orderCtrl.execute(req, res);
 				
-			}else if("onlineTest".equals(work))
-			{
+			}else if("onlineTest".equals(work))	{
 				/*
 				 * FrontController가 실제 업무를 처리하는 클래스가 아니다.
 				 * 요청건에 따라 해당 업무를 처리하는 클래스(MemberController,TestController)를 배정
@@ -80,15 +78,16 @@ public class FrontController extends HttpServlet {
 				 * 분기를 해야함.
 				 * 기준되는 값이 crud의 담긴 값			
 				 */		
-							req.setAttribute("crud", command);//==> member/memberInsert
-							forward = testCtrl.execute(req, res);
-						}
+				req.setAttribute("crud", command);
+				forward = testCtrl.execute(req, res);
+			}
 			if(forward!=null) {
 				if(forward.isRedirect()) {//새창열기 이전의 리퀘스트가 없어짐.
 					res.sendRedirect(forward.getviewName());
 				}else {
 					RequestDispatcher view = req.getRequestDispatcher(forward.getviewName());
 					view.forward(req, res);
+
 				}
 			}
 	}

@@ -1,0 +1,7 @@
+package com.util;
+
+public class Sha256Util {
+	public static String applySha256(String user) {
+		
+	}
+}

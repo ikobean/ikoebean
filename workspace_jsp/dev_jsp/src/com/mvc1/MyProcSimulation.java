@@ -59,22 +59,23 @@ public class MyProcSimulation {
 //				System.out.println("");
 //			}
 //			
-//			
-//			Object keys[] = pMap.keySet().toArray();//키값을 배열로 담아줌
-//			for(int i=0;i<keys.length;i++) {
-//				String value = (String)pMap.get(keys[i]);
-//				System.out.println(value); //Object 출력 or 주소번지 출력 =>잘못된 것
+				
+			Object keys[] = pMap.keySet().toArray();//키값을 배열로 담아줌
+			for(int i=0;i<keys.length;i++) {
+				String value = (String)pMap.get(keys[i]);
+				System.out.println(value); //Object 출력 or 주소번지 출력 =>잘못된 것
+			}
+		
+			
+			
+//			List<DeptVO> dlist = (List<DeptVO>) pMap.get("key");
+//			for(DeptVO dVO:dlist) {				
+//				System.out.print(dVO.getDeptno()+"||");
+//				System.out.print(dVO.getDname()+"||");
+//				System.out.print(dVO.getLoc());
+//				System.out.println("");
 //			}
 //			
-			
-			List<DeptVO> dlist = (List<DeptVO>) pMap.get("key");
-			for(DeptVO dVO:dlist) {				
-				System.out.print(dVO.getDeptno()+"||");
-				System.out.print(dVO.getDname()+"||");
-				System.out.print(dVO.getLoc());
-				System.out.println("");
-			}
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

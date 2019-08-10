@@ -11,6 +11,9 @@
 	//사용자와 웹서버[톰캣서버,JEUS,Websphere] 사이에 통신을 지원하는 객체
 	var xhrObject = null;
 	function createRequest(){
+		//jquery api 사용하면 생략할 수 있따.
+		//$.ajax({});
+		//아래처럼 직접 객체를 생성하지 않아도 된다.
 		try {
 			xhrObject = new XMLHttpRequest();
 		} catch (trymicrosoft) {
@@ -21,8 +24,13 @@
 		}
 	}
 	//현재 바라보는 경로 ajax 폴더 추가
+	//요청에 대한 처리 구현한 함수
 	function getBoardSold(){
+		//비동기 통신 객체를 생성하기
 		createRequest();
+		//페이지를 갱신하지 않고 서버에 무언가를 요청할 수 있다.
+		//요청을 받는 페이지가 jsp라면 모델1 방식이다.
+		//요청을 받는 페이지가 servlet이면 모델2 방식
 		var url = "./boardSellAction.jsp?"+new Date().getTime();
 		//첫번째 파라미터 : 전송방식 -get|post
 		//두번쨰 파라미터 : 이 요청을 처리할 페이지 이름
@@ -44,6 +52,10 @@
 		//alert(xhrObject.readyState);
 		if(xhrObject.readyState==4){
 			if(xhrObject.status==200){
+			// success:function(data){
+			// alert(data) JSON.parse(data):new Array()
+			// }여기서 가져오는 data가 밑에서 가져오는 newTotal과 같음!
+			
 			var newTotal = xhrObject.responseText;
 			//alert(newTotal);
 			var boardSoldEL = $("#boardSold");

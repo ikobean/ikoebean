@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1" borderColor="green" width="100%" height="100%">
-	<tr>
-		<td align="center">게시판</td>
-	</tr>
-</table>
+	<table border="1" borderColor="green" width="100%" height="100%">
+		<tr>
+			<td align="center"> 게시판 </td>
+		</tr>
+	</table>
 </body>
 </html>

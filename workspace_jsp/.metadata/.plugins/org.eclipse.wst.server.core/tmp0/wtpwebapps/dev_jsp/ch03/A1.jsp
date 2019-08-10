@@ -7,17 +7,13 @@
 <title>A1.jsp</title>
 </head>
 <body>
+여기
 <%
-	String name="john";
-    session.setAttribute("name", name);
-	response.sendRedirect("B1.jsp");//이동
+	String name ="john";
+	session.setAttribute("name", name);
+	response.sendRedirect("B1.jsp");
+	
 %>
+
 </body>
 </html>
-
-
-
-
-
-
-

@@ -12,13 +12,16 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class HashMapBinder {
 	HttpServletRequest req = null;
-	
-	
+	//req 객체를 서블릿에서 받아와야 하니까.
 	public HashMapBinder(HttpServletRequest req) {
 		//??
 		this.req = req;
 	}
-
+	//get방식 요청시 사용할 것
+	/*********************************************************
+	 * @param target Map<String,Object> 객체생성해서 넘길 것.
+	 *	주의 : NullPointerException 맞기 싫으면...
+	 *********************************************************/
 	public void bind(Map<String,Object> target) {
 		//p77의 11-15행 대신 쓰려는 것
 		//파라미터로 넘어온 target 안에 다른 정보가 담겨있다면 제거
@@ -48,7 +51,21 @@ public class HashMapBinder {
 			
 		}
 	}
-
+	//post방식으로 요청시 사용할 것. 한글처리 인코딩 타입은 UTF-8로 하였음.
+	public void bindPost(Map<String,Object> target) {
+		//p77의 11-15행 대신 쓰려는 것
+		//파라미터로 넘어온 target 안에 다른 정보가 담겨있다면 제거
+		target.clear();
+		Enumeration er = req.getParameterNames(); //name,address,pet
+		while(er.hasMoreElements()) {
+			String name = (String)er.nextElement(); //name,address,pet
+				target.put(name,HangulConversion.toUTF(req.getParameter(name))); //address,주소 . name,이름이 들어감
+			//HangulConversion.toUTF(req.getParameter(name)) post 방식에만 가능함. 
+			//get일때는 req.getParameter(name)
+			//target.put(address,req.getParameter(address));
+			//target.put(pet,req.getParameter(pet));
+		}
+	}
 }
 
 

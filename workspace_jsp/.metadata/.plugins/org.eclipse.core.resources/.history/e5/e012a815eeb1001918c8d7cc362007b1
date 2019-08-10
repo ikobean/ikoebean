@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시험 응시</title>
+<%@ include file="../common/JEasyUICommon.jsp" %>
+<script>
+	function prev(p_test){
+		
+	}
+	function next(p_test){
+		
+	}
+</script>
+</head>
+<body>
+      <script type="text/javascript"> 
+      	//DOM구성이 완료되었을 때 콤보박스를 초기화 할 것.
+      	//이 문서 전체를 가리키는 내장객체.
+      	$(document).ready(function(){
+      		
+      		//콤보 초기화
+      		$('#cb_subject').combobox({
+      		  url:"/onlineTest/subjectList.kos?work=onlineTest",
+      		  valueField:'SUB_CD',
+      		  textField:'SUB_NAME',
+      		  panelHeight:'auto',
+      		  onSelect:function(record){
+      			  alert(record.SUB_NAME);
+      		  }
+      		});
+      	});
+    	function start(){
+    		//alert("gd");
+  			$('#dlg_test1').dialog("open");
+  			$.ajax({
+  	    		url:"/onlineTest/swDesignExam.kos?work=onlineTest&sub_cd=1001"
+  	    	   ,dataType:'json'
+  	    	   ,success:function(data){
+  	    		   
+  	    	   }
+  	    	   
+  	    	});
+  			
+  		}
+    	
+    	
+      </script>
+ <!-- 
+ ===========================================================================================
+ 					test take 창 만들기 시작
+ ===========================================================================================
+  -->
+
+ <div class="easyui-panel" id="pl_takeatest" title="Take a Test" style="width:70%;max-width:400px;padding:30px 30px" >
+	<div style="margin-bottom:20px">
+		<select class="easyui-combobox" id="cb_subject" name="cb_subject" label="수험 과목 선택: " labelPosition="top" style="width:70%;"
+		data-options="prompt:'수험 과목을 선택하세요.'">
+		</select>
+	</div>
+	<div style="margin-bottom:30px">
+		<input class="easyui-textbox" id="tb_examno" name="tb_examno" label="수험번호" labelPosition="top" style="width:70%;">
+	</div>
+	<div>
+		<a id="btn_start" href="javascript:start()" class="easyui-linkbutton" iconCls="icon-ok" style="width:70%;" >시험 시작 </a>
+	</div>
+	<div style="margin-bottom:20px"></div>
+	</div>
+
+	
+   <!-- 
+ ===========================================================================================
+ 					test take 창 만들기 끝
+ ===========================================================================================
+  -->
+
+	<!-- 시험문제1 -->
+	<div id="dlg_test1" class="easyui-dialog" style="width:700px; height:300px" data-options="title:'문제1', closed:'true',buttons:'#btn_test1',modal:true">
+		<div id="d_test1"> 1.다음 중에서....</div>
+	</div>
+	<div id="btn_test1">
+		<a href="javascript:next('dlg_test2')" class="easyui-linkbutton" data-options="iconCls:'icon-search'">다음문제</a>
+	</div>
+	
+	<!-- 시험문제2 -->
+	<div id="dlg_test2" class="easyui-dialog" style="width:700px; height:300px" data-options="title:'문제2', closed:'true',buttons:'#btn_test2',modal:true">
+		<div id="d_test2"> 2.다음 중에서....</div>
+	</div>
+	<div id="btn_test2">
+		<a href="javascript:prev('dlg_test1')" class="easyui-linkbutton" data-options="iconCls:'icon-before'">이전문제</a>
+		<a href="javascript:next('dlg_test3')" class="easyui-linkbutton" data-options="iconCls:'icon-next'">다음문제</a>
+	</div>
+	
+	<!-- 시험문제3 -->
+	<div id="dlg_test3" class="easyui-dialog" style="width:700px; height:300px" data-options="title:'문제3', closed:'true',buttons:'#btn_test3',modal:true">
+		<div id="d_test3"> 3.다음 중에서....</div>
+	</div>
+	<div id="btn_test3">
+		<a href="javascript:prev('dlg_test2')" class="easyui-linkbutton" data-options="iconCls:'icon-before'">이전문제</a>
+		<a href="javascript:next('dlg_test4')" class="easyui-linkbutton" data-options="iconCls:'icon-next'">다음문제</a>
+	</div>
+	
+	<!-- 시험문제4 -->
+	<div id="dlg_test4" class="easyui-dialog" style="width:700px; height:300px" data-options="title:'문제4', closed:'true',buttons:'#btn_test4',modal:true">
+		<div id="d_test4"> 4.다음 중에서....</div>
+	</div>
+	<div id="btn_test4">
+		<a href="javascript:prev('dlg_test3')" class="easyui-linkbutton" data-options="iconCls:'icon-before'">이전문제</a>
+		<a href="javascript:next('dlg_confirm')" class="easyui-linkbutton" data-options="iconCls:'icon-next'">끝</a>
+	</div>
+	
+	<!-- 답안지 확인 -->
+		<div id="dlg_confirm" class="easyui-dialog" style="width:700px; height:300px" data-options="title:'답안지 제출하기', closed:'true',buttons:'#btn_test4',modal:true">
+		<div id="d_test4"> 수고하셨습니다. 답안지 제출 버튼을 눌러주세요</div>
+	</div>
+	<div id="btn_confirm">
+		<a href="javascript:examSend()" class="easyui-linkbutton" data-options="iconCls:'icon-next'">답안지 제출</a>
+	</div>
+</body>
+</html>

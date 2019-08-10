@@ -7,10 +7,11 @@
 <title>index.jsp페이지에 삽입되므로 title은 보이지 않음.</title>
 </head>
 <body>
-<!-- top영역에서 width 와 height를 상수로 처리했으므로 %로 처리하면 됨. -->
-<table border="1" borderColor="orange" width="100%" height="100%">
+
+<!-- index.jsp top영역에서 width와 height을 상수로 처리했으므로 %로 처리하면 됨. -->
+<table width="100%" height="100%" borderColor="orange" border="1">
 	<tr>
-		<td align="center">메인 페이지 - 화면 템플릿 작업</td>
+		<td align="center">	메인 페이지 - 화면 템플릿 </td>
 	</tr>
 </table>
 </body>

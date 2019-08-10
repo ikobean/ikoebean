@@ -2,62 +2,66 @@
     pageEncoding="UTF-8"%>
 <%
 	String menu = request.getParameter("menu");
-	out.print(menu);
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>소프트인재개발원</title>
+<title>Insert title here</title>
 </head>
 <body>
-<table align="center" border="0" width="1000px" height="480px">
-<!-- top 영역 -->
+<table border=0 width="1000" height="500">
+<!-- top 영억 -->
 	<tr>
-		<td><jsp:include page="top.jsp" flush="false"/></td>
+	<td height="50" >
+	
+	<jsp:include page="top.jsp" flush="false"/></td>
 	</tr>
-<!-- body 영역 -->
+<!-- body 영억 -->
 	<tr>
 		<td>
-		<table border="0" width="1000px" height="400px">
-			<tr>
-<!-- menu 영역 -->			
-			<td width="200px" height="400px">
-			<!-- 메뉴에는 로그인 , 온라인 시험, 게시판 -->
-			<jsp:include page="menu.jsp" flush="false"/>
-			</td>
-<!-- main 영역 -->			
-			<td width="800px" height="400px">
+			<table border=1 width="1000" height="400">
+				<tr>
+<!-- menu 영억 -->
+					<td width="200" >
+					<jsp:include page="menu.jsp" flush="false"/>
+						
+					</td>
+<!-- main 영억 -->					
+					<td>
 <%
 	if("login".equals(menu)){
-%>			
-			<jsp:include page="login.jsp" flush="false"/>
+%>	
+		<jsp:include page="login.jsp" flush="false"/>
 <%
+
 	}
 	else if("test".equals(menu)){
-%>			
-			<jsp:include page="test.jsp" flush="false"/>
+	
+%>
+		<jsp:include page="test.jsp" flush="false"/>
 <%
 	}
 	else if("board".equals(menu)){
+
 %>
-			<jsp:include page="board.jsp" flush="false"/>
-<%
-	}
-	else{
-%>
-			<jsp:include page="main.jsp" flush="false"/>
+		<jsp:include page="board.jsp" flush="false"/>
 <%
 	}
 %>
-			</td>
-			</tr>
-		</table>
+					</td>
+				</tr>
+			
+			</table>
 		</td>
 	</tr>
-<!-- bottom 영역 -->
+<!-- bottom 영억 -->
 	<tr>
-		<td><jsp:include page="bottom.jsp" flush="false"/></td>
+		<td height="50">
+		<jsp:include page="bottom.jsp" flush="false"/>
+		
+		</td>
 	</tr>
 </table>
 </body>

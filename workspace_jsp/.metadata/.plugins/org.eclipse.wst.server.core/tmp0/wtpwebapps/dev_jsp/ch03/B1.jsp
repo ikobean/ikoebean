@@ -4,13 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>B1.jsp</title>
+<title>B.jsp</title>
 </head>
 <body>
 <%
-	String name = (String)session.getAttribute("name");
-	out.print(name);//여기(request)에는 name에 해당하는 값이 없다. 
+	String name =(String) session.getAttribute("name");
+	
+	out.print(name); //null 여기 (request)에는 해당하는 값이 없다.
+	
 %>
-<h3>B1.jsp로 이동되었다.</h3>
+<h3>꺄르르</h3>
+
 </body>
 </html>

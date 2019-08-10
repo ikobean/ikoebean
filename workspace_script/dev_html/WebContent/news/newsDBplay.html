@@ -16,9 +16,10 @@
 				   //(). 아래에 쓰면 innerHTML -> html(), innerText -> text(); : jquery
 					   $("#d_news").html(result);
 				   }
+				//xhrObject=>XMLHttpRequest
 				   ,fail:function(xhrObject,textStatus){
 					   alert("Request failed: " + textStatus);
-					   alert(xhrObject.responseText);
+					   alert(xhrObject.responseText);//에러메세지 출력-힌트
 				   }
 				});
 			}

@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
- * 
  * 표준 서블릿을 사용하면 리턴타입 변경 불가
- * 파라미터 갯수 변경 불거
+ * 파라미터 갯수 변경 불가
  */
 public interface Action {
 	public List<Map<String,Object>> test(HttpServletRequest req, HttpServletResponse res) 

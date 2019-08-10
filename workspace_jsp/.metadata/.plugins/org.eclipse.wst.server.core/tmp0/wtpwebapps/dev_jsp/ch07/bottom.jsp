@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- bottom영역에서 width 와 height를 상수로 처리했으므로 %로 처리하면 됨. -->
-<table border="1" borderColor="brown" width="100%" height="100%">
+
+<table width="100%" height="100%" borderColor="red" border="1">
 	<tr>
-		<td align="center">회사소개|회사 연혁|오시는 길</td>
+		<td align="center"> | 회사소개 | 회사 연혁 | 오시는 길 | </td>
 	</tr>
 </table>
 </body>

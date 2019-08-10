@@ -6,15 +6,21 @@ import java.util.ArrayList;
 public class MemberVO implements Serializable {
 	
 	/**
-	 * 
+	 * 전역변수를 private으로 하는 것을 권장함.
+	 * 이유가 뭘까?
+	 * 인스턴스화 하기
+	 * 네이버 1초당 2000명 입장
+	 * 그 중에서 200명 회원가입 진행한다.
 	 */
 	private static final long serialVersionUID = 4137373418319886949L;
-	public String  mem_id      ="" ;
-	public String  mem_pw      ="" ;
-	public String  mem_name    ="" ;
-	public String  mem_addr    ="" ;
-	public String  mem_zipcode ="" ;
-	public ArrayList<TakeExaminationVO> key = null;
+	private String  mem_id      ="" ;
+	private String  mem_pw      ="" ;
+	private String  mem_name    ="" ;
+	private String  mem_addr    ="" ;
+	private String  mem_zipcode ="" ;
+
+	private ArrayList<TakeExaminationVO> key = null;
+	
 	/*
 	 * VO는 보통 테이블 컬럼을 담는 것이 일반적이지나 개발자가 필요한 정보도 추가로 담을 수 있다.
 	 * r_status 는 proc_login 프로시저에서 사용되는 out 속성으로

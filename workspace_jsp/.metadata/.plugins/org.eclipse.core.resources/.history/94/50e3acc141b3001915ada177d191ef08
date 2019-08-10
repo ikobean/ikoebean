@@ -1,0 +1,6 @@
+package com.mvc2;
+
+public interface Controller {
+	public String execute(HttpServletRequest req,HttpServletResponse res)
+	throws Exception;
+}

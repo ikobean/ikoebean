@@ -1,0 +1,31 @@
+package com.mvc2;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+public class Member2Controller implements Controller {
+	Logger logger = Logger.getLogger(Member2Controller.class);
+	String requestName = null;
+	String crud		   = null;
+	String path 	   = null;
+	public Member2Controller(String requestName, String crud) {
+		this.requestName = requestName;
+		this.crud		 = crud;
+	}
+
+	@Override
+	public String execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		logger.info("excute 호출 성공");
+		if("login".equals(crud)) {
+			path = "redirect:/onlineTest/loginAccount.jsp";
+			//path = "redirect:/onlineTest/getSubjectList.kos";
+		}
+		else if("index".equals(crud)) {
+			path = "redirect:/onlineTestVer2/index.jsp";
+		}
+		return path;
+	}
+
+}

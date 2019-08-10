@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1" borderColor="green" width="100%" height="100%">
-	<tr>
-		<td align="center">로그인</td>
-	</tr>
-</table>
+까꿍
+
 </body>
 </html>

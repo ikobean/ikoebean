@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mybatis.mapper.onlineTestMapper">
+<mapper namespace="com.mybatis.mapper.OnlineTestMapper">
+	<resultMap type="com.vo.SwDesignVO" id="swDVO" />
+ 	 <select id="isOk" parameterType="map" resultType="string">
+	 	SELECT NVL((SELECT '승인' FROM take_examination
+	 	 				WHERE mem_id	= #{mem_id}
+	 	 				AND   exam_no	= #{exam_no}), '확인불가')
+	 		FROM dual
+	 </select> 
+	 <select id="swDesignExam" parameterType="map" statementType="CALLABLE">
+		{call proc_swDesign(#{key, jdbcType=CURSOR, mode=OUT, javaType=java.sql.ResultSet, resultMap=swDVO})}
+	</select> 
+	
 	<select id="subjectList" parameterType="map" resultType="map">
 		SELECT SUB_CD, SUB_NAME
 		FROM online_subject

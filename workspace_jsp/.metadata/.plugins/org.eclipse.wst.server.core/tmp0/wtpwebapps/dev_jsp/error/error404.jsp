@@ -7,6 +7,8 @@
 <title>404에러</title>
 </head>
 <body>
-요청 페이지는 존재하지 않습니다.
+<strong>
+요청하신 페이지는 존재하지 않습니다.
+</strong>
 </body>
 </html>

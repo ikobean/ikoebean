@@ -7,10 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1" borderColor="green" width="100%" height="100%">
-	<tr>
-		<td align="center">콘텐츠</td>
-	</tr>
+<table width="100%" height="100%" borderColor="green" border="1">
 </table>
+
 </body>
 </html>

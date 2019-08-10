@@ -203,6 +203,12 @@
       "url": "http://json.schemastore.org/commands"
     },
     {
+      "name": "cosmos.config.json",
+      "description": "React Cosmos configuration file",
+      "fileMatch": [ "cosmos.config.json" ],
+      "url": "http://json.schemastore.org/cosmos-config"
+    },
+    {
       "name": "Chrome Extension",
       "description": "Google Chrome extension manifest file",
       "url": "http://json.schemastore.org/chrome-manifest"
@@ -222,7 +228,7 @@
     {
       "name": "cloudbuild.json",
       "description": "Google Cloud Build configuration file",
-      "fileMatch": ["cloudbuild.json","cloudbuild.yaml","cloudbuild.yml", "*.cloudbuild.json"],
+      "fileMatch": [ "cloudbuild.json", "cloudbuild.yaml", "cloudbuild.yml", "*.cloudbuild.json", "*.cloudbuild.yaml", "*.cloudbuild.yml" ],
       "url": "http://json.schemastore.org/cloudbuild"
     },
     {
@@ -564,7 +570,7 @@
     {
       "name": "kustomization.yaml",
       "description": "Kubernetes native configuration management",
-      "fileMatch": ["kustomization.yaml","kustomization.yml"],
+      "fileMatch": [ "kustomization.yaml", "kustomization.yml" ],
       "url": "http://json.schemastore.org/kustomization"
     },
     {
@@ -662,7 +668,7 @@
       "name": "openapi.json",
       "description": "A JSON schema for Open API documentation files",
       "fileMatch": [ "openapi.json", "openapi.yml", "openapi.yaml" ],
-      "url": "https://raw.githubusercontent.com/kogosoftwarellc/open-api/master/packages/openapi-schema-validator/resources/openapi-3.0.json"
+      "url": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/schemas/v3.0/schema.json"
     },
     {
       "name": "openfin.json",
@@ -1152,7 +1158,7 @@
     {
       "name": "huskyrc",
       "description": "Husky can prevent bad `git commit`, `git push` and more 🐶 woof!",
-      "fileMatch": [".huskyrc", ".huskyrc.json"],
+      "fileMatch": [ ".huskyrc", ".huskyrc.json" ],
       "url": "http://json.schemastore.org/huskyrc"
     },
     {
@@ -1162,10 +1168,10 @@
       "url": "http://json.schemastore.org/lintstagedrc.schema"
     },
     {
-      "name": "mta",
-      "description": "A JSON schema for MTA projects (mta.yaml files)",
+      "name": "mta.yaml",
+      "description": "A JSON schema for MTA projects v3.2",
       "fileMatch": [ "mta.yaml", "mta.yml" ],
-      "url": "http://json.schemastore.org/mta-3.1"
+      "url": "http://json.schemastore.org/mta"
     },
     {
       "name": "mtad.yaml",
@@ -1178,6 +1184,21 @@
       "description": "A JSON schema for MTA extension descriptors v3.3",
       "fileMatch": [ "*.mtaext" ],
       "url": "http://json.schemastore.org/mtaext"
+    },
+    {
+      "name": "Opctl",
+      "description": "Opctl schema for describing an op",
+      "url": "http://json.schemastore.org/opspec-io-0.1.7",
+      "fileMatch": [ ".opspec/*/*.yml", ".opspec/*/*.yaml" ]
+    },
+    {
+      "name": "HEMTT",
+      "description": "HEMTT Project File",
+      "url": "http://json.schemastore.org/hemtt-0.6.2",
+      "fileMatch": [ "hemtt.json", "hemtt.toml" ],
+      "versions": {
+        "0.6.2": "http://json.schemastore.org/hemtt-0.6.2"
+      }
     }
   ]
 }

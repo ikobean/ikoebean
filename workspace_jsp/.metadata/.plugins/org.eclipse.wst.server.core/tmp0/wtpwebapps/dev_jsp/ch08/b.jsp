@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.vo.MemberVO" %>    
+<%@ page import="com.vo.MemberVO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,16 +14,16 @@
 	out.print("<br>");
 	out.print(mvo.getMem_name());
 	out.print("<br>");
-	out.print(mvo.getMem_addr());
+	
 %>
+<%=
+	mvo.getMem_id()
+
+%>
+<%=
+	mvo.getMem_name()
+
+%>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
