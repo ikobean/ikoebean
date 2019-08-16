@@ -1,0 +1,17 @@
+package mvc3;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.util.MyBatisCommonFactory;
+
+public class SNSDao {
+	Logger logger = Logger.getLogger(SNSDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	public SNSDao() {
+		sqlSessionFactory= 
+				MyBatisCommonFactory.getSqlSessionFactory(); //공통코드 static이라서 인스턴스화 없이 메소드 호출 가능.
+	}
+}

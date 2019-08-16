@@ -1,0 +1,17 @@
+package com.b_board;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+
+import com.vo.BoardMasterVO;
+
+public class BoardLogic2 {
+	Logger logger = Logger.getLogger(BoardLogic2.class);
+	public List<Map<String, Object>> boardList(BoardMasterVO bmVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

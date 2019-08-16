@@ -1,0 +1,17 @@
+package com.b_board;
+
+public class ControllerMapping2 {
+	static String crud="";
+	public static Controller2 getController(String command, String crud) {
+		
+		ControllerMapping2.crud=crud;
+		Controller2 controller2 = null;
+		
+		String commands[]= command.split("/");
+		String work = commands[0];
+		String requestName = commands[1];
+		
+		return null;
+	}
+
+}

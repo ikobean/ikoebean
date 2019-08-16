@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>삭제화면</title>
+<%@ include file="/common/JEasyUICommon.jsp" %>
+</head>
+<body>
+<div>
+	<input class="easyui-passwordbox" id="bm_pw" name="bm_pw" label="비밀번호">
+</div>
+</body>
+</html>

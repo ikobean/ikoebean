@@ -1,0 +1,8 @@
+package com.b_board;
+
+public interface Controller2 {
+
+	public abstract String excute(HttpServletRequest req,
+			HttpServletResponse res)
+	throws Exception;
+}

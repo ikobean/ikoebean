@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+    <div class="col-sm-8">
+    <!-- 메세지 입력 부분 -->
+	  <div class="card">
+	    <input type="hidden" name="favcnt" value="0">
+	    
+			<div class="card-header">
+				<form class="was-validated" id="f_write">
+	    <input type="hidden" id="mno" name="mno" value="0">
+	    <input type="hidden" name="msg_date" value="0">
+				<div class="form-inline" >
+					<textarea class="form-control" placeholder="Enter your ID" rows="1"  id="mem_id" name="mem_id" required></textarea>
+				</div>
+				<div style="margin-bottom:20px"></div>
+				<div>
+					<textarea class="form-control" placeholder="무슨일이 일어나고 있나요?"rows="5" id="msg" name="msg"></textarea>
+				</div> 
+				<div style="margin-bottom:20px"></div>
+				<div class="form-inline">
+		 			<textarea class="form-control" placeholder="Enter password" rows="1"  id="mem_pw" name="mem_pw" required></textarea>
+		 			&nbsp;&nbsp;
+		 			<a role="button" class="btn btn-success btn-m text-light" href="javascript:write()" id="btn_write" name="btn_write">글쓰기</a>
+				</div>
+				</form>
+			</div>
+		</div>
+    </div>
+
+</body>
+</html>

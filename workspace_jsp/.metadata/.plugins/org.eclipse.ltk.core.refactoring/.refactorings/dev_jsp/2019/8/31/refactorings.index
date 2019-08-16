@@ -4,3 +4,11 @@
 1564648492572	Rename type 'TestLogic'
 1564648501461	Rename type 'MemberDao'
 1564648509373	Rename type 'MemberLogic'
+1564825370060	Move 'html.jsp' to 'onlineTest_HY'
+1564825374653	Move 'jsp.jsp' to 'onlineTest_HY'
+1564825382363	Move 'jsp.jsp' to 'onlineTest'
+1564825384834	Move 'html.jsp' to 'onlineTest'
+1564825392275	Delete elements
+1564825403710	Copy files
+1564825449145	Copy file
+1564825518762	Copy file

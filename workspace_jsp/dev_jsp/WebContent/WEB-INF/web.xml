@@ -19,7 +19,16 @@
   	<error-code>404</error-code>
   	<location>/error/error404.jsp</location>
   </error-page> -->
-  
+  <servlet>
+		<servlet-name>POJO_MVC3</servlet-name>
+		<servlet-class>com.mvc3.ActionServletVer3</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>POJO_MVC3</servlet-name>
+		<url-pattern>*.mvc</url-pattern>
+	</servlet-mapping>
+	
+	
   <servlet>
   	<servlet-name>POJO_MVC1</servlet-name>
   	<servlet-class>com.mvc1.FrontController</servlet-class>

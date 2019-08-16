@@ -1,0 +1,5 @@
+package com.b_board;
+
+public interface Controller2 {
+
+}

@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%@ include file ="/common/BootStrapCommon.jsp" %>
+<%@ include file ="/common/JEasyUICommon.jsp" %>
+<script>
+
+	function boardList(){
+		alert("boardList 호출성공")
+	}
+	
+	$(document).ready(function (){
+		$("#tb_board").Datatable({
+			
+		})
+	
+			
+	});
+
+
+
+</script>
+
+
+<meta charset="UTF-8">
+<title>부트스트랩 게시판</title>
+</head>
+<body>
+
+	<table id="tb_board" class="table" style="width:1000px">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th data-options="field:'BM_NO'" scope="col" style="width:50px">#</th>
+	      <th data-options="field:'BM_TITLE'" scope="col" style="width:550px" id="bm_title">제목</th>
+	      <th data-options="field:'BM_WRITER'" scope="col" style="width:100px" id="bm_writer">작성자</th>
+	      <th data-options="field:'BM_HIT'" scope="col" style="width:70px" id="bm_hit">조회수</th>
+	    </tr>
+	   </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td>가나다</td>
+	      <td>111</td>
+	      <td>111</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	        <td>마바사</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	        <td>아자차</td>
+	    </tr>
+	  </tbody> 
+	  <tfoot>
+	  		<!-- 버튼추가 -->
+		  <tr align="right">
+		  	<td colspan="4">
+				<a role="button" href="javascript:boardList()"  class="btn btn-outline-warning">조회</a>
+				<a role="button" href="#"  class="btn btn-outline-primary">입력</a>
+				<a role="button" href="#"  class="btn btn-outline-secondary">수정</a>
+				<a role="button" href="#"  class="btn btn-outline-danger">삭제</a>
+			</td>
+		  </tr>
+	  </tfoot>
+	</table>
+
+</body>
+</html>

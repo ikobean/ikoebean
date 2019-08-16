@@ -1,0 +1,26 @@
+package com.b_board;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.util.MyBatisCommonFactory;
+import com.vo.BoardMasterVO;
+
+public class BoardDao2 {
+	Logger logger = Logger.getLogger(BoardDao2.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	
+	public BoardDao2() {
+		sqlSessionFactory=
+				MyBatisCommonFactory.getSqlSessionFactory();
+	}
+	
+	public List<Map<String, Object>> boardList(BoardMasterVO bmVO) {
+		
+		return null;
+	}
+
+}

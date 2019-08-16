@@ -1,0 +1,351 @@
+
+package com.mvc2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.util.MyBatisCommonFactory;
+import com.vo.BoardMasterVO;
+import com.vo.BoardSubVO;
+
+public class BoardDao {
+	Logger logger = Logger.getLogger(BoardDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	public BoardDao() {
+		sqlSessionFactory= 
+				MyBatisCommonFactory.getSqlSessionFactory(); //공통코드 static이라서 인스턴스화 없이 메소드 호출 가능.
+	}
+	/*
+	 * MyBatis의 전신인 iBatis의 경우에는 스레드에 안전한 SqlMapClient 클래스가 사라졌다.
+	 * SqlMapClient객체 대신 스레드에 안전하지 않은 SqlSession 객체를 사용하여 질의를 수행함.
+	 * SqlSession이 스레드에 안전하지 않은 이유는 요청(request) 또는 메소드 범위의 객체이기 때문이다.
+	 * 또 SqlSession은 SqlMapClient와 달리 반드시 사용한 자원을 해제해야 한다.
+	 * 
+	 * 나아진 점도 있다.
+	 * 그것은 트랙잭션을 시작하는 메소드가 없어도 트랜잭션 처리를 할 수 있다는 것이다.
+	 * 왜 자원 해제의 누락으로 애플리케이션의 안정성을 해칠 수도 있는 로직을 개발자에게 떠넘긴걸까?
+	 * 
+	 * MyBatis 프레임워크를 Spring 프레임워크와 결합하여 SqlSessionTemplate 클래스를 사용하면
+	 * 자원 해제에 대한 문제는 고려하지 않아도 된다.
+	 * 
+	 */
+	public List<Map<String, Object>> boardList(BoardMasterVO bmVO) {
+		/*
+		 * 웹페이지는 exception이 발생하면 화면을 확인할 수가 없다.
+		 * 따라서 에러 상황을 파악하는데 화면이 필요할 때는 초기화를 반드시 해줌
+		 */
+		List<Map<String, Object>> boardList = new ArrayList<>();
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			boardList = sqlSession.selectList("boardList",bmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		
+		return boardList;		
+	}
+	public List<Map<String, Object>> boardDetail(BoardMasterVO bmVO) {
+		/*
+		 * 웹페이지는 exception이 발생하면 화면을 확인할 수가 없다.
+		 * 따라서 에러 상황을 파악하는데 화면이 필요할 때는 초기화를 반드시 해줌
+		 */
+		List<Map<String, Object>> boardDetail = new ArrayList<>();
+		try {
+			 sqlSession 
+			= sqlSessionFactory.openSession();
+			boardDetail = sqlSession.selectList("boardDetail",bmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		
+		return boardDetail;		
+	}
+	
+	public int boardMAdd(BoardMasterVO bmVO) {
+		logger.info("boardMAdd 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.update("boardMAdd", bmVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return result;		
+	
+	}
+	
+	public int boardSAdd(BoardSubVO bsVO) {
+		logger.info("boardSAdd 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.update("boardSAdd", bsVO);
+			sqlSession.commit();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return result;		
+	}
+
+
+	public int boardMUpd(BoardMasterVO bmVO) {
+		logger.info("boardMUpd 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.update("boardMUpd", bmVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		logger.info("master테이블 업데이트 결과 :"+result);
+		return result;		
+	}
+	
+	public int boardSUpd(BoardSubVO bsVO) {
+		logger.info("boardSUpd 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.update("boardSUpd", bsVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		logger.info("sub 테이블 업데이트 결과 :"+result);
+		return result;		
+	}
+
+	public int boardSDel(BoardSubVO bsVO) {
+		logger.info("boardSDel 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.delete("boardSDel", bsVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		logger.info("sub테이블 삭제 결과 :"+result);
+		return result;
+	}
+	public int boardMDel(BoardMasterVO bmVO) {
+		logger.info("boardMDel 호출 성공");
+		int result=0;
+		try {
+			 sqlSession 
+				= sqlSessionFactory.openSession();
+			result = sqlSession.delete("boardMDel", bmVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		logger.info("master테이블 삭제 결과 :"+result);
+		return result;
+	}
+	
+	public int getTotal(BoardMasterVO bmVO) {
+		logger.info("getTotal 호출 성공");
+		int total=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+			total = sqlSession.selectOne("getTotal",bmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return total;
+	}
+	public int hitCount(int bm_no) {
+		logger.info("hitCount 호출 성공");
+		int result=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+									   //xml에 있는 아이디랑 맞춰주기
+			bm_no = sqlSession.update("hitCount",bm_no);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return result;
+	}
+	public int getBmno() {
+		logger.info("getBmno 호출 성공");
+		int bm_no=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+									   //xml에 있는 아이디랑 맞춰주기
+			bm_no = sqlSession.selectOne("getBmno");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return bm_no;
+	}
+	
+	public int getUBmno() {
+		logger.info("getUBmno 호출 성공");
+		int bm_no=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+			//xml에 있는 아이디랑 맞춰주기
+			bm_no = sqlSession.selectOne("getUBmno");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return bm_no;
+	}
+	
+	public int getBmgroup() {
+		logger.info("getBmgroup 호출 성공");
+		int bm_group=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+			//xml에 있는 아이디랑 맞춰주기
+			bm_group = sqlSession.selectOne("getBmgroup");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return bm_group;
+	}
+	public int bmStepUpdate(BoardMasterVO bmVO) {
+		int result=0;
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+									   //xml에 있는 아이디랑 맞춰주기
+			result = sqlSession.update("bmStepUpdate",bmVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return result;
+		
+	}
+	
+	public  List<Map<String, Object>> rowData(BoardMasterVO bmVO) {
+		List<Map<String, Object>> rowData = new ArrayList<>();
+		
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			//xml에 있는 아이디랑 맞춰주기
+			rowData = sqlSession.selectList("rowData",bmVO);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return rowData;
+		
+	}
+
+	public String getDbFile(int bm_no) {
+		logger.info("getDbFile 호출 성공");
+		String getDbFile="";
+		try {
+			 sqlSession = sqlSessionFactory.openSession();
+			//xml에 있는 아이디랑 맞춰주기
+			 getDbFile = sqlSession.selectOne("getDbFile",bm_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return getDbFile;
+	}
+	
+	public Map<String,Object> updatefile(int bm_no) {
+		logger.info("updatefile 호출 성공");
+		Map<String,Object> updatefile=null;
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			//xml에 있는 아이디랑 맞춰주기
+			updatefile = sqlSession.selectOne("updatefile",bm_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return updatefile;
+	}
+
+
+}

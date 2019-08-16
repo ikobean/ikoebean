@@ -1,0 +1,113 @@
+package com.mvc3;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.util.HashMapBinder;
+import com.vo.SNSMessageSet;
+import com.vo.SNSMessageVO;
+
+public class SNSController implements ControllerVer3 {
+	Logger logger = Logger.getLogger(SNSController.class);
+	String requestName = null;
+	String crud = null;
+	SNSLogic snsLogic = null;
+	SNSMessageVO smVO = null;
+	
+	public SNSController(String requestName, String crud) {
+		this.requestName = requestName;
+		this.crud = crud;
+		SNSMessageVO smVO = new SNSMessageVO();
+		snsLogic = new SNSLogic();
+	}
+	@Override
+	public ModelAndView execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		logger.info("execute 호출 성공");
+		ModelAndView mav = null;
+		// mySNS/test.mo?crud=smsgList
+		if("smsgList".equals(crud)) {
+			List<SNSMessageSet> smsgList = null;
+			smsgList = snsLogic.smsgList();
+			logger.info("smsgList.size() ==> "+smsgList.size());
+	
+			
+			mav = new ModelAndView();
+			mav.addObject("smsgList", smsgList);
+			mav.setViewName("./bootMsgList.jsp");
+			/*
+			List<String> nameList = new ArrayList<>();
+			nameList.add("김유신");
+			mav.addObject("list", nameList);
+			List<String> nickList = new ArrayList<>();
+			nickList.add("나초보");
+			mav.addObject("list2", nickList);
+			*/			
+		}else if("write".equals(crud)) {
+			int result=0;
+			logger.info("SNScontroller write 호출 성공");
+			Map<String,Object> pMap = new HashMap<>();
+			HashMapBinder hmb = new HashMapBinder(req);
+			hmb.bindPost(pMap);
+			result= snsLogic.write(pMap);
+			mav = new ModelAndView();
+			mav.setViewName("./main_sns.jsp");
+			
+		}else if("snsDel".equals(crud)) {
+			int result=0;
+			logger.info("SNScontroller sns_del 호출 성공");
+			Map<String,Object> pMap = new HashMap<>();
+			HashMapBinder hmb = new HashMapBinder(req);
+			hmb.bindPost(pMap);
+			result= snsLogic.snsDel(pMap);
+			mav = new ModelAndView();
+			//mav.addObject("smsgList", smsgList);
+			mav.setViewName("./main_sns.jsp");
+		}
+		else if("favcnt".equals(crud)) {
+			int result=0;
+			int mno=0;
+			int favcnt=0;
+			logger.info("SNScontroller favcnt 호출 성공");
+			Map<String,Object> pMap = new HashMap<>();
+			HashMapBinder hmb = new HashMapBinder(req);
+			hmb.bindPost(pMap);
+			
+			//req.setAttribute("mno", mno);
+			//req.setAttribute("favcnt", favcnt);
+			
+			logger.info("컨트롤러 mno=========>"+mno);
+			logger.info("컨트롤러 favcnt=========>"+favcnt);
+			if(req.getParameter("mno")==pMap.get("mno")) {
+				mno= Integer.parseInt(req.getParameter("mno").toString());
+				favcnt= Integer.parseInt(req.getParameter("favcnt").toString());
+			}
+			smVO.setMno(mno);
+			smVO.setFavcnt(favcnt);
+			
+			result= snsLogic.favcnt(pMap);
+			mav = new ModelAndView();
+			//ajax로 처리하고 싶은데 어떡하지?
+			//mav.addObject("smsgList", smsgList);
+			mav.setViewName("./main_sns.jsp");
+		}
+		return mav;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+

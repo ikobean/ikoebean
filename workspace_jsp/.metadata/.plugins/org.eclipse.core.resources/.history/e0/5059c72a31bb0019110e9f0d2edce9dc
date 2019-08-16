@@ -1,0 +1,55 @@
+package com.b_board;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+public class ActionServlet2 extends HttpServlet {
+
+	Logger logger = Logger.getLogger(ActionServlet2.class);
+	public void doService(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException{
+		
+		String requestURI = req.getRequestURI();
+		String contextPath = req.getContextPath();
+		String command = requestURI.substring(contextPath.length()+1);
+		Controller2 controller2=null;
+		String crud = req.getParameter("crud");
+		
+		logger.info("requestURI:" +requestURI);
+		logger.info("contextPath: "+contextPath);
+		logger.info("command: "+command);
+		logger.info("crud:" +crud);
+		
+		try {
+			controller2 = ControllerMapping2.getController(command, crud);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		if(controller2!=null) {
+			String pageMove[]=null;
+			try {
+				String ret = controller2.excute(req, res);
+				pageMove = ret.split(":");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+	public void doGet(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException,IOException{
+				doService(req,res);
+	}
+		
+		public void doPost(HttpServletRequest req, HttpServletResponse res) 
+			throws ServletException,IOException{
+				doService(req,res);
+	}	
+}

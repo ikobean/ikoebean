@@ -37,11 +37,11 @@
             		   where mem_id=#{mem_id}),'아이디가 존재하지 않습니다.') status
                 FROM dual
 	</select>
-	<select id="login" parameterType="com.vo.MemberVO" resultType="java.lang.String">
+<!-- 	<select id="login" parameterType="com.vo.MemberVO" resultType="java.lang.String">
 	select nvl((select mem_name|| '님 환영합니다.' from member
             where mem_id=#{mem_id} 
               AND mem_pw=#{mem_pw}),'비밀번호가 틀립니다.') 
             FROM dual
-	</select>
+	</select> -->
 </mapper> 
  

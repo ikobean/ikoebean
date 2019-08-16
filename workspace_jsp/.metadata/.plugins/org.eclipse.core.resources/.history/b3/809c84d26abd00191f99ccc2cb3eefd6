@@ -1,0 +1,5 @@
+package mvc3;
+
+public interface ControllerVer3 {
+
+}

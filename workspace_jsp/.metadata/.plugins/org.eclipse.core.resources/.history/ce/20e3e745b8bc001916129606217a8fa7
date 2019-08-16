@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String bm_no = request.getParameter("bm_no");
+	String bm_pw = request.getParameter("bm_pw");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글삭제</title>
+<%@ include file="/common/JEasyUICommon.jsp" %>
+
+<script>
+//삭제
+function deleteForm(){
+	$("#dlg_boardDel").dialog({
+		 buttons: btn_boardDel
+		,title:'글삭제'
+		,width: '420px'
+		,height: '250px'
+		,modal: true
+		,href:'boardDelForm.jsp?bm_no=<%=rMap.get("BM_NO")%>&bm_pw=<%=rMap.get("BM_PW")%>'
+	});
+	$('#dlg_boardDel').dialog('open');	
+	
+/* 		$('#f_boardRead').attr("method","post");
+	$('#f_boardRead').attr("action","/board/test.nb?crud=boardDel");
+	$('#f_boardRead').submit();
+	$('#pan_read').panel('close'); */
+}
+</script>
+</head>
+<body>
+<div class="easyui-dialog" id="dlg_boardDel" data-options="footer:'btn_boardDel'">
+	<input class="easyui-passwordbox" id="bm_pw" name="bm_pw" label="비밀번호: " style="width:200px;height:25px">
+	<!-- 확인 버튼과 닫기 버튼 추가 -->
+	<div id="btn_boardDel" align="right" >
+		<a href="javascript:boardDel()" class="easyui-linkbutton" iconCls="icon-ok">확인</a>
+		<a href="javascript:boardDelClose()" class="easyui-linkbutton" iconCls="icon-cancel">닫기</a>
+	</div>
+</div>
+</div>
+
+
+<!-- ===================[[글 삭제하기]]====================== -->
+</body>
+</html>

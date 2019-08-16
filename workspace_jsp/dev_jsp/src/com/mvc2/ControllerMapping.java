@@ -2,6 +2,7 @@ package com.mvc2;
 
 import com.mvc1.TestController;
 
+
 public class ControllerMapping {
 	static String crud = "";
 	/************************************************************
@@ -15,7 +16,10 @@ public class ControllerMapping {
 		String commands[] = command.split("/"); //  /이걸 기준으로 짤라서 리턴해줌
 		String work = commands[0]; //onlineTest
 		String requestName = commands[1]; //test.nb?crud="select"
-		if("onlineTestVer2".equals(work)) {
+		if("board".equals(work)) {
+			controller = new BoardController(requestName, ControllerMapping.crud);
+		}
+		else if("onlineTestVer2".equals(work)) {
 			controller = new Test2Controller(requestName, ControllerMapping.crud);
 		}
 		else if("member".equals(work)) {

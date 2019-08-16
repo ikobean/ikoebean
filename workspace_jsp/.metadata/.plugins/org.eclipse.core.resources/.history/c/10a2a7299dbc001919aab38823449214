@@ -1,0 +1,11 @@
+package com.b_board;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public interface Controller2 {
+
+	public abstract String excute(HttpServletRequest req,
+			HttpServletResponse res)
+	throws Exception;
+}

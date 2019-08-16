@@ -1,0 +1,43 @@
+package com.b_board;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.vo.BoardMasterVO;
+
+public class BoardController2 implements Controller2 {
+	Logger logger = Logger.getLogger(BoardController.class);
+	BoardMasterVO bmVO = new BoardMasterVO();
+	String requestName = null;
+	String crud		   = null;
+	String path		   = null;
+	BoardLogic2 bLogic = null;
+	int total=0;
+	
+	public BoardController2(String requestName, String crud) {
+		this.requestName=requestName;
+		this.crud=crud;
+		bLogic = new BoardLogic2();
+		BoardMasterVO bmVO = new BoardMasterVO();
+		//total = bLogic.getTotal(bmVO);
+	}
+
+	@Override
+	public String excute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		logger.info("컨트롤러 excute 호출");
+		if("b_boardList".equals(crud)) {
+			logger.info("컨트롤러 =>b_boardList");
+			List<Map<String,Object>> b_boardList=null;
+			b_boardList=bLogic.boardList(bmVO);
+			req.setAttribute("b_baordList", b_boardList);
+			path="forward:b_board.jsp"
+		}
+		return path;
+	}
+
+}

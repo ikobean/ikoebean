@@ -1,0 +1,12 @@
+package com.b_board;
+
+import javax.servlet.http.HttpServlet;
+
+import org.apache.log4j.Logger;
+
+public class ActionServlet2 extends HttpServlet {
+
+	Logger logger = Logger.getLogger(ActionServlet2.class);
+	
+	
+}

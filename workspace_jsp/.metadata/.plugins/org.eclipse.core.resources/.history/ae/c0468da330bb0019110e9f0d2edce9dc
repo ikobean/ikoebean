@@ -1,0 +1,11 @@
+package com.b_board;
+
+public class ControllerMapping2 {
+	static String crud="";
+	public static Controller2 getController(String command, String crud) {
+
+		
+		return null;
+	}
+
+}
