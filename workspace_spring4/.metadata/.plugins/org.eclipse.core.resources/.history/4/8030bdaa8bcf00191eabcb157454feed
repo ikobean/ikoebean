@@ -1,0 +1,22 @@
+package com.login;
+
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.web.bind.annotation.RequestParam;
+//@Service
+public class LoginLogic {
+
+	Logger logger = Logger.getLogger(LoginLogic.class);
+	//Autowired
+	public LoginDao loginDao = null;
+	public void setLoginDao(LoginDao loginDao) {
+		this.loginDao = loginDao;
+	}
+
+	public String login(Map<String,Object> pMap) {
+		String mem_name= loginDao.login(pMap);
+		logger.info("로직 호출성공");
+		return mem_name;
+	}
+}

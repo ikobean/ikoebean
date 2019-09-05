@@ -1,0 +1,18 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+
+public class LoginDao {
+	Logger logger = Logger.getLogger(LoginDao.class);
+	public SqlSessionTemplate sqlSessionTemplate = null;
+
+	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+		this.sqlSessionTemplate = sqlSessionTemplate;
+	}
+
+
+	public void Login() {
+		logger.info("다오 호출성공");
+	}
+}

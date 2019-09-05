@@ -1,0 +1,5 @@
+package com.sts4.news;
+@Service
+public class NewsLogic {
+
+}

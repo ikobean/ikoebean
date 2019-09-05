@@ -28,7 +28,6 @@
 		<url-pattern>*.mvc</url-pattern>
 	</servlet-mapping>
 	
-	
   <servlet>
   	<servlet-name>POJO_MVC1</servlet-name>
   	<servlet-class>com.mvc1.FrontController</servlet-class>

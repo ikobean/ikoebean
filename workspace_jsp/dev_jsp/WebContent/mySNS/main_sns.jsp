@@ -32,31 +32,26 @@
 	});
 	
 	function write(){
-		
 		//alert($('#mno').val());
 		$('#f_write').attr("method","post");
 		$('#f_write').attr("action","/mySNS/test.mvc?crud=write"); //전송을 하는 곳.
 		$('#f_write').submit();
-		
-	
 	}
 	
 </script>
-<div class="jumbotron text-center">
-  <h1>My Simple SNS</h1>
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-    <!-- 메세지 입력 부분 -->
-	  <div class="card">
-	    <input type="hidden" name="favcnt" value="0">
-	    
+	<div class="jumbotron text-center">
+ 	 	<h1>My Simple SNS</h1>
+	</div>
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm-8">
+	    <!-- 메세지 입력 부분 -->
+		  <div class="card">
+		    <input type="hidden" name="favcnt" value="0">
 			<div class="card-header">
-				<form class="was-validated" id="f_write">
-	    <input type="hidden" id="mno" name="mno" value="0">
-	    <input type="hidden" name="msg_date" value="0">
+			<form class="was-validated" id="f_write">
+		    	<input type="hidden" id="mno" name="mno" value="0">
+		    	<input type="hidden" name="msg_date" value="0">
 				<div class="form-inline" >
 					<textarea class="form-control" placeholder="Enter your ID" rows="1"  id="mem_id" name="mem_id" required></textarea>
 				</div>
@@ -70,20 +65,20 @@
 		 			&nbsp;&nbsp;
 		 			<a role="button" class="btn btn-success btn-m text-light" href="javascript:write()" id="btn_write" name="btn_write">글쓰기</a>
 				</div>
-				</form>
+			</form>
+			</div>
 		</div>
+		<div style="margin-bottom:50px"></div>
+	      <h3>친구들의 최신소식</h3>
+	      <div id="d_msg"></div>
+	    </div>
+	    <div class="col-sm-4">
+	      <h3>새로운 친구들!!!</h3>        
+	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+	      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+	    </div>
+	  </div>
 	</div>
-	<div style="margin-bottom:50px"></div>
-      <h3>친구들의 최신소식</h3>
-      <div id="d_msg"></div>
-    </div>
-    <div class="col-sm-4">
-      <h3>새로운 친구들!!!</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

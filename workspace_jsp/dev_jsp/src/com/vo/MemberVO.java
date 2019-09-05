@@ -16,6 +16,7 @@ public class MemberVO implements Serializable {
 	private String  mem_id      ="" ;
 	private String  mem_pw      ="" ;
 	private String  mem_name    ="" ;
+	private String  mem_email    ="" ;
 	private String  mem_addr    ="" ;
 	private String  mem_zipcode ="" ;
 
@@ -27,7 +28,7 @@ public class MemberVO implements Serializable {
 	 * -1 / 아이디 를 담는 변수로 활용됨.
 	 */
 	public String r_status		="" ;
-	
+	public String msg			="";
 	
 	public String getMem_id() {
 		return mem_id;
@@ -71,5 +72,18 @@ public class MemberVO implements Serializable {
 	public void setKey(ArrayList<TakeExaminationVO> key) {
 		this.key = key;
 	}
+	public String getMem_email() {
+		return mem_email;
+	}
+	public void setMem_email(String mem_email) {
+		this.mem_email = mem_email;
+	}
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
 
 }

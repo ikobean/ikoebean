@@ -1,0 +1,14 @@
+package com.mybatis.mapper;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/test/*)
+public class TestController {
+	publcic Strping methodA(int page) {
+		return="redirect:test.jsp"
+	}
+	[]
+
+}

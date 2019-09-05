@@ -1,0 +1,18 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+
+public class LoginController {
+	Logger logger = Logger.getLogger(LoginController.class);
+	
+	
+	public LoginLogic loginLogic = null;
+	public void setLoginLogic(LoginLogic loginLogic) {
+		this.loginLogic = loginLogic;
+	}
+	
+	public void Login() {
+		logger.info("컨트롤러 호출성공");
+	}
+	
+}

@@ -1,0 +1,22 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class LoginController {
+	Logger logger = Logger.getLogger(LoginController.class);
+	
+	public LoginLogic loginLogic = null;
+	public void setLoginLogic(LoginLogic loginLogic) {
+		this.loginLogic = loginLogic;
+	}
+	
+	@PostMapping("login")
+	public String Login() {
+		logger.info("컨트롤러 호출성공");
+		return "redirect:/index5.jsp";
+	}
+	
+}

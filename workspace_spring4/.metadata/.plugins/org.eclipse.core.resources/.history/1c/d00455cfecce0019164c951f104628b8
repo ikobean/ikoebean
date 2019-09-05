@@ -1,0 +1,6 @@
+package com.security;
+@Controller
+@RequestMapping("/security/*")
+public class CommonController {
+
+}

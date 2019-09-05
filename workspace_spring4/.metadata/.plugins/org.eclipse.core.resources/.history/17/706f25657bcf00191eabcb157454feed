@@ -1,0 +1,15 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+
+public class LoginLogic {
+
+	Logger logger = Logger.getLogger(LoginLogic.class);
+	
+	public void setLoginDao(LoginDao loginDao) {
+		this.loginDao = loginDao;
+	}
+
+	public LoginDao loginDao = null;
+	
+}

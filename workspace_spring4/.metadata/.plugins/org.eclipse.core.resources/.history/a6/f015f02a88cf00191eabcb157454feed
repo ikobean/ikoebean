@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.MemberMapper">
+	<select id="memList" parameterType="map" resultType="map">
+		SELECT MEM_ID, MEM_PW, MEM_NAME, MEM_ADDR, MEM_ZIPCODE
+		FROM MEMBER
+	</select>
+	
+	<select id="currentTime" parameterType="int" resultType="java.lang.String"> 
+	select TO_CHAR(sysdate, 'YYYY-MM-DD')from dual
+	</select>
+
+</mapper> 
+ 

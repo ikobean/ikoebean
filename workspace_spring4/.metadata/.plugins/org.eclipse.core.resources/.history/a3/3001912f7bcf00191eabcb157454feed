@@ -1,0 +1,7 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+
+public class LoginController {
+	Logger logger = Logger.getLogger(LoginController.class)
+}

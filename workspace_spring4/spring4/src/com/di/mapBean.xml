@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<bean id="propsObject" class="com.di.PropertiesObject">
+		<property name="someProps">
+			<props>
+				<prop key="/di/testList.sp4">testList</prop>
+				<prop key="/di/testAdd.sp4">testAdd</prop>
+				<prop key="/di/testUpd.sp4">testUpd</prop>
+				<prop key="/di/testDel.sp4">testDel</prop>
+			</props>
+		</property>
+		</bean>
+		<bean id="moreComplexObject" class="com.di.ComplexObject">
+		<property name="someMap">
+			<map>
+				<entry>
+					<key><value>first</value></key>
+					<value>무는 메인</value>
+				</entry>
+				<entry>
+					<key><value>second</value></key>
+					<value>두부는 거들뿐</value>
+				</entry>
+				<entry>
+					<key><value>third</value></key>
+					<value>도후쿠</value>
+				</entry>
+				<entry>
+					<key><value>fourth</value></key>
+					<value>배고파?</value>
+				</entry>
+			</map>
+		</property>
+	 
+	</bean>
+</beans>

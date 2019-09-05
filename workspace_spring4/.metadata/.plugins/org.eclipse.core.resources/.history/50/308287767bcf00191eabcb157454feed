@@ -1,0 +1,12 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+
+public class LoginDao {
+	Logger logger = Logger.getLogger(LoginDao.class);
+
+	
+	public void Login() {
+		logger.info("다오 호출성공");
+	}
+}

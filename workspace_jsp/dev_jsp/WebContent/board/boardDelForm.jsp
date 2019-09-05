@@ -14,6 +14,6 @@
 <body>
 <!-- ===================[[글 삭제하기]]====================== -->
 	<input class="easyui-passwordbox" id="u_pw" name="u_pw" label="비밀번호: " style="width:200px;height:25px">
-
+ 
 </body>
 </html>

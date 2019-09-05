@@ -1,0 +1,8 @@
+package com.login;
+
+public class LoginDao {
+
+	public void Login() {
+		logger.info("다오 호출성공");
+	}
+}

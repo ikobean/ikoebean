@@ -1,0 +1,17 @@
+package com.login;
+
+import org.apache.log4j.Logger;
+//@Service
+public class LoginLogic {
+
+	Logger logger = Logger.getLogger(LoginLogic.class);
+	//Autowired
+	public LoginDao loginDao = null;
+	public void setLoginDao(LoginDao loginDao) {
+		this.loginDao = loginDao;
+	}
+
+	public void Login() {
+		logger.info("로직 호출성공");
+	}
+}

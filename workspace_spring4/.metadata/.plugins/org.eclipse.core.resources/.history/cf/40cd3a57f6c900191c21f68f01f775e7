@@ -1,0 +1,85 @@
+package com.sts3.board;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.vo.BoardMasterVO;
+
+@Service
+public class BoardDao {
+	Logger logger = Logger.getLogger(BoardDao.class);
+	@Autowired
+	private SqlSessionTemplate SqlSessionTemplate = null;
+	
+	
+	public List<Map<String, Object>> boardList(Map<String, Object> pMap) {
+		logger.info("boardList 호출 성공"+SqlSessionTemplate);
+		List<Map<String,Object>> boardList=null;
+		boardList=SqlSessionTemplate.selectList("boardList",pMap);
+		return boardList;
+	}
+
+	public int boardAdd(Map<String, Object> pMap) {
+		int result=0;
+		logger.info("boardAdd 호출 성공"+SqlSessionTemplate);
+		result=SqlSessionTemplate.update("boardMAdd",pMap);
+		return result;
+	}
+	public int boardSAdd(Map<String, Object> pMap) {
+		logger.info("boardSAdd 호출 성공");
+		int result=0;
+		try {
+			result = SqlSessionTemplate.update("boardSAdd", pMap);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;		
+	}
+
+	public int getBmno() {
+		int bm_no=0;
+		bm_no=SqlSessionTemplate.selectOne("getBmno");
+		return bm_no;
+	}
+	public int getBmgroup() {
+		logger.info("getBmgroup 호출 성공");
+		int bm_group=0;
+		bm_group = SqlSessionTemplate.selectOne("getBmgroup");
+		return bm_group;
+	}
+	public int bmStepUpdate(Map<String, Object> pMap) {
+		int result=0;
+		result = SqlSessionTemplate.update("bmStepUpdate",pMap);
+		return result;
+		
+	}
+
+	public int getTotal(BoardMasterVO bmVO) {
+		logger.info("getTotal 호출 성공");
+		int total=0;
+		try {
+			total = SqlSessionTemplate.selectOne("getTotal",bmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return total;
+	}
+
+	public int boardDel(Map<String, Object> pMap) {
+		logger.info("boardDel 호출 성공");
+		int total=0;
+		try {
+			total = SqlSessionTemplate.selectOne("getTotal",bmVO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return total;		
+	}
+
+		
+}

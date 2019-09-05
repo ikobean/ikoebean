@@ -6,10 +6,12 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
 import com.util.HashMapBinder;
+import com.vo.MemberVO;
 import com.vo.SNSMessageSet;
 import com.vo.SNSMessageVO;
 
@@ -56,7 +58,7 @@ public class SNSController implements ControllerVer3 {
 			hmb.bindPost(pMap);
 			result= snsLogic.write(pMap);
 			mav = new ModelAndView();
-			mav.setViewName("./main_sns.jsp");
+			mav.setViewName("../mySNS2/main_sns2.jsp");
 			
 		}else if("snsDel".equals(crud)) {
 			int result=0;
@@ -67,7 +69,7 @@ public class SNSController implements ControllerVer3 {
 			result= snsLogic.snsDel(pMap);
 			mav = new ModelAndView();
 			//mav.addObject("smsgList", smsgList);
-			mav.setViewName("./main_sns.jsp");
+			mav.setViewName("../mySNS2/main_sns2.jsp");
 		}
 		else if("favcnt".equals(crud)) {
 			int result=0;
@@ -96,7 +98,7 @@ public class SNSController implements ControllerVer3 {
 			mav = new ModelAndView();
 			//ajax로 처리하고 싶은데 어떡하지?
 			//mav.addObject("smsgList", smsgList);
-			mav.setViewName("./main_sns.jsp");
+			mav.setViewName("../mySNS2/main_sns2.jsp");
 		}
 		else if("snsUpd".equals(crud)) {
 			int result=0;
@@ -106,11 +108,57 @@ public class SNSController implements ControllerVer3 {
 			hmb.bindPost(pMap);
 			result= snsLogic.snsUpd(pMap);
 			mav = new ModelAndView();
-			mav.setViewName("./main_sns.jsp");
+			mav.setViewName("../mySNS2/main_sns2.jsp");
+//			
+//		}else if("signIn".equals(crud)) {
+//			int result=0;
+//			logger.info("SNScontroller signIn 호출 성공");
+//			Map<String,Object> pMap = new HashMap<>();
+//			HashMapBinder hmb = new HashMapBinder(req);
+//			hmb.bindPost(pMap);
+//			result= snsLogic.signIn(pMap);
+//			mav = new ModelAndView();
+//			mav.setViewName("../mySNS2/main_sns2.jsp");
+//			
 			
-		}else if("snsDet".equals(crud)) {
+		}else if("signIn".equals(crud)) {
+			int result=0;
+			logger.info("SNScontroller signIn 호출 성공");
+			MemberVO pmVO = new MemberVO();
+			pmVO.setMem_id(req.getParameter("mem_id"));
+			pmVO.setMem_pw(req.getParameter("mem_pw"));
+			pmVO.setMem_name(req.getParameter("mem_name"));
+			pmVO.setMem_email(req.getParameter("mem_email"));
+			
+			MemberVO rmVO = snsLogic.proc_signin(pmVO);
+			HttpSession session = req.getSession();
+			session.setAttribute("rmVO", rmVO);
+			mav = new ModelAndView();
+			mav.setViewName("../mySNS2/main_sns2.jsp");
 			
 			
+		}else if("insRep".equals(crud)) {
+			int result=0;
+			logger.info("insRep 호출 성공");
+			Map<String,Object> pMap = new HashMap<>();
+			HashMapBinder hmb = new HashMapBinder(req);
+			hmb.bindPost(pMap);
+			result= snsLogic.insRep(pMap);
+			mav = new ModelAndView();
+			mav.setViewName("../mySNS2/main_sns2.jsp");
+		}
+		else if("login".equals(crud)) {
+			int result=0;
+			logger.info("insRep 호출 성공");
+			MemberVO pmVO = new MemberVO();
+			pmVO.setMem_id(req.getParameter("mem_id"));
+			pmVO.setMem_pw(req.getParameter("mem_pw"));
+			
+			MemberVO rmVO = snsLogic.login(pmVO);
+			HttpSession session = req.getSession();
+			session.setAttribute("rmVO", rmVO);
+			mav = new ModelAndView();
+			mav.setViewName("../mySNS2/main_sns2.jsp");
 		}
 		return mav;
 	}

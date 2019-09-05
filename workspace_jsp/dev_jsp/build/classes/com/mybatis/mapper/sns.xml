@@ -3,10 +3,32 @@
 <mapper namespace="com.mybatis.mapper.SNSMapper">
 	<resultMap id="smVO" type="com.vo.SNSMessageVO"/>		
 	<resultMap id="srVO" type="com.vo.SNSRepleVO"/>		
+	<resultMap id="mVO" type="com.vo.MemberVO"/>
+	
+	<select id="proc_login" parameterType="com.vo.MemberVO" statementType="CALLABLE">
+		{call proc_login(#{mem_id, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{mem_pw, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{mem_name, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{r_status, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{key, mode=OUT, jdbcType=CURSOR, javaType=java.sql.ResultSet, resultMap=teVO}
+						)}
+	</select> 
+	
+	<select id="proc_signin" parameterType="com.vo.MemberVO" statementType="CALLABLE">
+		{call proc_signin(#{mem_id, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{mem_pw, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{mem_name, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{mem_email, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{r_status, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+						,#{msg, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+						)}
+	</select> 
+	
    	<select id="msgList" parameterType="map" resultType="com.vo.SNSMessageVO">
 		SELECT mno, mem_id, msg, favcnt, msg_date
 		  FROM sns_message order by mno desc
 	</select>
+	
    	<select id="getReple" parameterType="int" resultType="com.vo.SNSRepleVO">
 		SELECT rno, mno, mem_id, msg, msg_date
 		  FROM sns_reple
@@ -14,8 +36,15 @@
 		 <if test='value>0'>
 		 	AND mno = #{value}
 		 </if> 
+		  order by rno desc
 	</select>
-	<select id="write" parameterType="com.vo.SNSMessageVO" resultType="int" >
+	
+	<select id="signIn" parameterType="com.vo.SNSMessageVO" resultType="int" >
+		 insert into member(mem_email, mem_id, mem_name, mem_pw)
+                    	values(#{mem_email},#{mem_id},#{mem_name},#{mem_pw})
+	</select>
+	
+	<select id="write" parameterType="com.vo.MemberVO" resultType="int" >
 		 insert into sns_message(mno, mem_id, msg, 
 		 						 msg_date, mem_pw)
                     	values(#{mno},#{mem_id},#{msg}
@@ -23,10 +52,22 @@
                         	  ,#{mem_pw})
 	</select>
 	
+	<select id="getRno" parameterType="int" resultType="int" >
+		select nvl((select /*+index_desc(sns_reple SNSREPLY_RNO_PK) */ rno 
+		             from sns_reple
+		            where rownum=1),0)+1 rno
+		  from dual	 
+	</select>
 	<select id="getMno" parameterType="int" resultType="int" >
 		select nvl((select /*+index_desc(sns_message SNSMSG_MNO_PK) */ mno 
 		             from sns_message
 		            where rownum=1),0)+1 mno
+		  from dual	 
+	</select>
+	<select id="getUMno" parameterType="int" resultType="int" >
+		select nvl((select /*+index_desc(sns_message SNSMSG_MNO_PK) */ mno 
+		             from sns_message
+		            where rownum=1),0) mno
 		  from dual	 
 	</select>
 	<select id="getFavcnt" parameterType="int" resultType="int" >
@@ -37,6 +78,14 @@
 		<delete id="snsDel" parameterType="map">
 		DELETE from sns_message
 			WHERE mno = #{mno}
+			And mem_pw = #{mem_pw}
 	</delete>
+	<select id="insRep" parameterType="com.vo.SNSRepleVO"> 
+		 insert into sns_reple(rno, mno, mem_id, msg, 
+		 						 msg_date, mem_pw)
+                    	values(#{rno},#{mno},#{mem_id},#{msg}
+                        	  ,to_char(sysdate,'yyyy-mm-dd')
+                        	  ,#{mem_pw})
+	</select>
 	
 </mapper>

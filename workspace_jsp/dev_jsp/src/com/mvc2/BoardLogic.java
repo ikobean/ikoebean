@@ -76,6 +76,7 @@ public class BoardLogic {
 		//결함-만일 조건 검색으로 인한 결과가 똑같이 한 건일 때는 어떻게 분리해야 할까?
 		
 		if(boardList.size()==1 && "detail".equals(bmVO.getGubun())) {
+			
 			int bm_no = bmVO.getBm_no();
 			bDao.hitCount(bm_no);
 			logger.info(bm_no);
@@ -121,6 +122,8 @@ public class BoardLogic {
 		mresult = bDao.boardMAdd(bmVO);
 		//첨부파일이 있을 때
 		if(pMap.get("bs_file")!=null && pMap.get("bs_file").toString().length()>1) {
+			
+			
 			bsVO.setBm_no(bm_no);
 			bsVO.setBs_file(pMap.get("bs_file").toString());
 			bsVO.setBs_size(Double.parseDouble(pMap.get("bs_size").toString()));
